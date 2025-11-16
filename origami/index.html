@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Origami – Abi Claire Graham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">Abi Claire Graham</div>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/origami/" class="active">Origami</a>
+        <a href="/powerlifting/">Powerlifting</a>
+        <a href="/makeup/">Makeup</a>
+        <a href="/singing/">Singing</a>
+        <a href="/data-projects/">Data Projects</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Page Intro -->
+    <section class="hero">
+      <h1>Origami</h1>
+      <p>
+        I fold super intricate origami models, ranging from complex modulars to
+        detailed creatures and geometric tessellations. This page collects my
+        favourite pieces — colourful, precise, sometimes ridiculous.
+      </p>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+      <div class="gallery-grid">
+
+        <!-- Example gallery items. Replace or duplicate these. -->
+        <figure class="gallery-item">
+          <img src="/assets/images/origami/sample-1.jpg" alt="Origami model example 1">
+          <figcaption>Model title or short note</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="/assets/images/origami/sample-2.jpg" alt="Origami model example 2">
+          <figcaption>Another model caption</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="/assets/images/origami/sample-3.jpg" alt="Origami model example 3">
+          <figcaption>Optional caption text</figcaption>
+        </figure>
+
+        <!-- Add as many <figure> items as you want -->
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Abi Claire Graham</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
