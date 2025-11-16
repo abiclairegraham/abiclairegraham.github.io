@@ -111,8 +111,9 @@ a:hover {
 
 .card img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  aspect-ratio: 1 / 1;   /* makes the area a perfect square */
+  object-fit: cover;      /* fills the square nicely */
+  display: block;
 }
 
 .card h2 {
