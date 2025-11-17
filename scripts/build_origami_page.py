@@ -15,7 +15,8 @@ CAPTIONS_INCLUDE = False   # <<< change to True if you want captions later
 ROOT = Path(__file__).resolve().parent.parent
 
 # Catalogue path in Drive (adjust if needed)
-CATALOGUE = Path("/content/drive/MyDrive/Personal Projects/media_catalogue_instagram_with_paths.csv")
+# CATALOGUE = Path("/content/drive/MyDrive/Personal Projects/media_catalogue_instagram_with_paths.csv")
+CATALOGUE = Path("/content/drive/MyDrive/Personal Projects/media_catalogue_instagram_labeled.csv")
 
 # Template + output inside the repo
 TEMPLATE = ROOT / "templates" / "origami_template.html"
@@ -73,7 +74,6 @@ def make_post_key(row):
     js = row.get("json_source", "") or ""
     return f"{source}::{dt}::{js}"
 
-
 def slugify(text, max_len=80):
     text = text.lower()
     text = re.sub(r"[^a-z0-9]+", "-", text)
@@ -81,14 +81,27 @@ def slugify(text, max_len=80):
     return text[:max_len] or "post"
 
 
-def make_post_slug(section: str, row: dict) -> str:
+def make_post_slug(row: dict) -> str:
     """
-    Deterministic slug for a post, based on section + date + post_key.
-    Must match the slug logic used in build_origami_posts.py.
+    Get slug for this post from the CSV.
+    If 'post_slug' is missing/empty, fall back to a deterministic slug
+    based on post_datetime + post_key.
     """
+    slug = (row.get("post_slug") or "").strip()
+    if slug:
+        # If you've already slugified in the CSV, you *could* just return slug.
+        # Keeping slugify here is a light safety net in case there are spaces etc.
+        return slugify(slug)
+
+    # Fallback: derive from section/date/post_key
+    section = (row.get("section") or "origami").lower()
     dt = row.get("post_datetime", "") or ""
     date_part = dt[:10] if len(dt) >= 10 else "unknown-date"
-    post_key = make_post_key(row)
+
+    source = row.get("source", "") or "instagram"
+    js = row.get("json_source", "") or ""
+    post_key = f"{source}::{dt}::{js}"
+
     base = f"{section}-{date_part}-{post_key}"
     return slugify(base)
 
@@ -124,7 +137,7 @@ def make_gallery_section(title, post_groups):
         alt_text_esc = html.escape(alt_text, quote=True)
 
         # link to the corresponding post page
-        slug = make_post_slug("origami", rep)
+        slug = make_post_slug(rep)
         href = f"/origami/posts/{slug}.html"
 
         # Optional figcaption under thumbnail
