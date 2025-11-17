@@ -1,5 +1,5 @@
 # abiclairegraham.github.io
-My personal website. Here's how this repository is laid out:
+My personal website ✨ This website was built using automated Python scripts, with the content sourced from my existing social media (Facebook, Instagram). I downloaded all the social media content and then used scripts to catalogue everything, categorising the content using keywords that I searched in the captions for. Once categorised, I could use those categories as the structure for the website itself. My first Blog post explains all this in much more detail, check it out 😄
 
 ## Repository Structure
 
