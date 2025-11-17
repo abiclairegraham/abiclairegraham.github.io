@@ -1,6 +1,9 @@
 # abiclairegraham.github.io
 My personal website. Here's how this repository is laid out:
 
+## Repository Structure
+
+```text
 abiclairegraham.github.io/
 ├── index.html
 ├── styles.css
@@ -69,4 +72,4 @@ abiclairegraham.github.io/
     ├── build_origami_posts.py
     ├── build_blog_index.py
     └── (future builders)
-
+```
