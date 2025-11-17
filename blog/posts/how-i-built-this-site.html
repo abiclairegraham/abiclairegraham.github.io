@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>How I Built This Website From My Social Media – Abi Claire Graham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <!-- Page-specific styles for the flowchart -->
+  <style>
+    .blog-article {
+      max-width: 800px;
+      margin: 0 auto;
+      padding-bottom: 3rem;
+    }
+
+    .blog-article h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-article .meta {
+      font-size: 0.9rem;
+      opacity: 0.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .blog-article h2 {
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.4rem;
+    }
+
+    .blog-article h3 {
+      margin-top: 1.2rem;
+      margin-bottom: 0.4rem;
+      font-size: 1.15rem;
+    }
+
+    .blog-article p {
+      line-height: 1.6;
+      margin-bottom: 0.9rem;
+    }
+
+    .blog-article code {
+      font-size: 0.9em;
+    }
+
+    .blog-article pre {
+      background: #0f172a0d; /* very light */
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      overflow-x: auto;
+      font-size: 0.9em;
+    }
+
+    /* Flowchart styles */
+    .flowchart {
+      margin: 2.5rem 0;
+      padding: 1.5rem 1.25rem;
+      border-radius: 1rem;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+    }
+
+    .flowchart-title {
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 1.05rem;
+    }
+
+    .flowchart-title-badge {
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 999px;
+      background: #14b8a6; /* teal accent */
+    }
+
+    .flowchart-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .flow-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.75rem 0.75rem;
+      border-radius: 0.75rem;
+      background: white;
+      border: 1px solid #e5e7eb;
+      position: relative;
+    }
+
+    .flow-step-number {
+      flex-shrink: 0;
+      width: 1.9rem;
+      height: 1.9rem;
+      border-radius: 999px;
+      border: 2px solid #14b8a6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #0f172a;
+      background: #ecfeff;
+    }
+
+    .flow-step-content h3 {
+      margin: 0 0 0.2rem;
+      font-size: 1rem;
+    }
+
+    .flow-step-content p {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .flow-arrow {
+      align-self: center;
+      font-size: 1.2rem;
+      color: #14b8a6;
+      line-height: 1;
+    }
+
+    @media (min-width: 768px) {
+      .flowchart-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">Abi Claire Graham</div>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/origami/">Origami</a>
+        <a href="/powerlifting/">Powerlifting</a>
+        <a href="/makeup/">Makeup</a>
+        <a href="/singing/">Singing</a>
+        <a href="/data-projects/">Data Projects</a>
+        <a href="/blog/" class="active">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="blog-article">
+      <h1>How I Built This Website From My Social Media (Using Only Cloud Tools)</h1>
+      <p class="meta">
+        A behind-the-scenes tour of how I turned years of Instagram posts into this website,
+        using Google Drive, Google Colab, and GitHub.
+      </p>
+
+      <p>
+        Most people build personal websites by hand-picking photos, writing new text, or dragging
+        things into a site builder. I… did not do that.
+      </p>
+
+      <p>
+        Instead, I exported my entire Instagram archive, automatically analysed the captions,
+        sorted every image into meaningful sections, and generated the pages of this site
+        programmatically &mdash; all without storing anything locally on my laptop.
+      </p>
+
+      <p>
+        The whole workflow lives in the cloud, using three main tools:
+      </p>
+
+      <ul>
+        <li><strong>Google Drive</strong> &mdash; my working filesystem</li>
+        <li><strong>Google Colab</strong> &mdash; my Python environment</li>
+        <li><strong>GitHub</strong> &mdash; where the final site is hosted</li>
+      </ul>
+
+      <p>
+        Colab handles the GitHub syncing between my GitHub repository and a clone stored inside
+        Google Drive. Everything &mdash; from downloading my data to publishing this page &mdash;
+        happens there.
+      </p>
+
+      <!-- Flowchart -->
+      <section class="flowchart">
+        <div class="flowchart-title">
+          <span class="flowchart-title-badge"></span>
+          <span>High-level flow of the whole process</span>
+        </div>
+        <div class="flowchart-inner">
+          <div class="flow-step">
+            <div class="flow-step-number">1</div>
+            <div class="flow-step-content">
+              <h3>Export from Instagram</h3>
+              <p>
+                Request a full Instagram data export from Meta and save the unzipped archive into
+                Google Drive. This gives you all the images plus JSON files describing each post.
+              </p>
+            </div>
+          </div>
+
+          <div class="flow-arrow">↓</div>
+
+          <div class="flow-step">
+            <div class="flow-step-number">2</div>
+            <div class="flow-step-content">
+              <h3>Build a media catalogue in Colab</h3>
+              <p>
+                Use a Colab notebook to walk through all the JSON files and extract
+                <em>post_datetime</em>, <em>caption</em>, and <em>media URIs</em> into a CSV:
+                one row per image.
+              </p>
+            </div>
+          </div>
+
+          <div class="flow-arrow">↓</div>
+
+          <div class="flow-step">
+            <div class="flow-step-number">3</div>
+            <div class="flow-step-content">
+              <h3>Classify each image into sections</h3>
+              <p>
+                Scan each caption for keywords (origami, powerlifting, makeup, singing, activism,
+                etc.), count how many hits each category gets, and assign the image to whichever
+                section has the most matches. Origami posts also get finer-grained subsections.
+              </p>
+            </div>
+          </div>
+
+          <div class="flow-arrow">↓</div>
+
+          <div class="flow-step">
+            <div class="flow-step-number">4</div>
+            <div class="flow-step-content">
+              <h3>Copy images into the site structure</h3>
+              <p>
+                Another script copies each image from the archive into the GitHub repo in Drive,
+                into folders like <code>assets/images/origami/insects/</code> or
+                <code>assets/images/powerlifting/2022/</code>, based on its section and subsection.
+              </p>
+            </div>
+          </div>
+
+          <div class="flow-arrow">↓</div>
+
+          <div class="flow-step">
+            <div class="flow-step-number">5</div>
+            <div class="flow-step-content">
+              <h3>Generate HTML pages from the catalogue</h3>
+              <p>
+                Python scripts take the catalogue and turn it into static HTML pages: galleries for
+                each section, plus per-post pages that show all images from the same Instagram post,
+                with their full caption.
+              </p>
+            </div>
+          </div>
+
+          <div class="flow-arrow">↓</div>
+
+          <div class="flow-step">
+            <div class="flow-step-number">6</div>
+            <div class="flow-step-content">
+              <h3>Sync to GitHub Pages from Colab</h3>
+              <p>
+                From the Colab notebook, I commit changes inside the Drive-backed clone of my
+                repository and push to GitHub. GitHub Pages then serves the updated site.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <h2>1. Getting the content: my Instagram export</h2>
+
+      <p>
+        I started by requesting a full copy of my Instagram data. When the download was ready,
+        I saved and unzipped it directly into Google Drive so I could work on it from Colab.
+      </p>
+
+      <p>
+        The archive included:
+      </p>
+
+      <ul>
+        <li>All the images and videos I'd posted</li>
+        <li>JSON files describing each post</li>
+        <li>Timestamps, captions, and other metadata</li>
+        <li>Information about multi-image posts (carousels)</li>
+      </ul>
+
+      <p>
+        None of this ever had to live on my local computer: Drive is the canonical home for all of it.
+      </p>
+
+      <h2>2. Building a media catalogue</h2>
+
+      <p>
+        Next, in a Colab notebook, I wrote a parser that walked through every JSON file and pulled
+        out the pieces I cared about:
+      </p>
+
+      <ul>
+        <li><code>post_datetime</code> &mdash; when the post was created</li>
+        <li><code>caption</code> &mdash; the text I wrote underneath</li>
+        <li><code>filename_raw</code> &mdash; where the image lives in the export</li>
+        <li><code>json_source</code> &mdash; which JSON file it came from</li>
+      </ul>
+
+      <p>
+        All of that went into a CSV: one row per image. That CSV became my
+        <strong>media catalogue</strong>, a kind of structured index of my entire Instagram history.
+      </p>
+
+      <h2>3. Automatically classifying images by topic</h2>
+
+      <p>
+        Then I taught the catalogue to understand what each image was <em>about</em>.
+      </p>
+
+      <p>
+        I created keyword lists for each section:
+      </p>
+
+      <ul>
+        <li><strong>origami</strong> &mdash; words like <em>fold</em>, <em>tessellation</em>, <em>paper</em>, etc.</li>
+        <li><strong>powerlifting</strong> &mdash; <em>squat</em>, <em>bench</em>, <em>deadlift</em>, and so on</li>
+        <li><strong>makeup</strong> &mdash; <em>eyeshadow</em>, <em>lipstick</em>, palettes, brand names</li>
+        <li><strong>singing</strong> &mdash; <em>song</em>, <em>karaoke</em>, <em>singing</em></li>
+        <li><strong>activism</strong> &mdash; <em>trans</em>, <em>racism</em>, protests, and related terms</li>
+        <li><strong>general</strong> &mdash; everything else</li>
+      </ul>
+
+      <p>
+        For each caption, the script counted how many keywords matched for each section.
+        Whichever section had the most hits became the assigned category. In cases where two
+        sections tied, I used a simple priority list as a tiebreaker.
+      </p>
+
+      <p>
+        Origami posts got an extra layer of classification into subsections like
+        <em>insects</em>, <em>tessellations</em>, <em>curved</em>, and <em>modular</em>,
+        again based on keywords.
+      </p>
+
+      <h2>4. Copying images into the GitHub repo</h2>
+
+      <p>
+        Once each image knew its section and subsection, another Colab script copied the files
+        from the Instagram export into the cloned GitHub repository stored in Google Drive.
+      </p>
+
+      <p>
+        It built a folder structure like:
+      </p>
+
+      <pre><code>assets/images/origami/insects/
+assets/images/origami/tessellations/
+assets/images/powerlifting/2022/
+assets/images/makeup/
+assets/images/general/
+</code></pre>
+
+      <p>
+        Every run starts by clearing out the old image folders, then repopulating them
+        from the catalogue. That means the repository always reflects the current state of
+        the data.
+      </p>
+
+      <h2>5. Generating HTML pages automatically</h2>
+
+      <p>
+        The next step was to turn the catalogue into actual web pages.
+      </p>
+
+      <p>
+        I wrote small Python scripts (again in Colab) that read the CSV and generated:
+      </p>
+
+      <ul>
+        <li>
+          An <strong>Origami</strong> gallery page, split into sections for insects, animals,
+          tessellations, curved origami, modular origami, and general pieces.
+        </li>
+        <li>
+          A <strong>Powerlifting</strong> gallery grouped by year, so I can see lifting photos
+          chronologically.
+        </li>
+        <li>
+          A <strong>Makeup</strong> gallery, currently one big grid but ready for future subsections.
+        </li>
+      </ul>
+
+      <p>
+        For each Instagram post, the catalogue groups all images with the same post timestamp,
+        and creates a dedicated <em>post page</em>. The gallery only shows a single representative
+        thumbnail, but clicking it opens a page with:
+      </p>
+
+      <ul>
+        <li>All images from that post</li>
+        <li>The full caption</li>
+        <li>Any extra context I might add later</li>
+      </ul>
+
+      <h2>6. Pushing changes to GitHub from Colab</h2>
+
+      <p>
+        The repository itself lives inside Google Drive, so Colab can interact with it just like a
+        local folder. I configured Git with my name and email, added a GitHub personal access token,
+        and then used standard commands:
+      </p>
+
+      <pre><code>!git add .
+!git commit -m "Rebuild site from updated media catalogue"
+!git push origin main
+      </code></pre>
+
+      <p>
+        GitHub sees the new commit, and GitHub Pages takes care of serving the updated site. The
+        whole “rebuild + publish” cycle happens in the browser.
+      </p>
+
+      <h2>7. Why I like this setup</h2>
+
+      <p>
+        This approach means the site is:
+      </p>
+
+      <ul>
+        <li><strong>Data-driven</strong> – everything comes from a single source of truth: the catalogue.</li>
+        <li><strong>Repeatable</strong> – I can rerun the scripts any time and regenerate the whole site.</li>
+        <li><strong>Cloud-based</strong> – no local environment to maintain, no files on my laptop.</li>
+        <li><strong>Honest</strong> – it’s built out of the content I’ve actually posted over the years.</li>
+      </ul>
+
+      <p>
+        Now that the foundations are in place, I can add more pages, tweak the styling, or change
+        how things are grouped, and all of it flows from the same underlying data.
+      </p>
+
+      <p>
+        And this page you’re reading is part of that: a small write-up generated in the same spirit
+        as the rest of the site.
+      </p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Abi Graham</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
