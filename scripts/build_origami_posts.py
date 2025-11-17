@@ -8,7 +8,7 @@ import html
 ROOT = Path(__file__).resolve().parent.parent
 
 # Catalogue path in Drive (adjust if needed)
-CATALOGUE = Path("/content/drive/MyDrive/Personal Projects/media_catalogue_instagram_with_paths.csv")
+CATALOGUE = Path("/content/drive/MyDrive/Personal Projects/media_catalogue_instagram_labeled.csv")
 
 # Template file
 TEMPLATE = ROOT / "templates" / "origami_post_template.html"
@@ -45,16 +45,6 @@ def make_post_key(row):
     dt = row.get("post_datetime", "") or ""
     js = row.get("json_source", "") or ""
     return f"{source}::{dt}::{js}"
-
-
-def slugify(text, max_len=60):
-    text = text.lower()
-    text = re.sub(r"[^a-z0-9]+", "-", text)
-    text = re.sub(r"-+", "-", text).strip("-")
-    return text[:max_len] or "post"
-
-
-import re
 
 def slugify(text, max_len=80):
     text = text.lower()
