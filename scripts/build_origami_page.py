@@ -15,8 +15,8 @@ CAPTIONS_INCLUDE = False   # <<< change to True if you want captions later
 ROOT = Path(__file__).resolve().parent.parent
 
 # Catalogue path in Drive (adjust if needed)
-# CATALOGUE = Path("/content/drive/MyDrive/Personal Projects/media_catalogue_instagram_with_paths.csv")
-CATALOGUE = Path("/content/drive/MyDrive/Personal Projects/media_catalogue_instagram_labeled.csv")
+CATALOGUE = Path("/content/drive/MyDrive/Personal Projects/media_catalogue_instagram_with_paths.csv")
+# CATALOGUE = Path("/content/drive/MyDrive/Personal Projects/media_catalogue_instagram_labeled.csv")
 
 # Template + output inside the repo
 TEMPLATE = ROOT / "templates" / "origami_template.html"
