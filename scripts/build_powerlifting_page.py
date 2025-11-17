@@ -35,7 +35,7 @@ def make_gallery_section_for_year(year, items):
 
     # Sort items by date descending if possible
     def sort_key(row):
-        dt = parse_date_iso(row.get("post_datetime") or "")
+        dt = parse_iso_date(row.get("post_datetime") or "")
         # sort newest first; None goes last
         return dt or datetime.min
 
