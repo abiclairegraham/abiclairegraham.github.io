@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blog Post Title – Abi Claire Graham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <!-- Required metadata for the blog index script -->
+  <meta name="post-date" content="2025-02-10" />
+  <meta name="post-summary" content="Short 1–2 sentence summary of what this post is about." />
+  <!-- Optional: explicit thumbnail for the blog index (otherwise it uses the first <img>) -->
+  <!-- <meta name="post-thumbnail" content="/assets/images/blog/your-slug/thumbnail.jpg" /> -->
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">Abi Claire Graham</div>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/origami/">Origami</a>
+        <a href="/powerlifting/">Powerlifting</a>
+        <a href="/makeup/">Makeup</a>
+        <a href="/singing/">Singing</a>
+        <a href="/data-projects/">Data Projects</a>
+        <a href="/blog/" class="active">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="blog-article">
+      <h1>Blog Post Title</h1>
+      <p class="meta">
+        <!-- You can keep this in sync with post-date or expand it -->
+        Published on 2025-02-10
+      </p>
+
+      <!-- Optional leading image -->
+      <!--
+      <p>
+        <img src="/assets/images/blog/your-slug/lead-image.jpg"
+             alt="Short alt text describing this image">
+      </p>
+      -->
+
+      <p>
+        Intro paragraph goes here. Explain what the post is about and give people a reason to keep
+        reading.
+      </p>
+
+      <h2>Section heading</h2>
+      <p>
+        Main body content. You can use <strong>bold</strong>, <em>italics</em>, lists, code blocks,
+        whatever you like.
+      </p>
+
+      <ul>
+        <li>Key point one</li>
+        <li>Key point two</li>
+        <li>Key point three</li>
+      </ul>
+
+      <h2>Another section</h2>
+      <p>
+        More content here. This template is just a starting point &mdash; you can freely edit the
+        structure to suit each post.
+      </p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Abi Graham</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
