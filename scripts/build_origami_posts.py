@@ -8,7 +8,8 @@ import html
 ROOT = Path(__file__).resolve().parent.parent
 
 # Catalogue path in Drive (adjust if needed)
-CATALOGUE = Path("/content/drive/MyDrive/Personal Projects/media_catalogue_instagram_labeled.csv")
+CATALOGUE = Path("/content/drive/MyDrive/Personal Projects/media_catalogue_instagram_with_paths.csv")
+# CATALOGUE = Path("/content/drive/MyDrive/Personal Projects/media_catalogue_instagram_labeled.csv")
 
 # Template file
 TEMPLATE = ROOT / "templates" / "origami_post_template.html"
