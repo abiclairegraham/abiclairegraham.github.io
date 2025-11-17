@@ -54,27 +54,39 @@ def slugify(text, max_len=60):
     return text[:max_len] or "post"
 
 
-def choose_slug_for_group(section, rows, used_slugs):
+import re
+
+def slugify(text, max_len=80):
+    text = text.lower()
+    text = re.sub(r"[^a-z0-9]+", "-", text)
+    text = re.sub(r"-+", "-", text).strip("-")
+    return text[:max_len] or "post"
+
+
+def make_post_slug(row: dict) -> str:
     """
-    Build a URL-friendly slug for a post from section, date, and caption snippet.
-    Ensure uniqueness by appending -2, -3, ... if needed.
+    Get slug for this post from the CSV.
+    If 'post_slug' is missing/empty, fall back to a deterministic slug
+    based on post_datetime + post_key.
     """
-    rep = rows[0]
-    dt = rep.get("post_datetime", "") or ""
+    slug = (row.get("post_slug") or "").strip()
+    if slug:
+        # If you've already slugified in the CSV, you *could* just return slug.
+        # Keeping slugify here is a light safety net in case there are spaces etc.
+        return slugify(slug)
+
+    # Fallback: derive from section/date/post_key
+    section = (row.get("section") or "origami").lower()
+    dt = row.get("post_datetime", "") or ""
     date_part = dt[:10] if len(dt) >= 10 else "unknown-date"
-    caption = (rep.get("caption") or "").strip()
-    first_line = caption.split("\n", 1)[0]
-    base_slug = f"{section}-{date_part}-{first_line}"
-    slug = slugify(base_slug)
 
-    original_slug = slug
-    i = 2
-    while slug in used_slugs:
-        slug = f"{original_slug}-{i}"
-        i += 1
+    source = row.get("source", "") or "instagram"
+    js = row.get("json_source", "") or ""
+    post_key = f"{source}::{dt}::{js}"
 
-    used_slugs.add(slug)
-    return slug
+    base = f"{section}-{date_part}-{post_key}"
+    return slugify(base)
+
 
 
 def build_post_html(rows):
@@ -151,8 +163,8 @@ def build_origami_posts():
     count = 0
 
     for key, group_rows in groups.items():
-        # choose a slug for this post
-        slug = choose_slug_for_group("origami", group_rows, used_slugs)
+        rep = group_rows[0]
+        slug = make_post_slug(rep)
         out_path = POSTS_DIR / f"{slug}.html"
 
         meta_html, body_html = build_post_html(group_rows)
