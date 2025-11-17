@@ -4,81 +4,25 @@ from pathlib import Path
 from collections import defaultdict
 import html
 
-# Repo root (this script lives in scripts/)
-ROOT = Path(__file__).resolve().parent.parent
+from scripts.build_common import (
+    ROOT,
+    CATALOGUE_PATH,
+    load_catalogue,
+    get_image_path,
+    slugify,
+    make_post_slug,
+    make_post_key,
+    group_rows_by_post,
+    parse_iso_date,
+)
 
-# Catalogue path in Drive (adjust if needed)
-CATALOGUE = Path("/content/drive/MyDrive/Personal Projects/media_catalogue_instagram_with_paths.csv")
-# CATALOGUE = Path("/content/drive/MyDrive/Personal Projects/media_catalogue_instagram_labeled.csv")
-
+ 
 # Template file
 TEMPLATE = ROOT / "templates" / "origami_post_template.html"
 
 # Output directory for per-post pages
 POSTS_DIR = ROOT / "origami" / "posts"
-
-
-def load_catalogue():
-    rows = []
-    with CATALOGUE.open(newline="", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            rows.append(row)
-    return rows
-
-
-def get_image_path(row):
-    """Use filename_relative if present, else fallback to filename_raw."""
-    if "filename_relative" in row and row["filename_relative"]:
-        return row["filename_relative"].lstrip("/")
-    if "filename_raw" in row and row["filename_raw"]:
-        return row["filename_raw"].lstrip("/")
-    return ""
-
-
-def make_post_key(row):
-    """
-    Build a grouping key for 'posts' from existing columns.
-    Using (source, post_datetime, json_source) should uniquely
-    identify an Instagram post in your export.
-    """
-    source = row.get("source", "") or "instagram"
-    dt = row.get("post_datetime", "") or ""
-    js = row.get("json_source", "") or ""
-    return f"{source}::{dt}::{js}"
-
-def slugify(text, max_len=80):
-    text = text.lower()
-    text = re.sub(r"[^a-z0-9]+", "-", text)
-    text = re.sub(r"-+", "-", text).strip("-")
-    return text[:max_len] or "post"
-
-
-def make_post_slug(row: dict) -> str:
-    """
-    Get slug for this post from the CSV.
-    If 'post_slug' is missing/empty, fall back to a deterministic slug
-    based on post_datetime + post_key.
-    """
-    slug = (row.get("post_slug") or "").strip()
-    if slug:
-        # If you've already slugified in the CSV, you *could* just return slug.
-        # Keeping slugify here is a light safety net in case there are spaces etc.
-        return slugify(slug)
-
-    # Fallback: derive from section/date/post_key
-    section = (row.get("section") or "origami").lower()
-    dt = row.get("post_datetime", "") or ""
-    date_part = dt[:10] if len(dt) >= 10 else "unknown-date"
-
-    source = row.get("source", "") or "instagram"
-    js = row.get("json_source", "") or ""
-    post_key = f"{source}::{dt}::{js}"
-
-    base = f"{section}-{date_part}-{post_key}"
-    return slugify(base)
-
-
+ 
 
 def build_post_html(rows):
     """
