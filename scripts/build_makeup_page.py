@@ -3,38 +3,27 @@ from pathlib import Path
 from textwrap import indent
 import html
 
+from scripts.build_common import (
+    ROOT,
+    CATALOGUE_PATH,
+    load_catalogue,
+    get_image_path,
+    slugify,
+    make_post_slug,
+    make_post_key,
+    group_rows_by_post,
+    parse_iso_date,
+)
+
+
 # --------------------------------------
 # CONFIG
 # --------------------------------------
 CAPTIONS_INCLUDE = False   # set to True later if you want captions under photos
 
-# Repo root (this script lives in scripts/)
-ROOT = Path(__file__).resolve().parent.parent
-
-# Catalogue path in Drive (adjust if needed)
-CATALOGUE = Path("/content/drive/MyDrive/Personal Projects/media_catalogue_instagram_with_paths.csv")
-
 # Template + output inside the repo
 TEMPLATE = ROOT / "templates" / "makeup_template.html"
 OUTPUT = ROOT / "makeup" / "index.html"
-
-
-def load_catalogue():
-    rows = []
-    with CATALOGUE.open(newline="", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            rows.append(row)
-    return rows
-
-
-def get_image_path(row):
-    """Use filename_relative if present, else fallback to filename_raw."""
-    if "filename_relative" in row and row["filename_relative"]:
-        return row["filename_relative"].lstrip("/")
-    if "filename_raw" in row and row["filename_raw"]:
-        return row["filename_raw"].lstrip("/")
-    return ""
 
 
 def make_gallery_section(title, items, show_heading=True):
