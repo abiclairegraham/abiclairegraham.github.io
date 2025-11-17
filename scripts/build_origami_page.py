@@ -2,6 +2,9 @@ import csv
 from pathlib import Path
 from textwrap import indent
 import html
+import re
+from collections import defaultdict
+from datetime import datetime
 
 # --------------------------------------
 # CONFIG
@@ -28,6 +31,10 @@ ORIGAMI_SUBSECTIONS = [
 ]
 
 
+# --------------------------------------
+# Helpers
+# --------------------------------------
+
 def load_catalogue():
     rows = []
     with CATALOGUE.open(newline="", encoding="utf-8") as f:
@@ -46,29 +53,92 @@ def get_image_path(row):
     return ""
 
 
-def make_gallery_section(title, items):
+def parse_dt(s):
+    if not s:
+        return None
+    try:
+        return datetime.fromisoformat(s)
+    except Exception:
+        return None
+
+
+def make_post_key(row):
+    """
+    Build a grouping key for 'posts' from existing columns.
+    Using (source, post_datetime, json_source) should uniquely
+    identify an Instagram post in your export.
+    """
+    source = row.get("source", "") or "instagram"
+    dt = row.get("post_datetime", "") or ""
+    js = row.get("json_source", "") or ""
+    return f"{source}::{dt}::{js}"
+
+
+def slugify(text, max_len=80):
+    text = text.lower()
+    text = re.sub(r"[^a-z0-9]+", "-", text)
+    text = re.sub(r"-+", "-", text).strip("-")
+    return text[:max_len] or "post"
+
+
+def make_post_slug(section: str, row: dict) -> str:
+    """
+    Deterministic slug for a post, based on section + date + post_key.
+    Must match the slug logic used in build_origami_posts.py.
+    """
+    dt = row.get("post_datetime", "") or ""
+    date_part = dt[:10] if len(dt) >= 10 else "unknown-date"
+    post_key = make_post_key(row)
+    base = f"{section}-{date_part}-{post_key}"
+    return slugify(base)
+
+
+def group_rows_by_post(rows):
+    """Group a list of rows into {post_key: [rows...]}."""
+    groups = defaultdict(list)
+    for r in rows:
+        key = make_post_key(r)
+        groups[key].append(r)
+    return groups
+
+
+def make_gallery_section(title, post_groups):
+    """
+    post_groups: list of (post_key, [rows_for_post])
+    Returns HTML for one section.
+    """
     figures = []
 
-    for item in items:
-        img_path = get_image_path(item)
+    for post_key, items in post_groups:
+        if not items:
+            continue
+
+        # representative row for this post (first item)
+        rep = items[0]
+        img_path = get_image_path(rep)
         if not img_path:
             continue
 
-        caption = (item.get("caption") or "").strip()
+        caption = (rep.get("caption") or "").strip()
         alt_text = caption or "Origami model"
-
         alt_text_esc = html.escape(alt_text, quote=True)
 
-        # Only include <figcaption> if enabled
+        # link to the corresponding post page
+        slug = make_post_slug("origami", rep)
+        href = f"/origami/posts/{slug}.html"
+
+        # Optional figcaption under thumbnail
         if CAPTIONS_INCLUDE:
             caption_esc = html.escape(caption)
             caption_html = f"<figcaption>{caption_esc}</figcaption>"
         else:
-            caption_html = ""  # no caption at all
+            caption_html = ""
 
         fig_html = f"""
         <figure class="gallery-item">
-          <img src="/{img_path}" alt="{alt_text_esc}">
+          <a href="{href}">
+            <img src="/{img_path}" alt="{alt_text_esc}">
+          </a>
           {caption_html}
         </figure>
         """.rstrip()
@@ -94,16 +164,45 @@ def make_gallery_section(title, items):
 
 def build_origami_page():
     rows = load_catalogue()
+    # Only origami rows
     origami_rows = [r for r in rows if (r.get("section") or "").lower() == "origami"]
 
-    sections_html = []
-    for key, title in ORIGAMI_SUBSECTIONS:
-        items = [r for r in origami_rows if (r.get("subsection") or "").lower() == key]
-        section_html = make_gallery_section(title, items)
-        if section_html:
-            sections_html.append(section_html)
+    if not origami_rows:
+        galleries_html = "<p>No origami yet.</p>"
+    else:
+        sections_html = []
 
-    galleries_html = "\n\n".join(sections_html) if sections_html else "<p>No origami yet.</p>"
+        for key, title in ORIGAMI_SUBSECTIONS:
+            # rows that belong to this subsection
+            rows_for_sub = [
+                r for r in origami_rows
+                if (r.get("subsection") or "").lower() == key
+            ]
+            if not rows_for_sub:
+                continue
+
+            # group into posts
+            groups = group_rows_by_post(rows_for_sub)
+
+            # sort posts by newest date (using representative row)
+            grouped_items = []
+            for post_key, items in groups.items():
+                rep = items[0]
+                dt = parse_dt(rep.get("post_datetime") or "")
+                grouped_items.append((post_key, items, dt))
+
+            grouped_items.sort(key=lambda t: (t[2] or datetime.min), reverse=True)
+
+            # drop the datetime from the tuple for HTML generation
+            section_html = make_gallery_section(
+                title,
+                [(pk, items) for (pk, items, _dt) in grouped_items]
+            )
+
+            if section_html:
+                sections_html.append(section_html)
+
+        galleries_html = "\n\n".join(sections_html) if sections_html else "<p>No origami yet.</p>"
 
     template_text = TEMPLATE.read_text(encoding="utf-8")
     final_html = template_text.replace("{{GALLERIES}}", galleries_html)
