@@ -5,7 +5,7 @@ import csv
 import re
 import shutil
 
-INSTAGRAM_DIR = Path("/content/drive/MyDrive/meta-2025-Nov-16-09-27-16/instagram-...")  # same as before
+INSTAGRAM_DIR = Path("/content/drive/MyDrive/meta-2025-Nov-16-09-27-16/instagram-abi.graham.35-2025-11-16-QoA42s2j")  # same as before
 REPO_ROOT = Path("/content/drive/MyDrive/Personal Projects/abiclairegraham.github.io")
 
 CATALOG_IN = Path("/content/drive/MyDrive/Personal Projects/media_catalogue_instagram_labeled.csv")
