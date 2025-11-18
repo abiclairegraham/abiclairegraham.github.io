@@ -16,6 +16,10 @@ import re
 # Root of the repo (scripts/ is one level down)
 ROOT = Path(__file__).resolve().parent.parent
 
+INSTAGRAM_DIR = Path(
+    "/content/drive/MyDrive/meta-2025-Nov-16-09-27-16/instagram-abi.graham.35-2025-11-16-QoA42s2j"
+)
+
 # Single source of truth for the main catalogue path
 # (you can change this in ONE place later)
 CATALOGUE_PATH = Path(
