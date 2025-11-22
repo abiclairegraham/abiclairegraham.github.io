@@ -148,12 +148,12 @@ a:hover {
   flex-direction: column;
 }
 
-.card img {
+/* .card img {
   width: 100%;
-  aspect-ratio: 1 / 1;   /* makes the area a perfect square */
-  object-fit: cover;      /* fills the square nicely */
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   display: block;
-}
+} */
 
 .card h2 {
   font-size: 1.3rem;
