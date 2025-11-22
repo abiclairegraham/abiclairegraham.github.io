@@ -20,7 +20,7 @@ body {
     sans-serif;
   /* background: var(--bg);  old background, now unused */
   color: var(--text);
-  background-image: url("assets/images/decoration/raven wallpaper lighter.jpg");
+  background-image: url("assets/images/decoration/raven wallpaper tile.jpg");
   background-repeat: repeat;      /* or 'no-repeat' and background-size: cover; */
   background-size: 1000px auto;    /* tweak to taste */
 }
