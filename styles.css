@@ -22,7 +22,7 @@ body {
   color: var(--text);
   background-image: url("assets/images/decoration/raven wallpaper.jpg");
   background-repeat: repeat;      /* or 'no-repeat' and background-size: cover; */
-  background-size: 300px auto;    /* tweak to taste */
+  background-size: 900px auto;    /* tweak to taste */
 }
 
 
