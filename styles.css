@@ -41,6 +41,33 @@ a:hover {
   padding: 1rem 1.25rem 3rem;
 }
 
+/* --- Gothic Frame Overlay --- */
+.frame-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Keeps your frame/photos square */
+  overflow: hidden; /* Prevents frame edges leaking out */
+}
+
+.frame-wrapper .photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.frame-wrapper .frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* Ensures the frame shape stays correct */
+  pointer-events: none; /* Keeps the frame click-transparent */
+  z-index: 3;
+}
+
+
 /* Header */
 
 .site-header {
