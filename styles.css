@@ -22,7 +22,7 @@ body {
   color: var(--text);
   background-image: url("assets/images/decoration/raven wallpaper lighter.jpg");
   background-repeat: repeat;      /* or 'no-repeat' and background-size: cover; */
-  background-size: 1500px auto;    /* tweak to taste */
+  background-size: 1000px auto;    /* tweak to taste */
 }
 
 
