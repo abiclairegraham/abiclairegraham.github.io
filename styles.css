@@ -153,12 +153,6 @@ a:hover {
   }
 }
 
-/* Special style for the framed card */
-.card--framed {
-  background: transparent;   /* no white slab */
-  box-shadow: none;          /* no outer shadow around the card */
-  border-radius: 0;
-}
 
 .card {
   background: var(--card-bg);
@@ -190,6 +184,13 @@ a:hover {
 .card-link {
   margin: 0 1rem 1rem;
   font-weight: 600;
+}
+
+/* Special style for the framed card */
+.card--framed {
+  background: transparent;   /* no white slab */
+  box-shadow: none;          /* no outer shadow around the card */
+  border-radius: 0;
 }
 
 /* Footer */
