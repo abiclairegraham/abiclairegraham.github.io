@@ -1,9 +1,12 @@
+/* --------------------------------------------------
+   Root variables & global reset
+-------------------------------------------------- */
 :root {
   --bg: #f5f5f5;
   --card-bg: #ffffff;
   --text: #111111;
   --muted: #6b7280;
-  --accent: #2563eb; /* change this to your favourite accent colour */
+  --accent: #2563eb;
   --radius: 1rem;
   --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
@@ -16,15 +19,13 @@
 
 body {
   margin: 0;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  /* background: var(--bg);  old background, now unused */
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
   color: var(--text);
   background-image: url("assets/images/decoration/raven wallpaper tile.jpg");
-  background-repeat: repeat;      /* or 'no-repeat' and background-size: cover; */
-  background-size: 1000px auto;    /* tweak to taste */
+  background-repeat: repeat;
+  background-size: 1000px auto;
 }
-
 
 a {
   color: var(--accent);
@@ -41,65 +42,10 @@ a:hover {
   padding: 1rem 1.25rem 3rem;
 }
 
-/* --- Gothic Frame Overlay --- */
-.frame-wrapper {
-  position: relative;
-  display: block;
-  width: 100%;
-  aspect-ratio: 1 / 1;   /* Card stays a square */
-  overflow: visible;      /* Let the frame breathe if needed */
-}
 
-/* PHOTO: slightly smaller than the frame (≈ 15% inset) */
-.frame-wrapper .photo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 75%;             /* 100% - 25% = "frame is 25% larger" */
-  height: 75%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  display: block;
-  z-index: 1;
-}
-
-/* FRAME: full size of the wrapper */
-.frame-wrapper .frame {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;     /* Keeps frame proportions */
-  pointer-events: none;    /* Click goes to the link */
-  z-index: 3;
-  transform-origin: center;
-}
-
-/* --- Metal Plaque Under Frame --- */
-.plaque {
-  background-image: url("assets/images/decoration/Plaque 4-1.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  padding: 2.5rem 1.5rem;   /* adjust these depending on your plaque shape */
-  text-align: center;
-
-  margin-top: 1rem;         /* spacing under the frame */
-  color: #111;              /* dark engraved text look */
-  font-family: "Cinzel", serif;  /* suggested engraved-looking font */
-}
-
-.plaque h2,
-.plaque p,
-.plaque .card-link {
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2),
-               0 -1px 1px rgba(0, 0, 0, 0.4);
-}
-
-
-/* Header */
-
+/* --------------------------------------------------
+   Header
+-------------------------------------------------- */
 .site-header {
   background: #ffffff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
@@ -135,100 +81,149 @@ a:hover {
   text-decoration: none;
 }
 
-/* Hero */
 
+/* --------------------------------------------------
+   Hero (generic) + Embossed hero panel
+-------------------------------------------------- */
 .hero {
   margin-top: 2.5rem;
   margin-bottom: 2rem;
 }
 
-.hero h1 {
-  font-size: 2.3rem;
-  margin-bottom: 0.75rem;
-}
-
-.hero p {
-  max-width: 650px;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-/* --- Embossed header area --- */
+/* Embossed hero panel */
 .embossed-hero {
   width: 100%;
   max-width: 900px;
   margin: 3rem auto 2rem;
 
-  /* keep same shape as the image */
+  /* keep same shape as the “Embossed short” image */
   aspect-ratio: 1909 / 611;
 
   background-image: url("assets/images/decoration/Embossed short.png");
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center bottom;  /* panel sits at bottom */
+  background-position: center bottom;
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;       /* ⬅ push text down toward panel */
+  justify-content: flex-start;        /* content nearer top of panel */
   align-items: center;
-  /* text-align: center; */
   text-align: left;
 
-  /* big bottom padding so text sits inside inner rectangle */
-  padding: 0 4rem 3.5rem;          /* top right/left bottom */
+  /* inner spacing from the engraved border */
+  padding: 1.5rem 4rem 2.5rem;        /* top  right/left  bottom */
   box-sizing: border-box;
 
   color: #929bad;
   font-family: "Cinzel", serif;
 }
 
- 
-/* tighten text so it stays nicely inside the inner frame */
+/* Title in embossed hero */
 .embossed-hero h1 {
   font-size: 1.7rem;
-  margin-bottom: 0.75rem;
+  margin: 0 0 0.75rem;                /* no default top margin */
+  letter-spacing: 0.08em;
+  text-transform: none;
+  color: #929bad;
+
+  text-shadow:
+    0 -1px 1px rgba(255, 255, 255, 0.6),
+    0  2px 3px rgba(0, 0, 0, 0.9),
+    0  0 6px rgba(0, 0, 0, 0.7);
 }
 
+/* Body text in embossed hero */
 .embossed-hero p {
   max-width: 90%;
   margin: 0 auto;
   font-family: "EB Garamond", serif;
-  font-size: 1.1rem;       /* Garamond looks smaller, so bump slightly */
+  font-size: 1.1rem;
   line-height: 1.6;
-}
+  letter-spacing: 0.08em;
+  text-transform: none;
+  color: #929bad;
 
-.embossed-hero h1,
-.embossed-hero p {
-  color: #929bad;      /* pale silvery grey */
-  letter-spacing: 0.08em;  /* a bit more “engraved” / formal */
-  text-transform: none;   /* overrides any uppercase */
-}
-
-/* Stronger embossed effect for the title */
-.embossed-hero h1 {
-  text-shadow:
-    0 -1px 1px rgba(255, 255, 255, 0.6),   /* top highlight */
-    0  2px 3px rgba(0, 0, 0, 0.9),         /* bottom shadow */
-    0  0 6px rgba(0, 0, 0, 0.7);           /* soft glow in the dark panel */
-}
-
-/* Subtle version for the paragraph */
-.embossed-hero p {
   text-shadow:
     0 -1px 1px rgba(255, 255, 255, 0.3),
     0  1px 2px rgba(0, 0, 0, 0.7);
 }
 
 
+/* --------------------------------------------------
+   Gothic frame overlay on cards
+-------------------------------------------------- */
+.frame-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;    /* keeps frame area square */
+  overflow: visible;      /* allows ornate frames to spill out */
+}
 
-/* Cards */
+/* PHOTO: slightly smaller than frame (≈ inset) */
+.frame-wrapper .photo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 75%;
+  height: 75%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  display: block;
+  z-index: 1;
+}
 
+/* FRAME: full size of the wrapper (decorative) */
+.frame-wrapper .frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 3;
+  transform-origin: center;
+}
+
+
+/* --------------------------------------------------
+   Metal plaque under framed images
+-------------------------------------------------- */
+.plaque {
+  background-image: url("assets/images/decoration/Plaque 4-1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+
+  margin-top: 1rem;
+  color: #111;
+  font-family: "Cinzel", serif;
+}
+
+.plaque h2,
+.plaque p,
+.plaque .card-link {
+  text-shadow:
+    0 1px 1px rgba(255, 255, 255, 0.2),
+    0 -1px 1px rgba(0, 0, 0, 0.4);
+}
+
+
+/* --------------------------------------------------
+   Cards grid + card styles
+-------------------------------------------------- */
+
+/* Cards grid layout */
 .cards {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));  /* force 3 columns */
+  grid-template-columns: repeat(3, minmax(330px, 1fr));
 }
 
+/* Individual card */
 .card {
   background: var(--card-bg);
   border-radius: var(--radius);
@@ -237,14 +232,15 @@ a:hover {
   display: flex;
   flex-direction: column;
 }
- 
+
+/* Card text */
 .card h2 {
   font-size: 1.3rem;
   margin: 1rem 1rem 0.25rem;
 }
 
 .card p {
-  margin: 0 1rem 0.5rem; 
+  margin: 0 1rem 0.5rem;
   line-height: 1.5;
   font-size: 0.9rem;
 }
@@ -254,61 +250,27 @@ a:hover {
   font-weight: 600;
 }
 
-/* Special style for the framed card */
+/* Framed cards (no white slab, let frames and plaques float) */
 .card--framed {
-  background: transparent;   /* no white slab */
-  box-shadow: none;          /* no outer shadow around the card */
+  background: transparent;
+  box-shadow: none;
   border-radius: 0;
-  overflow: visible;         /* allows frames to spill over edge of card */
+  overflow: visible;
 }
 
-/* Gold frame needs to be a bit bigger */
+/* Per-card frame scaling tweaks */
 .card--frame-powerlifting .frame-wrapper .frame {
   transform: scale(1.4);
 }
 
-/* Makeup frame even bigger */
 .card--frame-makeup .frame-wrapper .frame {
   transform: scale(1.35);
 }
 
-/* Makeup card even bigger */
-.cards {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(3, minmax(330px, 1fr));
-}
 
-/* 2 columns on tablets */
-@media (max-width: 900px) {
-  .cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* 1 column on phones */
-@media (max-width: 600px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 1100px) {
-  .cards {
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
-  }
-}
-
-@media (max-width: 700px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-
-/* Footer */
-
+/* --------------------------------------------------
+   Footer
+-------------------------------------------------- */
 .site-footer {
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   background: #ffffff;
@@ -321,22 +283,10 @@ a:hover {
   padding-top: 1rem;
 }
 
-/* Responsive tweaks */
 
-@media (max-width: 720px) {
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .hero h1 {
-    font-size: 1.9rem;
-  }
-}
-
-/* --- Gallery layout (Origami page) --- */
-
+/* --------------------------------------------------
+   Gallery layout (Origami page etc.)
+-------------------------------------------------- */
 .gallery {
   margin-top: 2rem;
 }
@@ -368,3 +318,39 @@ a:hover {
   line-height: 1.4;
 }
 
+
+/* --------------------------------------------------
+   Responsive tweaks
+-------------------------------------------------- */
+
+/* Header layout on small screens */
+@media (max-width: 720px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+}
+
+/* Cards: 2 columns on mid screens, 1 on narrow screens */
+@media (max-width: 1100px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
