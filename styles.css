@@ -153,6 +153,19 @@ a:hover {
   }
 }
 
+@media (max-width: 1100px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 
 .card {
   background: var(--card-bg);
@@ -201,6 +214,13 @@ a:hover {
 /* Makeup frame even bigger */
 .card--frame-makeup .frame-wrapper .frame {
   transform: scale(1.2);
+}
+
+/* Makeup card even bigger */
+.cards {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(330px, 1fr));
 }
 
 
