@@ -197,6 +197,7 @@ a:hover {
 .embossed-hero p {
   color: #d4d7df;          /* pale silvery grey */
   letter-spacing: 0.08em;  /* a bit more “engraved” / formal */
+  text-transform: none;   /* overrides any uppercase */
 }
 
 /* Stronger embossed effect for the title */
@@ -273,7 +274,7 @@ a:hover {
 
 /* Gold frame needs to be a bit bigger */
 .card--frame-powerlifting .frame-wrapper .frame {
-  transform: scale(1.3);
+  transform: scale(1.4);
 }
 
 /* Makeup frame even bigger */
