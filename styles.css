@@ -171,7 +171,8 @@ a:hover {
   flex-direction: column;
   justify-content: flex-end;       /* ⬅ push text down toward panel */
   align-items: center;
-  text-align: center;
+  /* text-align: center; */
+  text-align: left;
 
   /* big bottom padding so text sits inside inner rectangle */
   padding: 0 4rem 3.5rem;          /* top right/left bottom */
