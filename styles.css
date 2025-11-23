@@ -208,12 +208,12 @@ a:hover {
 
 /* Gold frame needs to be a bit bigger */
 .card--frame-powerlifting .frame-wrapper .frame {
-  transform: scale(1.1);
+  transform: scale(1.25);
 }
 
 /* Makeup frame even bigger */
 .card--frame-makeup .frame-wrapper .frame {
-  transform: scale(1.2);
+  transform: scale(1.4);
 }
 
 /* Makeup card even bigger */
