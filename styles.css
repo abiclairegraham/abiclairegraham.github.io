@@ -256,9 +256,9 @@ a:hover {
 }
 
 .card p {
-  margin: 0 1rem 0.5rem;
-  /* color: var(--muted); (TRY DEFAULT COLOUR) */
+  margin: 0 1rem 0.5rem; 
   line-height: 1.5;
+  font-size: 0.9rem;
 }
 
 .card-link {
