@@ -94,7 +94,7 @@ a:hover {
 .embossed-hero {
   width: 100%;
   max-width: 900px;
-  margin: 3rem auto 2rem;
+  margin: 4rem auto 2rem;
 
   /* keep same shape as the “Embossed short” image */
   aspect-ratio: 1909 / 611;
