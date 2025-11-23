@@ -72,19 +72,9 @@ a:hover {
   object-fit: contain;     /* Keeps frame proportions */
   pointer-events: none;    /* Click goes to the link */
   z-index: 3;
-}
-
-.frame-wrapper .frame {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  pointer-events: none;
-  z-index: 3;
   transform-origin: center;
 }
-
+ 
 
 /* Header */
 
