@@ -206,7 +206,7 @@ a:hover {
 
 /* Makeup frame even bigger */
 .card--frame-makeup .frame-wrapper .frame {
-  transform: scale(1.6);
+  transform: scale(1.4);
 }
 
 /* Makeup card even bigger */
