@@ -160,7 +160,7 @@ a:hover {
   margin: 3rem auto 2rem;
 
   /* keep same shape as the image */
-  aspect-ratio: 600 / 256;
+  aspect-ratio: 1909 / 611;
 
   background-image: url("assets/images/decoration/Embossed short.png");
   background-size: contain;
