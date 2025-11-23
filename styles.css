@@ -179,14 +179,14 @@ a:hover {
 
 /* Makeup frame even bigger */
 .card--frame-makeup .frame-wrapper .frame {
-  transform: scale(1.25);
+  transform: scale(1.35);
 }
 
 /* Makeup card even bigger */
 .cards {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(3, minmax(400px, 1fr));
+  grid-template-columns: repeat(3, minmax(330px, 1fr));
 }
 
 /* 2 columns on tablets */
