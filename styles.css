@@ -392,4 +392,58 @@ a:hover {
   }
 }
 
+/* Mobile: split hero into two stacked embossed plaques */
+@media (max-width: 700px) {
+  .embossed-hero {
+    max-width: 100%;
+    margin: 2rem auto 1.5rem;
+
+    /* remove the big background image on mobile */
+    background: none;
+    aspect-ratio: auto;
+    display: block;
+  }
+
+  .hero-title-plate,
+  .hero-body-plate {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    text-align: center;         /* center text inside each plaque */
+    padding: 1.1rem 1.4rem;     /* inner space from the edges of the embossing */
+  }
+
+  /* Top plaque: title */
+  .hero-title-plate {
+    aspect-ratio: 1909 / 611;  /* same as big card image */
+    background-image: url("assets/images/decoration/Embossed short.png");
+  }
+
+  /* Bottom plaque: body text */
+  .hero-body-plate {
+    aspect-ratio: 599 / 256;   /* from your Embossed simple image */
+    background-image: url("assets/images/decoration/Embossed simple.png");
+  }
+
+  .hero-title-plate h1 {
+    font-size: 1.15rem;
+    margin: 0;
+    text-align: center;
+  }
+
+  .hero-body-plate p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+}
+
 
