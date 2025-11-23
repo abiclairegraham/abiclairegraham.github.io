@@ -220,11 +220,11 @@ a:hover {
 
 /* Tighter internal spacing for plaque content */
 .plaque h2 {
-  margin: -0.2rem 0 0.1rem;   /* heading → paragraph spacing */
+  margin: 0rem 0 0.1rem;   /* heading → paragraph spacing */
 }
 
 .plaque p {
-  margin: 0.1rem 0 0.4rem;   /* paragraph → link spacing */
+  margin: -0.2rem 0 0.4rem;   /* paragraph → link spacing */
 }
 
 
