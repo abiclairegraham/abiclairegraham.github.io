@@ -276,6 +276,7 @@ a:hover {
 } */
 
 .card--frame-powerlifting .frame-wrapper .frame {
+   margin-top: 1rem;
   transform: scale(1.4);
 }
 
