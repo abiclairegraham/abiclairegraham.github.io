@@ -175,14 +175,7 @@ a:hover {
   display: flex;
   flex-direction: column;
 }
-
-/* .card img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-} */
-
+ 
 .card h2 {
   font-size: 1.3rem;
   margin: 1rem 1rem 0.25rem;
@@ -220,7 +213,7 @@ a:hover {
 .cards {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(3, minmax(330px, 1fr));
+  grid-template-columns: repeat(3, minmax(380px, 1fr));
 }
 
 
