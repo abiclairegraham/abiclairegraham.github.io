@@ -86,7 +86,7 @@ a:hover {
    Hero (generic) + Embossed hero panel
 -------------------------------------------------- */
 .hero {
-  margin-top: 2.5rem;
+  margin-top: 0.5rem;
   margin-bottom: 2rem;
 }
 
@@ -111,7 +111,7 @@ a:hover {
   text-align: left;
 
   /* inner spacing from the engraved border */
-  padding: 4rem 4rem 2.5rem;        /* top  right/left  bottom */
+  padding: 3rem 4rem 2.5rem;        /* top  right/left  bottom */
   box-sizing: border-box;
 
   color: #929bad;
