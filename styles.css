@@ -155,7 +155,7 @@ a:hover {
 
 /* --- Embossed header area --- */
 .embossed-hero {
-  max-width: 70%;                           /* take ~70% of the container width */
+  max-width: 100%;                           /* take ~70% of the container width */
   margin: 0 auto 2rem;                      /* center it + add space below */
   background-image: url("assets/images/decoration/Embossed heading.png");
   background-size: 100% 100%;               /* stretch image to fill the box */
@@ -165,7 +165,7 @@ a:hover {
   padding: 3rem 4rem;                       /* controls how big the box is */
   text-align: center;
 
-  color: #81868f;                           /* engraved-ish text colour */
+  color: #81868f;                           /* silver-ish text colour */
   font-family: "Cinzel", serif;             /* or whatever font you like */
 }
 
