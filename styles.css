@@ -169,6 +169,7 @@ a:hover {
   background: transparent;   /* no white slab */
   box-shadow: none;          /* no outer shadow around the card */
   border-radius: 0;
+  overflow: visible;         /* allows frames to spill over edge of card */
 }
 
 /* Gold frame needs to be a bit bigger */
