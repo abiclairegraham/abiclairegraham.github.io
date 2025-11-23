@@ -221,13 +221,13 @@ a:hover {
 /* Tighter internal spacing for plaque content */
 .plaque h2 {
   margin: 0;
-  line-height: 0.8;   /* <<< THIS FIXES THE GAP */
-  font-size: 1rem;  /* optional, but matches the plaque better */
+  line-height: 0.7;   /* <<< THIS FIXES THE GAP */
+  font-size: 0.9rem;  /* optional, but matches the plaque better */
 }
 
 .plaque p {
   margin: 0.1rem 0 0.3rem;
-  line-height: 0.7;   /* makes it visually closer to the heading */
+  line-height: 0.5;   /* makes it visually closer to the heading */
 }
 
 
