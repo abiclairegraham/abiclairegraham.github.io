@@ -182,8 +182,10 @@ a:hover {
   font-family: "Cinzel", serif;
 }
 
+ 
+/* tighten text so it stays nicely inside the inner frame */
 .embossed-hero h1 {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   margin-bottom: 0.75rem;
 }
 
@@ -215,20 +217,6 @@ a:hover {
   text-shadow:
     0 -1px 1px rgba(255, 255, 255, 0.3),
     0  1px 2px rgba(0, 0, 0, 0.7);
-}
-
-
-
-/* tighten text so it stays nicely inside the inner frame */
-.embossed-hero h1 {
-  font-size: 2rem;
-  margin-bottom: 0.75rem;
-}
-
-.embossed-hero p {
-  max-width: 80%;                /* keeps paragraph inside the inner area */
-  margin: 0 auto;
-  line-height: 1.5;
 }
 
 
