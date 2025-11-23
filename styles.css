@@ -192,6 +192,28 @@ a:hover {
   line-height: 1.5;
 }
 
+.embossed-hero h1,
+.embossed-hero p {
+  color: #d4d7df;          /* pale silvery grey */
+  letter-spacing: 0.08em;  /* a bit more “engraved” / formal */
+}
+
+/* Stronger embossed effect for the title */
+.embossed-hero h1 {
+  text-shadow:
+    0 -1px 1px rgba(255, 255, 255, 0.6),   /* top highlight */
+    0  2px 3px rgba(0, 0, 0, 0.9),         /* bottom shadow */
+    0  0 6px rgba(0, 0, 0, 0.7);           /* soft glow in the dark panel */
+}
+
+/* Subtle version for the paragraph */
+.embossed-hero p {
+  text-shadow:
+    0 -1px 1px rgba(255, 255, 255, 0.3),
+    0  1px 2px rgba(0, 0, 0, 0.7);
+}
+
+
 
 /* tighten text so it stays nicely inside the inner frame */
 .embossed-hero h1 {
