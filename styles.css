@@ -189,7 +189,7 @@ a:hover {
 
 /* Gold frame needs to be a bit bigger */
 .card--frame-powerlifting .frame-wrapper .frame {
-  transform: scale(1.15);
+  transform: scale(1.3);
 }
 
 /* Makeup frame even bigger */
