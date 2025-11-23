@@ -111,7 +111,7 @@ a:hover {
   text-align: left;
 
   /* inner spacing from the engraved border */
-  padding: 3rem 4rem 2.5rem;        /* top  right/left  bottom */
+  padding: 4rem 4rem 2.5rem;        /* top  right/left  bottom */
   box-sizing: border-box;
 
   color: #929bad;
