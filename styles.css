@@ -198,7 +198,7 @@ a:hover {
 -------------------------------------------------- */
 .plaque {
   background-image: url("assets/images/decoration/Plaque 4-1.png");
-  background-size: 120%; /*contain;*/
+  background-size: 105%; /*contain;*/
   background-repeat: no-repeat;
   background-position: center;
 
