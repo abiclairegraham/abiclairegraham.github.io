@@ -74,6 +74,16 @@ a:hover {
   z-index: 3;
 }
 
+.frame-wrapper .frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 3;
+  transform-origin: center;
+}
 
 
 /* Header */
@@ -192,6 +202,17 @@ a:hover {
   box-shadow: none;          /* no outer shadow around the card */
   border-radius: 0;
 }
+
+/* Gold frame needs to be a bit bigger */
+.card--frame-powerlifting .frame-wrapper .frame {
+  transform: scale(1.1);
+}
+
+/* Makeup frame even bigger */
+.card--frame-makeup .frame-wrapper .frame {
+  transform: scale(1.2);
+}
+
 
 /* Footer */
 
