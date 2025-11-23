@@ -188,9 +188,11 @@ a:hover {
 }
 
 .embossed-hero p {
-  max-width: 80%;
+  max-width: 90%;
   margin: 0 auto;
-  line-height: 1.5;
+  font-family: "EB Garamond", serif;
+  font-size: 1.1rem;       /* Garamond looks smaller, so bump slightly */
+  line-height: 1.6;
 }
 
 .embossed-hero h1,
