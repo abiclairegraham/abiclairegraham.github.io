@@ -92,39 +92,41 @@ a:hover {
 
 /* Embossed hero panel */
 .embossed-hero {
+  position: relative;
   width: 100%;
   max-width: 900px;
-  margin: 1rem auto 2rem;
+  margin: 4rem auto 2rem;
 
-  /* keep same shape as the “Embossed short” image */
-  aspect-ratio: 1909 / 611;
+  aspect-ratio: 1909 / 611; /* same as the image */
 
   background-image: url("assets/images/decoration/Embossed short.png");
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: center;
 
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;        /* content nearer top of panel */
+  justify-content: center;
   align-items: center;
-  text-align: left;
-
-  /* inner spacing from the engraved border */
-  padding: 3rem 4rem 2.5rem;        /* top  right/left  bottom */
-  box-sizing: border-box;
-
-  color: #929bad;
-  font-family: "Cinzel", serif;
 }
 
-/* Title in embossed hero */
-.embossed-hero h1 {
-  font-size: 1.7rem;
-  margin: 3 0 0.75rem;                /* no default top margin */
+/* Inner text block that stays inside the frame */
+.embossed-inner {
+  width: 80%;                 /* text area width inside the panel */
+  max-width: 700px;
+  text-align: left;
+  font-family: "Cinzel", serif;
+  color: #929bad;
+}
+
+/* Title */
+.embossed-inner h1 {
+  margin: 0 0 0.6rem;
+  font-family: "Cinzel", serif;
   letter-spacing: 0.08em;
   text-transform: none;
-  color: #929bad;
+
+  /* responsive font size: smaller on phones, bigger on desktop */
+  font-size: clamp(1.2rem, 2vw + 0.8rem, 1.7rem);
 
   text-shadow:
     0 -1px 1px rgba(255, 255, 255, 0.6),
@@ -132,28 +134,21 @@ a:hover {
     0  0 6px rgba(0, 0, 0, 0.7);
 }
 
-/* Body text in embossed hero */
-.embossed-hero p {
-  max-width: 90%;
-  margin: 0 3rem auto;
+/* Body text */
+.embossed-inner p {
+  margin: 0;
   font-family: "EB Garamond", serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: none;
-  color: #929bad;
+  line-height: 1.5;
+
+  font-size: clamp(0.85rem, 1.3vw + 0.7rem, 1.1rem);
 
   text-shadow:
     0 -1px 1px rgba(255, 255, 255, 0.3),
     0  1px 2px rgba(0, 0, 0, 0.7);
 }
 
-.embossed-hero .text-block {
-  max-width: 100%;
-  margin-left: 1rem;
-  margin-right: 0;
-  text-align: left;
-}
 
 
 /* --------------------------------------------------
@@ -196,38 +191,49 @@ a:hover {
 /* --------------------------------------------------
    Metal plaque under framed images
 -------------------------------------------------- */
+/* Metal plaque under framed images */
 .plaque {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 800 / 260;       /* approximate – tweak when you know image ratio */
   background-image: url("assets/images/decoration/Plaque 4-1.png");
-  background-size: 85%; /*contain;*/
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 
-  padding: 0.4rem 3.5rem;   /* top  right/left  bottom */
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   margin-top: 5rem;
+}
+
+/* Text inside plaque */
+.plaque-inner {
+  width: 70%;                    /* how wide the text area is inside the metal */
+  text-align: center;
   color: #111;
   font-family: "Cinzel", serif;
 }
 
-.plaque h2,
-.plaque p,
-.plaque .card-link {
+.plaque-inner h2,
+.plaque-inner p,
+.plaque-inner .card-link {
   text-shadow:
     0 1px 1px rgba(255, 255, 255, 0.2),
     0 -1px 1px rgba(0, 0, 0, 0.4);
 }
 
-/* Tighter internal spacing for plaque content */
-.plaque h2 {
-  margin: 0;
-  line-height: 0.7;   /* <<< THIS FIXES THE GAP */
-  font-size: 0.9rem;  /* optional, but matches the plaque better */
+.plaque-inner h2 {
+  margin: 0 0 0.2rem;
+  line-height: 1.1;
+  font-size: 1.05rem;
 }
 
-.plaque p {
+.plaque-inner p {
   margin: 0.1rem 0 0.3rem;
-  line-height: 0.5;   /* makes it visually closer to the heading */
+  line-height: 1.25;
+  font-size: 0.85rem;
 }
 
 
