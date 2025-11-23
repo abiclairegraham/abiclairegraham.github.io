@@ -220,9 +220,10 @@ a:hover {
 
 /* Tighter internal spacing for plaque content */
 .plaque h2 {
-  margin: 0rem 0 0rem;   /* heading → paragraph spacing */
+  margin: 0;
+  line-height: 1.1;   /* <<< THIS FIXES THE GAP */
+  font-size: 1.1rem;  /* optional, but matches the plaque better */
 }
-
 .plaque p {
   margin: -0.2rem 0 0.4rem;   /* paragraph → link spacing */
 }
