@@ -195,7 +195,7 @@ a:hover {
 .plaque {
   position: relative;
   width: 100%;
-  aspect-ratio: 800 / 260;       /* approximate – tweak when you know image ratio */
+  aspect-ratio: 1923 / 573;       /* approximate – tweak when you know image ratio */
   background-image: url("assets/images/decoration/Plaque 4-1.png");
   background-size: contain;
   background-repeat: no-repeat;
