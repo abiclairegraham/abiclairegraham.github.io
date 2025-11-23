@@ -199,7 +199,7 @@ a:hover {
 
 .embossed-hero h1,
 .embossed-hero p {
-  color: #d4d7df;          /* pale silvery grey */
+  color: #929bad;      /* pale silvery grey */
   letter-spacing: 0.08em;  /* a bit more “engraved” / formal */
   text-transform: none;   /* overrides any uppercase */
 }
