@@ -149,9 +149,10 @@ a:hover {
 }
 
 .embossed-hero .text-block {
-  max-width: 95%;       /* you control how wide the text area is */
-  margin: 0 2.5rm auto;       /* centers the whole block */
-  text-align: left;     /* but keeps the text left-justified */
+  max-width: 100%;
+  margin-left: 2.5rem;
+  margin-right: 0;
+  text-align: left;
 }
 
 
