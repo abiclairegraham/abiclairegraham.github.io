@@ -135,7 +135,7 @@ a:hover {
 /* Body text in embossed hero */
 .embossed-hero p {
   max-width: 90%;
-  margin: 0 auto;
+  margin: 0.2 auto;
   font-family: "EB Garamond", serif;
   font-size: 1.1rem;
   line-height: 1.6;
