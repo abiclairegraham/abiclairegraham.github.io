@@ -135,7 +135,7 @@ a:hover {
 /* Body text in embossed hero */
 .embossed-hero p {
   max-width: 90%;
-  margin: 0 1rem auto;
+  margin: 0 3rem auto;
   font-family: "EB Garamond", serif;
   font-size: 1.1rem;
   line-height: 1.6;
@@ -150,7 +150,7 @@ a:hover {
 
 .embossed-hero .text-block {
   max-width: 95%;       /* you control how wide the text area is */
-  margin: 0 auto;       /* centers the whole block */
+  margin: 0 3rm auto;       /* centers the whole block */
   text-align: left;     /* but keeps the text left-justified */
 }
 
