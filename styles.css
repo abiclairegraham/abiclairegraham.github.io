@@ -146,6 +146,21 @@ a:hover {
   line-height: 1.6;
 }
 
+/* --- Embossed header area --- */
+.embossed-hero {
+  background-image: url("assets/images/decoration/Embossed heading.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  padding: 2.5rem 1.5rem;   /* adjust these depending on your plaque shape */
+  text-align: center;
+
+  margin-top: 1rem;         /* spacing under the frame */
+  color: 81868f;              /* dark engraved text look */
+  font-family: "Cinzel", serif;  /* suggested engraved-looking font */
+}
+
 /* Cards */
 
 .cards {
