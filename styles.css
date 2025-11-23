@@ -162,7 +162,7 @@ a:hover {
   /* keep same shape as the image */
   aspect-ratio: 600 / 256;
 
-  background-image: url("assets/images/decoration/Embossed simple.png");
+  background-image: url("assets/images/decoration/Embossed short.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center bottom;  /* panel sits at bottom */
