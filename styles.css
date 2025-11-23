@@ -259,6 +259,16 @@ a:hover {
 }
 
 /* Per-card frame scaling tweaks */
+.card--frame-origami .frame-wrapper {
+  transform: scale(1.2);      /* tweak this: 1.05–1.15 */
+  transform-origin: center top;
+}
+
+/* Optional: add a bit of extra space below so it doesn't feel cramped 
+.card--frame-origami {
+  margin-bottom: 0.5rem;
+} */
+
 .card--frame-powerlifting .frame-wrapper .frame {
   transform: scale(1.4);
 }
