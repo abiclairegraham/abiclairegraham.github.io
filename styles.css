@@ -209,13 +209,13 @@ a:hover {
 }
 
 .plaque {
-  transform: scale(0.9);      /* 90% of original size */
+  transform: scale(0.75);      /* 90% of original size */
   transform-origin: top center;
 }
 
 /* Text inside plaque */
 .plaque-inner {
-  width: 70%;                    /* how wide the text area is inside the metal */
+  width: 85%;                    /* how wide the text area is inside the metal */
   text-align: center;
   color: #111;
   font-family: "Cinzel", serif;
