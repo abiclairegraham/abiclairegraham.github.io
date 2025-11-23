@@ -194,7 +194,7 @@ a:hover {
 /* Metal plaque under framed images */
 .plaque {
   position: relative;
-  width: 80%;
+  width: 100%;
   aspect-ratio: 1923 / 573;       /* approximate – tweak when you know image ratio */
   background-image: url("assets/images/decoration/Plaque 4-1.png");
   background-size: contain;
@@ -206,6 +206,11 @@ a:hover {
   align-items: center;
 
   margin-top: 8rem;
+}
+
+.plaque {
+  transform: scale(0.9);      /* 90% of original size */
+  transform-origin: top center;
 }
 
 /* Text inside plaque */
