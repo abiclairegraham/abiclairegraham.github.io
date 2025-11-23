@@ -222,7 +222,7 @@ a:hover {
 
 .card p {
   margin: 0 1rem 0.5rem;
-  color: var(--muted);
+  /* color: var(--muted); (TRY DEFAULT COLOUR) */
   line-height: 1.5;
 }
 
