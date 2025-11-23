@@ -155,34 +155,43 @@ a:hover {
 
 /* --- Embossed header area --- */
 .embossed-hero {
-  /* size & centering */
-  width: 70%;                    /* ~70% of page width */
-  max-width: 900px;              /* cap it on big screens */
-  margin: 3rem auto 2rem;        /* center horizontally + add top/bottom space */
+  width: 70%;
+  max-width: 900px;
+  margin: 3rem auto 2rem;
 
-  /* keep the box same shape as the image */
-  aspect-ratio: 1080 / 1060;     /* matches your PNG's real ratio */
+  /* keep same shape as the image */
+  aspect-ratio: 1080 / 1060;
 
-  /* image as background */
   background-image: url("assets/images/decoration/Embossed heading.png");
-  background-size: contain;      /* no distortion */
+  background-size: contain;
   background-repeat: no-repeat;
-  background-position: center bottom;  /* panel is near the bottom of the image */
+  background-position: center bottom;  /* panel sits at bottom */
 
-  /* layout for the text */
   display: flex;
   flex-direction: column;
-  justify-content: center;       /* vertically center within the panel area */
+  justify-content: flex-end;       /* ⬅ push text down toward panel */
   align-items: center;
   text-align: center;
 
-  /* space between text and inner embossed border */
-  padding: 2rem 5rem;
+  /* big bottom padding so text sits inside inner rectangle */
+  padding: 0 4rem 3.5rem;          /* top right/left bottom */
   box-sizing: border-box;
 
-  color: #c0c0c0;                /* silver-ish text */
+  color: #c0c0c0;
   font-family: "Cinzel", serif;
 }
+
+.embossed-hero h1 {
+  font-size: 2.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.embossed-hero p {
+  max-width: 80%;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
 
 /* tighten text so it stays nicely inside the inner frame */
 .embossed-hero h1 {
