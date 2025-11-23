@@ -155,19 +155,47 @@ a:hover {
 
 /* --- Embossed header area --- */
 .embossed-hero {
-  max-width: 100%;                           /* take ~70% of the container width */
-  margin: 0 auto 2rem;                      /* center it + add space below */
-  background-image: url("assets/images/decoration/Embossed heading.png");
-  background-size: 100% 100%;               /* stretch image to fill the box */
-  background-repeat: no-repeat;
-  background-position: center;
+  /* size & centering */
+  width: 70%;                    /* ~70% of page width */
+  max-width: 900px;              /* cap it on big screens */
+  margin: 3rem auto 2rem;        /* center horizontally + add top/bottom space */
 
-  padding: 3rem 4rem;                       /* controls how big the box is */
+  /* keep the box same shape as the image */
+  aspect-ratio: 1080 / 1060;     /* matches your PNG's real ratio */
+
+  /* image as background */
+  background-image: url("assets/images/decoration/Embossed heading.png");
+  background-size: contain;      /* no distortion */
+  background-repeat: no-repeat;
+  background-position: center bottom;  /* panel is near the bottom of the image */
+
+  /* layout for the text */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;       /* vertically center within the panel area */
+  align-items: center;
   text-align: center;
 
-  color: #81868f;                           /* silver-ish text colour */
-  font-family: "Cinzel", serif;             /* or whatever font you like */
+  /* space between text and inner embossed border */
+  padding: 2rem 5rem;
+  box-sizing: border-box;
+
+  color: #c0c0c0;                /* silver-ish text */
+  font-family: "Cinzel", serif;
 }
+
+/* tighten text so it stays nicely inside the inner frame */
+.embossed-hero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.embossed-hero p {
+  max-width: 80%;                /* keeps paragraph inside the inner area */
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
 
 
 /* Cards */
