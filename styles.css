@@ -150,7 +150,7 @@ a:hover {
 
 .embossed-hero .text-block {
   max-width: 100%;
-  margin-left: 2.5rem;
+  margin-left: 1rem;
   margin-right: 0;
   text-align: left;
 }
@@ -247,7 +247,7 @@ a:hover {
 }
 
 .card p {
-  margin: 0 1rem 0.5rem;
+  margin: 0 2rem 0.5rem;
   line-height: 1.5;
   font-size: 0.9rem;
 }
