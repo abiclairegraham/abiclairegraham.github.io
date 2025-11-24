@@ -17,6 +17,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 80%; /* globally scale down the entire site */
+}
+
 body {
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
