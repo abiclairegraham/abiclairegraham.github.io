@@ -431,6 +431,7 @@ a:hover {
   .hero-body-plate {
     aspect-ratio: 599 / 256;   /* from your Embossed simple image */
     background-image: url("assets/images/decoration/Embossed simple.png");
+     text-align: left;   
   }
 
   .hero-title-plate h1 {
