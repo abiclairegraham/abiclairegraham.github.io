@@ -341,7 +341,7 @@ a:hover {
 .plaque-inner p {
   margin: 0;
   line-height: 1;
-  font-size: 2rem;
+  font-size: 1.2rem;
 } 
 
 .plaque-inner .card-link {
@@ -406,7 +406,7 @@ a:hover {
 .card p {
   margin: 0 2rem 0.5rem;
   line-height: 1.5;
-  font-size: 0.9rem;
+ /* font-size: 0.9rem; */
 }
 
 .card-link {
