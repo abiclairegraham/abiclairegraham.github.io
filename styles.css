@@ -72,7 +72,7 @@ a:hover {
 
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 
-  min-height: 4.5rem;          /* tweak until the wood looks right */
+  min-height: 9.5rem;          /* tweak until the wood looks right */
   display: flex;
   align-items: center;
 }
