@@ -59,37 +59,25 @@ a:hover {
 } */
 
 .site-header {
-  position: relative;                /* so ::after is positioned relative to it */
-  background-color: #15110f;         /* dark beam colour behind the arches */
+  position: relative;
+  /* Remove the flat brown bar */
+  /* background-color: #15110f; */
+
+  /* Use the wooden beam image as the header background */
+  background-image: url("assets/images/decoration/Wooden header.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;   /* stretch to fill header area */
+  /* or try: background-size: contain; if 100% 100% looks distorted */
+
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 
-  min-height: 64px;
+  min-height: 4.5rem;          /* tweak until the wood looks right */
   display: flex;
   align-items: center;
 }
 
-/* Decorative wooden arches hanging from the header */
-.site-header::after {
-  content: "";
-  position: absolute;
-
-  left: 50%;
-  transform: translateX(-50%);   /* center the strip */
-  bottom: -40px;                 /* how far it drops into the page */
-
-  width: 100%;
-  max-width: 87.5rem;             /* match your .container max-width */
-  height: 5.6rem;                  /* adjust to the image's height */
-
-  background-image: url("assets/images/decoration/Wooden header.png");
-  background-repeat: no-repeat;
-
-  /* STRETCH horizontally, keep aspect ratio vertically */
-  background-size: 100% auto;    /* 100% width, height adjusts */
-
-  background-position: center bottom;
-  pointer-events: none;          /* purely decorative */
-}
+ 
 
 .header-inner {
   display: flex;
@@ -341,7 +329,7 @@ a:hover {
 .plaque-inner p {
   margin: 0;
   line-height: 1;
-  font-size: 1rem;
+  font-size: 1.1rem;
 } 
 
 .plaque-inner .card-link {
@@ -361,7 +349,7 @@ a:hover {
   font-family: "Cinzel", serif;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-decoration: none;
 }
 
