@@ -239,7 +239,7 @@ a:hover {
 .plaque-inner p {
   margin: 0.1rem 0 0rem;
   line-height: 1;
-  font-size: 0.85rem;
+  font-size: 1rem;
 }
 
 /* Plaque-specific link styling */
@@ -253,12 +253,13 @@ a:hover {
   color: #111;                      /* black like the heading */
   font-family: "Cinzel", serif;
   text-transform: uppercase;
+  letter-spacing: 0.08em;
   font-size: 0.85rem;
   text-decoration: none;
 }
 
 .card-link--plaque .card-link-icon {
-  font-size: 1.2rem;                /* slightly bigger pointing finger */
+  font-size: 2rem;                /* slightly bigger pointing finger */
 }
 
 .card-link--plaque:hover {
