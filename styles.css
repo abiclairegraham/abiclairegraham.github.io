@@ -242,6 +242,29 @@ a:hover {
   font-size: 0.85rem;
 }
 
+/* Plaque-specific link styling */
+.plaque .card-link,
+.card-link--plaque {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  margin: 0;
+  color: #111;                      /* black like the heading */
+  font-family: "Cinzel", serif;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  text-decoration: none;
+}
+
+.card-link--plaque .card-link-icon {
+  font-size: 0.9rem;                /* slightly bigger pointing finger */
+}
+
+.card-link--plaque:hover {
+  text-decoration: underline;
+  color: #000;                      /* a touch darker on hover */
+}
 
 
 
