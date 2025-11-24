@@ -436,14 +436,14 @@ a:hover {
 
   .hero-title-plate h1 {
     font-size: 1.15rem;
-    margin: 0;
+    margin: 0.2;
     text-align: center;
   }
 
   .hero-body-plate p {
-    font-size: 0.85rem;
-    line-height: 1.4;
-    margin: 0;
+    font-size: 0.75rem;
+    line-height: 1.3;
+    margin: 0.2;
   }
 }
 
