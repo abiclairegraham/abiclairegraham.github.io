@@ -237,9 +237,16 @@ a:hover {
 }
 
 .plaque-inner p {
-  margin: 0.1rem 0 0rem;
+  margin: 0;
   line-height: 1;
   font-size: 1rem;
+}
+
+/* Link on the plaque: tighten its line box + tiny margin */
+.plaque-inner .card-link {
+  display: inline-flex;
+  margin-top: 0.05rem;  /* try 0 or 0.05–0.1rem until you like it */
+  line-height: 1;       /* <-- THIS is the big one */
 }
 
 /* Plaque-specific link styling */
