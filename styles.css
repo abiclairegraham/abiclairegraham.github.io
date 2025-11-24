@@ -17,7 +17,7 @@
   box-sizing: border-box;
 }
 
-html { font-size: 80%; }
+html { font-size: 67%; }
 html, body {
   overflow-x: hidden;
 }
@@ -70,9 +70,9 @@ a:hover {
   background-size: 100% 100%;   /* stretch to fill header area */
   /* or try: background-size: contain; if 100% 100% looks distorted */
 
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  /*box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); */
 
-  min-height: 12rem;          /* tweak until the wood looks right */
+  min-height: 17rem;          /* tweak until the wood looks right */
   display: flex;
   align-items: center;
 }
