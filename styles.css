@@ -53,9 +53,42 @@ a:hover {
 /* --------------------------------------------------
    Header
 -------------------------------------------------- */
-.site-header {
+ /*.site-header {
   background: #ffffff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+} */
+
+.site-header {
+  position: relative;                /* so ::after is positioned relative to it */
+  background-color: #15110f;         /* dark beam colour behind the arches */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+/* Decorative wooden arches hanging from the header */
+.site-header::after {
+  content: "";
+  position: absolute;
+
+  left: 50%;
+  transform: translateX(-50%);   /* center the strip */
+  bottom: -40px;                 /* how far it drops into the page */
+
+  width: 100%;
+  max-width: 87.5rem;             /* match your .container max-width */
+  height: 5.6rem;                  /* adjust to the image's height */
+
+  background-image: url("assets/images/decoration/Wooden header.png");
+  background-repeat: no-repeat;
+
+  /* STRETCH horizontally, keep aspect ratio vertically */
+  background-size: 100% auto;    /* 100% width, height adjusts */
+
+  background-position: center bottom;
+  pointer-events: none;          /* purely decorative */
 }
 
 .header-inner {
