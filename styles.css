@@ -72,7 +72,7 @@ a:hover {
 
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 
-  min-height: 9.5rem;          /* tweak until the wood looks right */
+  min-height: 12rem;          /* tweak until the wood looks right */
   display: flex;
   align-items: center;
 }
@@ -124,7 +124,8 @@ a:hover {
   position: relative;
   width: 100%;
   max-width: 56.25rem;
-  margin: 4rem auto 2rem;
+  margin: 1rem auto 2rem; 
+   /* margin: 4rem auto 2rem; */
 
   aspect-ratio: 1909 / 611; /* exact ratio from your big image */
 
