@@ -467,6 +467,7 @@ padding: 1.1rem 2rem;     /* 1.3 inner space from the edges of the embossing */
 
   .hero-body-plate p {
     font-size: 0.75rem;
+     margin: 0.2;
     line-height: 1.1;
   }
 }
