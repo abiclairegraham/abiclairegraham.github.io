@@ -43,6 +43,60 @@ a:hover {
   text-decoration: underline;
 }
 
+
+/* Gold-leaf navigation on the wooden header */
+.site-header .nav a {
+  position: relative;
+  padding: 0.2rem 0.35rem;
+
+  /* uppercase, spaced-out “carved” look */
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  text-decoration: none;
+
+  /* metallic gold gradient */
+  background: linear-gradient(
+    135deg,
+    #fff8d8 0%,
+    #f4d27a 25%,
+    #d8a848 50%,
+    #fcecb3 75%,
+    #b17a1f 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* slight emboss / glow against dark wood */
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.8),
+    0 0 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Hover / focus: a bit brighter and “shinier” */
+.site-header .nav a:hover,
+.site-header .nav a:focus {
+  background: linear-gradient(
+    135deg,
+    #fffdf2 0%,
+    #ffe6a8 20%,
+    #f3c55f 45%,
+    #ffeec4 75%,
+    #d39932 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  text-shadow:
+    0 0 6px rgba(255, 239, 180, 0.8),
+    0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+
+
 .container {
   max-width: 87.5rem;
   margin: 0 auto;
