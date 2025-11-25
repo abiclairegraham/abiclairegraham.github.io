@@ -17,7 +17,7 @@
   box-sizing: border-box;
 }
 
-html { font-size: 67%; }
+html { font-size: 75%; }
 html, body {
   overflow-x: hidden;
 }
@@ -114,7 +114,7 @@ a:hover {
    Hero (generic) + Embossed hero panel
 -------------------------------------------------- */
 .hero {
-  margin-top: 0rem;
+  margin-top: -0.2rem;
   margin-bottom: 2rem;
 }
 
@@ -124,7 +124,7 @@ a:hover {
   position: relative;
   width: 100%;
   max-width: 56.25rem;
-  margin: 1rem auto 2rem; 
+  margin: 0rem auto 2rem; 
    /* margin: 4rem auto 2rem; */
 
   aspect-ratio: 1909 / 611; /* exact ratio from your big image */
