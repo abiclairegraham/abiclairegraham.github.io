@@ -539,6 +539,38 @@ a:hover {
 }
 
 
+/* --- Single-post layout (origami detail pages) --- */
+
+/* Container for image + caption */
+.post-detail {
+  max-width: 50rem;        /* nice readable width */
+  margin: 0 auto 3rem;     /* centre on page */
+}
+
+/* Remove default figure margins */
+.post-image {
+  margin: 0 0 1rem;
+}
+
+/* Make the image responsive + centred */
+.post-image img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 0.25rem;  /* optional: soft corners */
+}
+
+/* Caption text */
+.post-caption {
+  font-family: "EB Garamond", serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ddd;             /* light text on dark wall */
+  text-align: center;
+  padding: 0 1rem 0.5rem;
+}
 
 
 /* --------------------------------------------------
