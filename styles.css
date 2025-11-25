@@ -483,9 +483,75 @@ a:hover {
 }
 
 
+/* -------------------------------
+   Post layout wrapper
+---------------------------------- */
+.post-detail {
+  max-width: 60rem;        /* same design width as homepage elements */
+  margin: 2rem auto 4rem;
+  padding: 0 1rem;
+}
+
+/* Image container */
+.post-image {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.post-image img {
+  width: 100%;             /* always scale down to fit container */
+  height: auto;            /* keep aspect ratio */
+  display: block;
+  border-radius: 0.3rem;
+
+  /* Optional: subtle shadow to match your plaques */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Caption */
+.post-caption {
+  font-family: "EB Garamond", serif;
+  font-size: 1.05rem;
+  color: #ddd;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+/* Meta info (date + subsection) */
+.post-date,
+.post-subsection {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin: 0.1rem 0;
+}
+
+/* Back link */
+.back-link {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+
+
+
 /* --------------------------------------------------
    Responsive tweaks
 -------------------------------------------------- */
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .post-caption {
+    font-size: 0.95rem;
+  }
+}
+
 
 /* Header layout on small screens */
 @media (max-width: 768px) {
