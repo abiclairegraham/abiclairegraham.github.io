@@ -84,7 +84,7 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   padding-top: 0.1rem;
-  padding-bottom: 0.75rem;
+  padding-bottom: 0.2rem;
 }
 
 .logo {
@@ -100,7 +100,7 @@ a:hover {
 }
 
 .nav a {
-  padding: 3rem 0.2rem;
+  padding: 0.5rem 0.2rem;
   border-radius: 62.5rem;
 }
 
