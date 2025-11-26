@@ -148,7 +148,7 @@ a:hover {
 }
 
 .nav a {
-  padding: 0.5rem 0.2rem;
+  padding: 4rem 0.2rem;
   border-radius: 62.5rem;
 }
 
@@ -784,6 +784,27 @@ a:hover {
 
   .plaque-inner .card-link {
     font-size: 0.8rem;
+  }
+ 
+  /* make the wooden header shallower on small screens */
+  .site-header {
+    min-height: 10rem;          /* try 9–11rem until the arches feel right */
+    background-size: cover;     /* keeps it filling the width nicely */
+  }
+
+  /* reduce the top padding of the main container */
+  main.container {
+    padding-top: 0.3rem;        /* was 1rem; tweak to taste */
+  }
+
+  /* pull the hero up a bit closer to the arches */
+  .hero {
+    margin-top: -0.6rem;        /* small negative to snug things together */
+  }
+
+  /* and keep the mobile hero card itself from adding extra gap */
+  .embossed-hero {
+    margin-top: 0;              /* remove the extra 0.2rem you had */
   }
 }
 
