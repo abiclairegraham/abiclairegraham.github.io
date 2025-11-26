@@ -178,7 +178,7 @@ a:hover {
 .embossed-hero {
   position: relative;
   width: 100%;
-  max-width: 56.25rem;
+  max-width: 49rem; /* was 56.25 */
   margin: 0rem auto 2rem; 
    /* margin: 4rem auto 2rem; */
 
