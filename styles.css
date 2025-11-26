@@ -818,6 +818,21 @@ a:hover {
     transform-origin: top center;
   }
 
+   @media (max-width: 768px) {
+  .card--frame-origami .frame-wrapper {
+    transform: scale(0.8);  /*1.2*/
+  }
+
+  .card--frame-makeup .frame-wrapper {
+    transform: scale(1.12);  /*1.4*/
+  }
+
+  .card--frame-powerlifting .frame-wrapper {
+    transform: scale(1.08);   /* gold one is large 1.35 */
+  }
+}
+
+
   /* optionally reduce top margin above the plaque after the frame */
   .plaque {
     margin-top: 6rem;     /* was 7rem or more — shrink spacing */
