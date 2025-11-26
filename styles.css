@@ -138,7 +138,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 5rem;
+  padding-top: 2rem;
   padding-bottom: 0.2rem;
 }
 
@@ -873,6 +873,8 @@ a:hover {
     flex-direction: column;
     align-items: center;      /* was flex-start */
     gap: 0.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 0.2rem;
   }
 
   /* Center the nav row itself */
