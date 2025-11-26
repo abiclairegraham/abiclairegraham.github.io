@@ -806,6 +806,22 @@ a:hover {
   .embossed-hero {
     margin-top: 0;              /* remove the extra 0.2rem you had */
   }
+
+  /* shrink the whole framed picture */
+  .frame-wrapper {
+    width: 80%;           /* was 100% — shrink to 80% of the card width */
+    margin: 0 auto;       /* keep centered */
+    transform: scale(0.85);
+    transform-origin: top center;
+  }
+
+  /* optionally reduce top margin above the plaque after the frame */
+  .plaque {
+    margin-top: 4rem;     /* was 7rem or more — shrink spacing */
+    /* transform: scale(0.65);  smaller plaques on mobile */
+    transform-origin: top center;
+  }
 }
+
 
 
