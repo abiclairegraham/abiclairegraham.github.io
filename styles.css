@@ -169,7 +169,7 @@ a:hover {
    Hero (generic) + Embossed hero panel
 -------------------------------------------------- */
 .hero {
-  margin-top: -0.2rem;
+  margin-top: -2rem;
   margin-bottom: 2rem;
 }
 
@@ -355,7 +355,7 @@ a:hover {
   justify-content: center;
   align-items: center;
 
-  margin-top: 5rem;
+  margin-top: 6rem;
   margin-bottom: 5rem;
   transform: scale(0.75);      /* 90% of original size */
   transform-origin: top center;
