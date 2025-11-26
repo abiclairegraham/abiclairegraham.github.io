@@ -818,7 +818,7 @@ a:hover {
     transform-origin: top center;
   }
 
-   @media (max-width: 768px) {
+ 
   .card--frame-origami .frame-wrapper {
     transform: scale(1.2);  /*1.2*/
     margin-bottom: -4rem;
@@ -832,7 +832,6 @@ a:hover {
   .card--frame-powerlifting .frame-wrapper {
     transform: scale(1.08);   /* gold one is large 1.35 */
   }
-}
 
 
   /* optionally reduce top margin above the plaque after the frame */
@@ -841,7 +840,7 @@ a:hover {
     transform: scale(0.65);  smaller plaques on mobile
     transform-origin: top center;
   }
-}
+
 
 /* Make the card a stacking context container */
 .card--framed {
@@ -861,3 +860,21 @@ a:hover {
 }
 
 
+  /* Stack logo + nav, but center them */
+  .header-inner {
+    flex-direction: column;
+    align-items: center;      /* was flex-start */
+    gap: 0.5rem;
+  }
+
+  /* Center the nav row itself */
+  .nav {
+    justify-content: center;  /* center items in the row */
+    text-align: center;       /* helps multi-line wrapping look nice */
+  }
+
+  /* Optional: reduce huge vertical padding on links for mobile */
+  .nav a {
+    padding: 0.2rem 0.35rem;  /* smaller tap area but no giant top padding */
+  }
+}
