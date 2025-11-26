@@ -820,11 +820,12 @@ a:hover {
 
    @media (max-width: 768px) {
   .card--frame-origami .frame-wrapper {
-    transform: scale(0.96);  /*1.2*/
+    transform: scale(1.1);  /*1.2*/
+    margin-bottom: -4rem;
   }
 
   .card--frame-makeup .frame-wrapper {
-    transform: scale(1.12);  /*1.4*/
+    transform: scale(1.2);  /*1.4*/
   }
 
   .card--frame-powerlifting .frame-wrapper {
