@@ -524,6 +524,12 @@ a:hover {
   gap: 1.5rem;
 }
 
+.gallery-singing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(15rem, 1fr));
+  gap: 1.5rem;
+}
+
 .gallery-item {
   background: var(--card-bg);
   border-radius: var(--radius);
