@@ -820,12 +820,12 @@ a:hover {
 
    @media (max-width: 768px) {
   .card--frame-origami .frame-wrapper {
-    transform: scale(1.1);  /*1.2*/
+    transform: scale(1.2);  /*1.2*/
     margin-bottom: -4rem;
   }
 
   .card--frame-makeup .frame-wrapper {
-    transform: scale(1.2);  /*1.4*/
+    transform: scale(1.3);  /*1.4*/
   }
 
   .card--frame-powerlifting .frame-wrapper {
@@ -836,7 +836,7 @@ a:hover {
 
   /* optionally reduce top margin above the plaque after the frame */
   .plaque {
-    margin-top: 7rem;     /* was 7rem or more — shrink spacing */
+    margin-top: 8rem;     /* was 7rem or more — shrink spacing */
     transform: scale(0.65);  smaller plaques on mobile
     transform-origin: top center;
   }
