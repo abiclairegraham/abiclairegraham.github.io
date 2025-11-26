@@ -756,7 +756,7 @@ a:hover {
     aspect-ratio: 599 / 256;   /* from your Embossed simple image */
     background-image: url("assets/images/decoration/Embossed simple.png");
      text-align: left;   
-     /*font-size: 0.8rem;*/
+     /*font-size: 0.8rem;*/ 
   }
 
   .hero-title-plate h1 {
@@ -817,8 +817,8 @@ a:hover {
 
   /* optionally reduce top margin above the plaque after the frame */
   .plaque {
-    margin-top: 4rem;     /* was 7rem or more — shrink spacing */
-    /* transform: scale(0.65);  smaller plaques on mobile */
+    margin-top: 6rem;     /* was 7rem or more — shrink spacing */
+    transform: scale(0.85);  smaller plaques on mobile
     transform-origin: top center;
   }
 }
