@@ -241,7 +241,8 @@ a:hover {
   font-family: "Cinzel", serif;
   letter-spacing: 0.08em;
   text-transform: none;
-  font-size: clamp(1.2rem, 2vw + 0.8rem, 1.7rem);
+  /*font-size: clamp(1.2rem, 2vw + 0.8rem, 1.7rem);*/
+  font-size: clamp(1.25rem, 1rem + 0.8vw, 1.55rem); 
 
   /* base colour if gradient isn't supported */
   color: #d0d4dd;
