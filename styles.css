@@ -762,14 +762,14 @@ a:hover {
 
   .hero-title-plate h1 {
     /* font-size: 1.4rem;*/
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin: 0.75;
     text-align: center;
   }
 
   .hero-body-plate p {
-    font-size: 0.72rem;
-     margin: 0.35;
+    font-size: 0.75rem;
+     margin: 0.55;
     line-height: 1;
   }
 }
@@ -802,7 +802,7 @@ a:hover {
 
   /* pull the hero up a bit closer to the arches */
   .hero {
-    margin-top: -1.2rem;        /* small negative to snug things together */
+    margin-top: -3rem;        /* small negative to snug things together */
   }
 
   /* and keep the mobile hero card itself from adding extra gap */
@@ -875,6 +875,6 @@ a:hover {
 
   /* Optional: reduce huge vertical padding on links for mobile */
   .nav a {
-    padding: 0.2rem 0.35rem;  /* smaller tap area but no giant top padding */
+    padding: 1rem 0.35rem;  /* smaller tap area but no giant top padding */
   }
 }
