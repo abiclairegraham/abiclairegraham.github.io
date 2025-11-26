@@ -791,7 +791,7 @@ a:hover {
  
   /* make the wooden header shallower on small screens */
   .site-header {
-    min-height: 13rem;          /* try 9–11rem until the arches feel right */
+    min-height: 11.5rem;          /* try 9–11rem until the arches feel right */
     background-size: cover;     /* keeps it filling the width nicely */
   }
 
