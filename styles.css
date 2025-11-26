@@ -747,7 +747,7 @@ a:hover {
   /* Top plaque: title */
   .hero-title-plate {
     aspect-ratio: 1909 / 611;  /* same as big card image */
-    max-width: 20rem;
+    max-width: 22rem;
     background-image: url("assets/images/decoration/Embossed short metallic.png");
    padding: 2rem 2.7rem;     /* 1.3 inner space from the edges of the embossing */
   }
@@ -762,7 +762,7 @@ a:hover {
 
   .hero-title-plate h1 {
     /* font-size: 1.4rem;*/
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin: 0.8;
     text-align: center;
   }
@@ -802,7 +802,7 @@ a:hover {
 
   /* pull the hero up a bit closer to the arches */
   .hero {
-    margin-top: -0.6rem;        /* small negative to snug things together */
+    margin-top: -0.9rem;        /* small negative to snug things together */
   }
 
   /* and keep the mobile hero card itself from adding extra gap */
@@ -836,7 +836,7 @@ a:hover {
   /* optionally reduce top margin above the plaque after the frame */
   .plaque {
     margin-top: 6rem;     /* was 7rem or more — shrink spacing */
-    transform: scale(0.85);  smaller plaques on mobile
+    transform: scale(0.65);  smaller plaques on mobile
     transform-origin: top center;
   }
 }
