@@ -107,15 +107,10 @@ a:hover {
 /* --------------------------------------------------
    Header
 -------------------------------------------------- */
- /*.site-header {
-  background: #ffffff;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-} */
+ 
 
 .site-header {
   position: relative;
-  /* Remove the flat brown bar */
-  /* background-color: #15110f; */
 
   /* Use the wooden beam image as the header background */
   background-image: url("assets/images/decoration/Wooden header.png");
@@ -123,8 +118,7 @@ a:hover {
   background-position: center top;
   background-size: 100% 100%;   /* stretch to fill header area */
   /* or try: background-size: contain; if 100% 100% looks distorted */
-
-  /*box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); */
+ 
 
   min-height: 15rem;          /* tweak until the wood looks right */
   display: flex;
@@ -489,10 +483,10 @@ a:hover {
 /* --------------------------------------------------
    Footer
 -------------------------------------------------- */
-.site-footer {
+/* .site-footer {
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   background: #ffffff;
-}
+} */
 
 .site-footer p {
   font-size: 0.85rem;
@@ -501,6 +495,21 @@ a:hover {
   padding-top: 1rem;
 }
 
+
+.site-footer {
+  position: relative;
+
+  /* Use the wooden beam image as the header background */
+  background-image: url("assets/images/decoration/Wooden footer.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% 100%;   /* stretch to fill header area */
+  /* or try: background-size: contain; if 100% 100% looks distorted */
+
+  min-height: 15rem;          /* tweak until the wood looks right */
+  display: flex;
+  align-items: flex-start;       /* put the content near the top, not centered */
+}
 
 /* --------------------------------------------------
    Gallery layout (Origami page etc.)
