@@ -842,5 +842,21 @@ a:hover {
   }
 }
 
+/* Make the card a stacking context container */
+.card--framed {
+  position: relative;      /* already has overflow: visible etc */
+}
+
+/* Frame on top */
+.card--framed .frame-wrapper {
+  position: relative;      /* it already is, but just to be explicit */
+  z-index: 2;              /* higher number = in front */
+}
+
+/* Plaque underneath the frame */
+.plaque {
+  position: relative;      /* needed for z-index to apply */
+  z-index: 1;              /* lower than the frame-wrapper */
+}
 
 
