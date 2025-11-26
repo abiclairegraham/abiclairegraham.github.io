@@ -729,7 +729,7 @@ a:hover {
   .hero-title-plate,
   .hero-body-plate {
     width: 100%;
-    max-width: 20rem;
+    max-width: 22rem;
     margin: 0 auto 0.4rem;
     margin-bottom: -0.2rem;   /* even smaller gap below the body plaque */
 
@@ -768,9 +768,9 @@ a:hover {
   }
 
   .hero-body-plate p {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
      margin: 0.3;
-    line-height: 1.1;
+    line-height: 1;
   }
 }
  
