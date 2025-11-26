@@ -204,7 +204,7 @@ a:hover {
   color: #929bad;
 }
 
-/* Title */
+/* Title 
 .hero-title-plate h1 {
   margin: 0 0 0.6rem;
   font-family: "Cinzel", serif;
@@ -217,8 +217,10 @@ a:hover {
     0  2px 3px rgba(0, 0, 0, 0.9),
     0  0 6px rgba(0, 0, 0, 0.7);
 }
+*/
 
 /* Body text */
+/*
 .hero-body-plate p {
   margin: 0;
   font-family: "EB Garamond", serif;
@@ -231,6 +233,7 @@ a:hover {
     0 -1px 1px rgba(255, 255, 255, 0.3),
     0  1px 2px rgba(0, 0, 0, 0.7);
 }
+*/
 
 /* Title – stronger engraved silver effect */
 .hero-title-plate h1 {
