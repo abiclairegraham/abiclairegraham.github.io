@@ -22,7 +22,14 @@ html, body {
   overflow-x: hidden;
 }
 
- 
+img {
+  aspect-ratio: 1 / 1;     /* force image box to be a square */
+  object-fit: cover;       /* zoom/crop so the square is filled */
+  width: 100%;             /* responsive */
+  height: auto;            /* handled by aspect-ratio */
+  display: block;
+}
+
 
 body {
   margin: 0;
@@ -198,7 +205,6 @@ a:hover {
 }
 
 /* Title */
-/* REPEATED???!!
 .hero-title-plate h1 {
   margin: 0 0 0.6rem;
   font-family: "Cinzel", serif;
@@ -210,7 +216,7 @@ a:hover {
     0 -1px 1px rgba(255, 255, 255, 0.6),
     0  2px 3px rgba(0, 0, 0, 0.9),
     0  0 6px rgba(0, 0, 0, 0.7);
-} */
+}
 
 /* Body text */
 .hero-body-plate p {
@@ -232,7 +238,7 @@ a:hover {
   font-family: "Cinzel", serif;
   letter-spacing: 0.08em;
   text-transform: none;
-  font-size: clamp(1.25rem, 1rem + 0.8vw, 1.55rem);
+  font-size: clamp(1.2rem, 2vw + 0.8rem, 1.7rem);
 
   /* base colour if gradient isn't supported */
   color: #d0d4dd;
@@ -255,9 +261,24 @@ a:hover {
     0  2px 3px rgba(0, 0, 0, 0.9),         /* main bottom shadow */
     0  0 6px rgba(0, 0, 0, 0.7);           /* soft glow into the panel */
 }
- 
 
-/* Soft diagonal sheen across the embossed panel (desktop) 
+/* Body text – subtler metal effect */
+.hero-body-plate p {
+  margin: 0;
+  font-family: "EB Garamond", serif;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  line-height: 1.5;
+  font-size: clamp(0.85rem, 1.3vw + 0.7rem, 1.1rem);
+
+  color: #c2c7d2;
+  text-shadow:
+    0 -1px 1px rgba(255, 255, 255, 0.35),
+    0  1px 2px rgba(0, 0, 0, 0.8);
+}
+
+
+/* Soft diagonal sheen across the embossed panel (desktop) */
 .embossed-hero::before {
   content: "";
   position: absolute;
@@ -274,7 +295,7 @@ a:hover {
   mix-blend-mode: screen;  /* lets it interact nicely with the dark panel */
   opacity: 0.28;
 }
-*/
+
 
 /* --------------------------------------------------
    Gothic frame overlay on cards
@@ -450,7 +471,11 @@ a:hover {
   transform: scale(1.2);      /* tweak this: 1.05–1.15 */
   transform-origin: center top;
 }
- 
+
+/* Optional: add a bit of extra space below so it doesn't feel cramped 
+.card--frame-origami {
+  margin-bottom: 0.5rem;
+} */
 
 .card--frame-powerlifting .frame-wrapper .frame {
    margin-top: 1.5rem;
@@ -545,7 +570,6 @@ a:hover {
 }
 
 .gallery-item img {
-  aspect-ratio: 1 / 1;     /* force image box to be a square */
   width: 100%;
   height: 13.75rem;
   object-fit: cover;
