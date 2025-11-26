@@ -762,8 +762,8 @@ a:hover {
 
   .hero-title-plate h1 {
     /* font-size: 1.4rem;*/
-    font-size: 1.1rem;
-    margin: 0.8;
+    font-size: 1rem;
+    margin: 0.75;
     text-align: center;
   }
 
@@ -797,12 +797,12 @@ a:hover {
 
   /* reduce the top padding of the main container */
   main.container {
-    padding-top: 0.3rem;        /* was 1rem; tweak to taste */
+    padding-top: 0.1rem;        /* was 1rem; tweak to taste */
   }
 
   /* pull the hero up a bit closer to the arches */
   .hero {
-    margin-top: -0.9rem;        /* small negative to snug things together */
+    margin-top: -1.2rem;        /* small negative to snug things together */
   }
 
   /* and keep the mobile hero card itself from adding extra gap */
@@ -820,7 +820,7 @@ a:hover {
 
    @media (max-width: 768px) {
   .card--frame-origami .frame-wrapper {
-    transform: scale(0.8);  /*1.2*/
+    transform: scale(0.96);  /*1.2*/
   }
 
   .card--frame-makeup .frame-wrapper {
@@ -835,7 +835,7 @@ a:hover {
 
   /* optionally reduce top margin above the plaque after the frame */
   .plaque {
-    margin-top: 6rem;     /* was 7rem or more — shrink spacing */
+    margin-top: 7rem;     /* was 7rem or more — shrink spacing */
     transform: scale(0.65);  smaller plaques on mobile
     transform-origin: top center;
   }
