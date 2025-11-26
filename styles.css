@@ -355,11 +355,8 @@ a:hover {
   justify-content: center;
   align-items: center;
 
-  margin-top: 7rem;
+  margin-top: 5rem;
   margin-bottom: 5rem;
-}
-
-.plaque {
   transform: scale(0.75);      /* 90% of original size */
   transform-origin: top center;
 }
