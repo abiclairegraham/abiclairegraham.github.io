@@ -25,14 +25,16 @@ POSTS_DIR = ROOT / "powerlifting" / "posts"
 
 def build_post_html(rows):
     """
-    Build HTML body + meta for a single powerlifting post (list of rows/images).
+    Build HTML body + meta for a single powerlifting post.
+    Adds support for video files (mp4/mov/webm).
     """
+
     rep = rows[0]
     caption = (rep.get("caption") or "").strip()
     dt = rep.get("post_datetime") or ""
     subsection = (rep.get("subsection") or "").strip()
 
-    # meta block (date + subsection if present)
+    # Meta area
     meta_parts = []
     if dt:
         meta_parts.append(f"<p class='post-date'>{html.escape(dt)}</p>")
@@ -40,21 +42,34 @@ def build_post_html(rows):
         meta_parts.append(f"<p class='post-subsection'>{html.escape(subsection.title())}</p>")
     meta_html = "\n".join(meta_parts) if meta_parts else ""
 
-    # images for this post
+    # Images / videos for this post
     image_parts = []
     for row in rows:
-        img_path = get_image_path(row)
-        if not img_path:
+        media_path = get_image_path(row)
+        if not media_path:
             continue
+
         alt = caption or "Powerlifting photo"
         alt_esc = html.escape(alt, quote=True)
-        image_parts.append(
-            f'<figure class="post-image"><img src="/{img_path}" alt="{alt_esc}"></figure>'
-        )
+
+        ext = media_path.lower().split(".")[-1]
+
+        # Video?
+        if ext in ("mp4", "mov", "webm"):
+            media_html = f"""
+            <video controls preload="metadata">
+              <source src="/{media_path}" type="video/{ext}">
+              Your browser does not support the video tag.
+            </video>
+            """.strip()
+        else:
+            media_html = f'<img src="/{media_path}" alt="{alt_esc}">'
+
+        image_parts.append(f'<figure class="post-image">{media_html}</figure>')
 
     images_html = "\n".join(image_parts)
 
-    # full caption
+    # Caption
     if caption:
         caption_html = f"<div class='post-caption'><p>{html.escape(caption)}</p></div>"
     else:
@@ -68,6 +83,7 @@ def build_post_html(rows):
     """.rstrip()
 
     return meta_html, body_html
+
 
 
 def build_powerlifting_posts():
