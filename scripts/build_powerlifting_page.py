@@ -1,9 +1,8 @@
+# build_powerlifting_page.py
 import csv
 from pathlib import Path
 from textwrap import indent
 import html
-import re
-from collections import defaultdict
 from datetime import datetime
 
 from scripts.build_common import (
@@ -21,62 +20,58 @@ from scripts.build_common import (
 # --------------------------------------
 # CONFIG
 # --------------------------------------
-CAPTIONS_INCLUDE = False   # <<< change to True if you want captions later
- 
+CAPTIONS_INCLUDE = False   # set to True later if you want captions under photos
+
 # Template + output inside the repo
-TEMPLATE = ROOT / "templates" / "origami_template.html"
-OUTPUT = ROOT / "origami" / "index.html"
-
-ORIGAMI_SUBSECTIONS = [
-    ("insects", "Insects"),
-    ("animals", "Animals"),
-    ("tessellations", "Tessellations"),
-    ("curved", "Curved Origami"),
-    ("modular", "Modular Origami"),
-    ("general", "General"),
-]
+TEMPLATE = ROOT / "templates" / "powerlifting_template.html"
+OUTPUT = ROOT / "powerlifting" / "index.html"
 
 
-# --------------------------------------
-# Helpers
-# --------------------------------------
-
-
-def parse_dt(s):
-    if not s:
-        return None
-    try:
-        return datetime.fromisoformat(s)
-    except Exception:
-        return None
-
- 
-def make_gallery_section(title, post_groups):
+def make_gallery_section_for_year(year, items):
     """
-    post_groups: list of (post_key, [rows_for_post])
-    Returns HTML for one section.
+    year: string, e.g. "2023"
+    items: list of dicts (rows) for that year
+
+    This version mirrors the origami gallery behaviour:
+    - group rows into posts
+    - pick a representative image for each post
+    - make the thumbnail clickable, linking to a per-post detail page
     """
+
     figures = []
 
-    for post_key, items in post_groups:
-        if not items:
+    # Group rows in this year into posts
+    groups = group_rows_by_post(items)  # {post_key: [rows_for_post]}
+
+    # Prepare a sortable list of (post_key, rows_for_post, datetime)
+    grouped_items = []
+    for post_key, rows_for_post in groups.items():
+        if not rows_for_post:
             continue
 
-        # representative row for this post (first item)
-        rep = items[0]
+        rep = rows_for_post[0]
+        dt = parse_iso_date(rep.get("post_datetime") or "")
+        grouped_items.append((post_key, rows_for_post, dt))
+
+    # Sort posts by newest date first
+    grouped_items.sort(key=lambda t: (t[2] or datetime.min), reverse=True)
+
+    # Build the figures
+    for post_key, rows_for_post, dt in grouped_items:
+        rep = rows_for_post[0]
+
         img_path = get_image_path(rep)
         if not img_path:
             continue
 
         caption = (rep.get("caption") or "").strip()
-        alt_text = caption or "Origami model"
+        alt_text = caption or "Powerlifting photo"
         alt_text_esc = html.escape(alt_text, quote=True)
 
-        # link to the corresponding post page
+        # Link to per-post powerlifting page (mirrors origami pattern)
         slug = make_post_slug(rep)
-        href = f"/origami/posts/{slug}.html"
+        href = f"/powerlifting/posts/{slug}.html"
 
-        # Optional figcaption under thumbnail
         if CAPTIONS_INCLUDE:
             caption_esc = html.escape(caption)
             caption_html = f"<figcaption>{caption_esc}</figcaption>"
@@ -99,9 +94,11 @@ def make_gallery_section(title, post_groups):
 
     figures_html = "\n\n".join(figures)
 
+    section_title = year if year else "Unsorted"
+
     section_html = f"""
     <section class="gallery">
-      <h2>{html.escape(title)}</h2>
+      <h2>{html.escape(section_title)}</h2>
       <div class="gallery-grid">
 {indent(figures_html, "        ")}
       </div>
@@ -111,47 +108,39 @@ def make_gallery_section(title, post_groups):
     return section_html
 
 
-def build_origami_page():
+def build_powerlifting_page():
     rows = load_catalogue()
-    # Only origami rows
-    origami_rows = [r for r in rows if (r.get("section") or "").lower() == "origami"]
 
-    if not origami_rows:
-        galleries_html = "<p>No origami yet.</p>"
-    else:
-        sections_html = []
+    # Filter for powerlifting only
+    pl_rows = [
+        r for r in rows
+        if (r.get("section") or "").lower() == "powerlifting"
+    ]
 
-        for key, title in ORIGAMI_SUBSECTIONS:
-            # rows that belong to this subsection
-            rows_for_sub = [
-                r for r in origami_rows
-                if (r.get("subsection") or "").lower() == key
-            ]
-            if not rows_for_sub:
-                continue
+    # Group rows by subsection (year)
+    by_year = {}
+    for r in pl_rows:
+        year = (r.get("subsection") or "").strip()
+        if not year:
+            year = ""  # bucket for unknown
+        by_year.setdefault(year, []).append(r)
 
-            # group into posts
-            groups = group_rows_by_post(rows_for_sub)
+    # Sort years descending, but put "" (unknown) at the end
+    years = sorted(
+        [y for y in by_year.keys() if y],
+        reverse=True
+    )
+    if "" in by_year:
+        years.append("")  # unknown at end
 
-            # sort posts by newest date (using representative row)
-            grouped_items = []
-            for post_key, items in groups.items():
-                rep = items[0]
-                dt = parse_dt(rep.get("post_datetime") or "")
-                grouped_items.append((post_key, items, dt))
+    sections_html = []
+    for year in years:
+        items = by_year[year]
+        section_html = make_gallery_section_for_year(year, items)
+        if section_html:
+            sections_html.append(section_html)
 
-            grouped_items.sort(key=lambda t: (t[2] or datetime.min), reverse=True)
-
-            # drop the datetime from the tuple for HTML generation
-            section_html = make_gallery_section(
-                title,
-                [(pk, items) for (pk, items, _dt) in grouped_items]
-            )
-
-            if section_html:
-                sections_html.append(section_html)
-
-        galleries_html = "\n\n".join(sections_html) if sections_html else "<p>No origami yet.</p>"
+    galleries_html = "\n\n".join(sections_html) if sections_html else "<p>No powerlifting photos yet.</p>"
 
     template_text = TEMPLATE.read_text(encoding="utf-8")
     final_html = template_text.replace("{{GALLERIES}}", galleries_html)
@@ -162,4 +151,4 @@ def build_origami_page():
 
 
 if __name__ == "__main__":
-    build_origami_page()
+    build_powerlifting_page()
