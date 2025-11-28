@@ -32,56 +32,71 @@ def make_gallery_section_for_year(year, items):
     year: string, e.g. "2023"
     items: list of dicts (rows) for that year
 
-    This version mirrors the origami gallery behaviour:
-    - group rows into posts
-    - pick a representative image for each post
-    - make the thumbnail clickable, linking to a per-post detail page
+    For images:
+      - use the image itself as the thumbnail.
+
+    For videos (.mp4/.mov/.webm):
+      - use a JPEG poster thumbnail as the thumbnail on the index.
+      - expected poster path: same as the video but with '.jpg' extension.
+
+    The thumbnail always links to the per-post page, where the real
+    <video> element is rendered.
     """
 
     figures = []
 
     # Group rows in this year into posts
-    groups = group_rows_by_post(items)  # {post_key: [rows_for_post]}
+    groups = group_rows_by_post(items)
 
-    # Prepare a sortable list of (post_key, rows_for_post, datetime)
+    # Prepare sortable list
     grouped_items = []
     for post_key, rows_for_post in groups.items():
         if not rows_for_post:
             continue
-
         rep = rows_for_post[0]
         dt = parse_iso_date(rep.get("post_datetime") or "")
         grouped_items.append((post_key, rows_for_post, dt))
 
-    # Sort posts by newest date first
+    # Newest posts first
     grouped_items.sort(key=lambda t: (t[2] or datetime.min), reverse=True)
 
-    # Build the figures
     for post_key, rows_for_post, dt in grouped_items:
         rep = rows_for_post[0]
 
-        img_path = get_image_path(rep)
-        if not img_path:
+        media_path = get_image_path(rep)
+        if not media_path:
             continue
 
         caption = (rep.get("caption") or "").strip()
         alt_text = caption or "Powerlifting photo"
-        alt_text_esc = html.escape(alt_text, quote=True)
+        alt_esc = html.escape(alt_text, quote=True)
 
-        # Link to per-post powerlifting page (mirrors origami pattern)
+        # Decide thumbnail src
+        ext = media_path.lower().rsplit(".", 1)[-1]
+
+        if ext in ("mp4", "mov", "webm"):
+            # Use a poster image with the same base name but .jpg
+            base, _ = media_path.rsplit(".", 1)
+            thumb_path = f"{base}.jpg"
+        else:
+            # Normal image file as-is
+            thumb_path = media_path
+
+        thumb_src = f"/{thumb_path}"
+
+        # Link to per-post powerlifting page
         slug = make_post_slug(rep)
         href = f"/powerlifting/posts/{slug}.html"
 
         if CAPTIONS_INCLUDE:
-            caption_esc = html.escape(caption)
-            caption_html = f"<figcaption>{caption_esc}</figcaption>"
+            caption_html = f"<figcaption>{html.escape(caption)}</figcaption>"
         else:
             caption_html = ""
 
         fig_html = f"""
         <figure class="gallery-item">
           <a href="{href}">
-            <img src="/{img_path}" alt="{alt_text_esc}">
+            <img src="{thumb_src}" alt="{alt_esc}">
           </a>
           {caption_html}
         </figure>
@@ -93,7 +108,6 @@ def make_gallery_section_for_year(year, items):
         return ""
 
     figures_html = "\n\n".join(figures)
-
     section_title = year if year else "Unsorted"
 
     section_html = f"""
@@ -106,6 +120,7 @@ def make_gallery_section_for_year(year, items):
     """.rstrip()
 
     return section_html
+
 
 
 def build_powerlifting_page():
