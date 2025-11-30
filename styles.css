@@ -391,7 +391,7 @@ a:hover {
  
 
 .blog-hero-frame ul li::before {
-  content: "☠" ;   /* or "💀" */
+  content: "☠ " ;   /* or "💀" */
   position: absolute;
   left: -1.4rem;
   top: -0.3rem;
