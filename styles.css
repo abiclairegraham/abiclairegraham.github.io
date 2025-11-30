@@ -272,28 +272,50 @@ a:hover {
 }
 
 /* Blog hero frame panel (desktop) */
-.blog-hero-frame { 
+.blog-hero-frame {
   position: relative;
-  width: 100%;
-  /* max-width: 49rem;  if you still want a max width, keep this */
-  margin: 0rem auto 2rem; 
+  max-width: 49rem;
+  margin: 0 auto 2rem;
 
-  /* Let the height be auto so it grows with the article */
-  /* height: 100%;   <- remove this */
-  /* aspect-ratio: 771 / 1109; <- keep this commented out */
+  /* Middle paper strip that tiles vertically */
+  background-image: url("assets/images/decoration/blog frame middle.png");
+  background-repeat: repeat-y;
+  background-position: top center;
+  background-size: 100% auto;
 
-  background-image: url("assets/images/decoration/Blog frame.png");
-  background-size: 100% 100%;      /* 🔑 stretch to full width AND height */
-  background-repeat: no-repeat;
-  background-position: center;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  /* give the text some breathing room inside the frame */
-  padding: 3rem 2.5rem 3rem;
+  /* Space inside where the article lives */
+  padding: 1rem 3rem;     /* top/bottom will be adjusted to fit ornaments */
+  box-sizing: border-box;
 }
+
+/* Top flourish cap */
+.blog-hero-frame::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 721px; /* match your top image’s height */
+  background: url("assets/images/decoration/blog frame top.png")
+              no-repeat top center;
+  background-size: 100% auto;
+  pointer-events: none;
+}
+
+/* Bottom flourish cap */
+.blog-hero-frame::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 727px; /* match bottom image’s height */
+  background: url("assets/images/decoration/blog frame bottom.png")
+              no-repeat bottom center;
+  background-size: 100% auto;
+  pointer-events: none;
+}
+
 
 
 /* Title – stronger engraved silver effect */
