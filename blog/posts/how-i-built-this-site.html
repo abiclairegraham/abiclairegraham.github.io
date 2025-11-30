@@ -8,141 +8,130 @@
 
   <!-- Page-specific styles for the flowchart -->
   <style>
-    .blog-article {
-      max-width: 800px;
-      margin: 0 auto;
-      padding-bottom: 3rem;
-    }
+/* Flowchart – Victorian insert on cream paper */
+.flowchart {
+  width: 30rem;                /* good desktop width */
+  max-width: 100%;
+  float: right;
+  margin: 1rem 0 1.5rem 1.5rem;
 
-    .blog-article h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
-    }
+  padding: 1.75rem 1.5rem;
+  border-radius: 1.1rem;
 
-    .blog-article .meta {
-      font-size: 0.9rem;
-      opacity: 0.7;
-      margin-bottom: 1.5rem;
-    }
+  /* cream paper panel */
+  background: #f4efe3;
+  border: 1px solid #b6aa8c;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  font-family: "EB Garamond", serif;
+  color: #111;
+}
 
-    .blog-article h2 {
-      margin-top: 2rem;
-      margin-bottom: 0.5rem;
-      font-size: 1.4rem;
-    }
+/* title row */
+.flowchart-title {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 
-    .blog-article h3 {
-      margin-top: 1.2rem;
-      margin-bottom: 0.4rem;
-      font-size: 1.15rem;
-    }
+/* small decorative badge before title */
+.flowchart-title-badge {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #7b6b4a;
+  background: radial-gradient(circle at 30% 30%, #fdf7e7, #c8b48a);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
 
-    .blog-article p {
-      line-height: 1.6;
-      margin-bottom: 0.9rem;
-    }
+/* stack of steps */
+.flowchart-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
 
-    .blog-article code {
-      font-size: 0.9em;
-    }
+/* individual step block */
+.flow-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: flex-start;
+  column-gap: 0.85rem;
 
-    .blog-article pre {
-      background: #0f172a0d; /* very light */
-      padding: 0.75rem 1rem;
-      border-radius: 0.75rem;
-      overflow-x: auto;
-      font-size: 0.9em;
-    }
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.6rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
 
-    /* Flowchart styles */
-    .flowchart {
-      width: 30rem;             /* pick the size you like (e.g. 18–24rem) */
-      max-width: 100%;          /* don’t overflow on tiny screens */
-      float: right;             /* or left; whichever you prefer */
-      margin: 1rem 0 1.5rem 1.5rem;  /* space around it (top, right, bottom, left) */
-    
-      padding: 1.5rem 1.25rem;
-      border-radius: 1rem;
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
-    }
+/* numbered medallion */
+.flow-step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
 
+  font-family: "Cinzel", serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
 
-    .flowchart-title {
-      font-weight: 600;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 1.05rem;
-    }
+  color: #f7f4eb;
+  background: radial-gradient(circle at 30% 30%, #4b3b24, #1c1510);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
 
-    .flowchart-title-badge {
-      width: 0.75rem;
-      height: 0.75rem;
-      border-radius: 999px;
-      background: #14b8a6; /* teal accent */
-    }
+/* step heading + text */
+.flow-step-content h3 {
+  margin: 0 0 0.15rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
 
-    .flowchart-inner {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
+.flow-step-content p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
 
-    .flow-step {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      padding: 0.75rem 0.75rem;
-      border-radius: 0.75rem;
-      background: white;
-      border: 1px solid #e5e7eb;
-      position: relative;
-    }
+/* Victorian pointing-hand arrow between steps */
+.flow-arrow {
+  align-self: center;
+  margin: 0.25rem 0;
+  font-size: 1.6rem;
+  line-height: 1;
+  text-align: center;
 
-    .flow-step-number {
-      flex-shrink: 0;
-      width: 1.9rem;
-      height: 1.9rem;
-      border-radius: 999px;
-      border: 2px solid #14b8a6;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #0f172a;
-      background: #ecfeff;
-    }
+  /* ☟ is a downward pointing hand */
+  font-family: "EB Garamond", serif;
+  color: #3a3121;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6),
+               0 2px 4px rgba(0, 0, 0, 0.6);
+}
 
-    .flow-step-content h3 {
-      margin: 0 0 0.2rem;
-      font-size: 1rem;
-    }
+/* make sure the HTML uses the hand rather than ↓ */
+.flow-arrow::before {
+  content: "☟";
+}
 
-    .flow-step-content p {
-      margin: 0;
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
- 
-    .flow-arrow {
-      align-self: center;
-      font-size: 3rem;     /* MUCH bigger arrow */
-      color: #0f766e;      /* deeper teal for stronger contrast */
-      font-weight: 900;    /* heavy bold */
-      line-height: 1;
-      text-shadow: 0 0 3px #0f766e40; /* soft glow for emphasis */
-    }
+/* mobile: un-float and go full-width */
+@media (max-width: 768px) {
+  .flowchart {
+    float: none;
+    margin: 2rem 0;
+    width: 100%;
+  }
+}
 
-
-    @media (min-width: 768px) {
-      .flowchart-inner {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
   </style>
 </head>
 
