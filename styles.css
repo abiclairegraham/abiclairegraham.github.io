@@ -359,10 +359,9 @@ a:hover {
 
 /* Body text – subtler metal effect */
 .blog-hero-frame li,
-.blog-hero-frame code,
 .blog-hero-frame pre,
 .blog-hero-frame p {
-  margin: 1rem 7.5rem 1.5rem;  /* margin: TOP  LEFT+RIGHT  BOTTOM */
+  margin: 1rem 7.5rem 1.5rem;
   font-family: "EB Garamond", serif;
   letter-spacing: 0.06em;
   text-transform: none;
@@ -373,6 +372,14 @@ a:hover {
   text-shadow:
     0 -1px 1px rgba(255, 255, 255, 0.35),
     0  1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Inline code – no big margins */
+.blog-hero-frame code {
+  margin: 0;                 /* remove the 7.5rem margins */
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+               Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.9em;
 }
 
 .blog-hero-frame ul li {
@@ -391,7 +398,7 @@ a:hover {
  
 
 .blog-hero-frame ul li::before {
-  content: "☠ " ;   /* or "💀" */
+  content: "☠  " ;   /* or "💀" */
   position: absolute;
   left: -1.4rem;
   top: -0.3rem;
