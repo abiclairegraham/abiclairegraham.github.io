@@ -303,8 +303,8 @@ a:hover {
   left: 0;
   right: 0;
   top: 0;
-  height: 13.25rem; /* top image height  212px */
-  background: url("assets/images/decoration/Blog frame top cropped.png")
+  height: 17.8rem; /* top image height  212px */
+  background: url("assets/images/decoration/Blog frame top.png")
               no-repeat top center;
   background-size: 100% auto;
   pointer-events: none;
@@ -317,8 +317,8 @@ a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 13.56rem; /* bottom image height 217px*/
-  background: url("assets/images/decoration/Blog frame bottom cropped.png")
+  height: 18.5rem; /* bottom image height 217px*/
+  background: url("assets/images/decoration/Blog frame bottom.png")
               no-repeat bottom center;
   background-size: 100% auto;
   pointer-events: none;
