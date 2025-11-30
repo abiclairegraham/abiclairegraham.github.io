@@ -274,7 +274,7 @@ a:hover {
 /* Blog hero frame panel (desktop) */
 .blog-hero-frame {
   position: relative;
-  max-width: 49rem;
+  max-width: 70rem;
   margin: 0 auto 2rem;
 
   /* Middle paper strip that tiles vertically */
