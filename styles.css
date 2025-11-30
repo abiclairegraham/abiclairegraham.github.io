@@ -298,10 +298,12 @@ a:hover {
 
 @media (max-width: 768px) {
   .blog-hero-frame {
-    /* either with 0 side padding… */
+    /* top | left/right | bottom */
     padding: 5rem 0 5rem;
-    background-origin: border-box;
-    background-clip: border-box;
+
+    /* make the tiling start BELOW the padding */
+    background-origin: content-box;
+    background-clip: content-box;
   }
 
   .blog-hero-frame h1,
