@@ -299,7 +299,7 @@ a:hover {
 @media (max-width: 768px) {
   .blog-hero-frame {
     /* either with 0 side padding… */
-    padding: 3rem 0 4.5rem;
+    padding: 5rem 0 5rem;
     background-origin: border-box;
     background-clip: border-box;
   }
