@@ -467,10 +467,10 @@ a:hover {
   justify-content: center;
   align-items: center;
 
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  transform: scale(0.1);      /* 90% of original size */
-  transform-origin: top center;
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+  transform: scale(0.2);      /* 90% of original size */
+  /*transform-origin: top center;*/
 }
 
 /* Text inside plaque */
@@ -491,7 +491,7 @@ a:hover {
 .mini-plaque-inner h2 {
   margin: 0 0 0.2rem;
   line-height: 1.1;
-  font-size: 1.05rem;
+  font-size: 1.5rem;
 }
 
 .mini-plaque-inner p {
