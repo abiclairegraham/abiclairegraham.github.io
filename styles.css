@@ -196,36 +196,7 @@ a:hover {
   color: #929bad;
 }
 
-/* Title 
-.hero-title-plate h1 {
-  margin: 0 0 0.6rem;
-  font-family: "Cinzel", serif;
-  letter-spacing: 0.08em;
-  text-transform: none;
-  font-size: clamp(1.2rem, 2vw + 0.8rem, 1.7rem);
-
-  text-shadow:
-    0 -1px 1px rgba(255, 255, 255, 0.6),
-    0  2px 3px rgba(0, 0, 0, 0.9),
-    0  0 6px rgba(0, 0, 0, 0.7);
-}
-*/
-
-/* Body text */
-/*
-.hero-body-plate p {
-  margin: 0;
-  font-family: "EB Garamond", serif;
-  letter-spacing: 0.06em;
-  text-transform: none;
-  line-height: 1.5;
-  font-size: clamp(0.85rem, 1.3vw + 0.7rem, 1.1rem);
-
-  text-shadow:
-    0 -1px 1px rgba(255, 255, 255, 0.3),
-    0  1px 2px rgba(0, 0, 0, 0.7);
-}
-*/
+ 
 
 /* Title – stronger engraved silver effect */
 .hero-title-plate h1 {
@@ -292,6 +263,79 @@ a:hover {
   opacity: 0.28;
 }
 
+/* --------------------------------------------------
+   Blog Hero Panel
+-------------------------------------------------- */
+.blog-hero {
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+}
+
+/* Blog hero frame panel (desktop) */
+.blog-hero-frame {
+  position: relative;
+  width: 100%;
+  max-width: 49rem; /* was 56.25 */
+  margin: 0rem auto 2rem; 
+ 
+  aspect-ratio: 771 / 1109; /* exact ratio from your big image */
+
+  background-image: url("assets/images/decoration/Square gotic dark wood.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Title – stronger engraved silver effect */
+.blog-hero-frame h1 {
+  margin: 0 -0.2rem 0.6rem;  /* margin: TOP  LEFT+RIGHT  BOTTOM */
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.08em;
+  text-transform: none;
+  /*font-size: clamp(1.2rem, 2vw + 0.8rem, 1.7rem);*/
+  font-size: clamp(1.25rem, 1rem + 0.8vw, 1.55rem); 
+
+  /* base colour if gradient isn't supported */
+  color: #d0d4dd;
+
+  /* metallic-ish gradient inside the text */
+  background: linear-gradient(
+    to bottom,
+    #f5f7fb 0%,
+    #d0d4dd 35%,
+    #9ba2b2 65%,
+    #f1f3f8 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* bevel / embossed shadow */
+  text-shadow:
+    0 -1px 1px rgba(255, 255, 255, 0.7),   /* top edge highlight */
+    0  2px 3px rgba(0, 0, 0, 0.9),         /* main bottom shadow */
+    0  0 6px rgba(0, 0, 0, 0.7);           /* soft glow into the panel */
+}
+
+/* Body text – subtler metal effect */
+.blog-hero-frame p {
+  margin: 0;
+  font-family: "EB Garamond", serif;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  line-height: 1.5;
+  font-size: clamp(0.85rem, 1.3vw + 0.7rem, 1.1rem);
+
+  color: #c2c7d2;
+  text-shadow:
+    0 -1px 1px rgba(255, 255, 255, 0.35),
+    0  1px 2px rgba(0, 0, 0, 0.8);
+}
 
 /* --------------------------------------------------
    Gothic frame overlay on cards
