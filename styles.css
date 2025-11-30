@@ -386,14 +386,14 @@ a:hover {
 }
 
 .blog-hero-frame ul li::before {
-  content: "☠";   /* or "💀" */
+  content: "💀";   /* or "☠" */
   position: absolute;
   left: -1.4rem;
   top: 0.15rem;
 
   /* Gothic engraved look */
   /* color: #2a2218;  deep brown-black for parchment */
-  font-size: 1rem;
+  font-size: 1.7rem;
   text-shadow:
     0 1px 1px rgba(255, 255, 255, 0.6),
     0 2px 3px rgba(0, 0, 0, 0.45);
