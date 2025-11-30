@@ -296,7 +296,7 @@ a:hover {
   right: 0;
   top: 0;
   height: 721px; /* match your top image’s height */
-  background: url("assets/images/decoration/Blog frame top.png")
+  background: url("assets/images/decoration/Blog frame top cropped.png")
               no-repeat top center;
   background-size: 100% auto;
   pointer-events: none;
@@ -310,7 +310,7 @@ a:hover {
   right: 0;
   bottom: 0;
   height: 727px; /* match bottom image’s height */
-  background: url("assets/images/decoration/Blog frame bottom.png")
+  background: url("assets/images/decoration/Blog frame bottom cropped.png")
               no-repeat bottom center;
   background-size: 100% auto;
   pointer-events: none;
