@@ -291,7 +291,7 @@ a:hover {
      - top padding = flourish height + inner padding
      - bottom padding = bottom flourish height + inner padding
   */
-  padding-top: 4rem;
+  padding-top: 6rem;
   padding-bottom: 4rem;
   box-sizing: border-box;
 }
