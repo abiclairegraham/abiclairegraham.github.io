@@ -488,11 +488,13 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  max-width: 10rem;
+  margin: 0.5rem auto;
+   
   padding-top: 3rem;
   margin-top: 0.1rem;
   margin-bottom: 0.1rem;
-  transform: scale(0.2);      /* 90% of original size */
+   /* transform: scale(0.2);     90% of original size */
   /*transform-origin: top center;*/
 }
 
