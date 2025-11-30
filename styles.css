@@ -362,7 +362,7 @@ a:hover {
 .blog-hero-frame code,
 .blog-hero-frame pre,
 .blog-hero-frame p {
-  margin: 5rem 5rem 5rem;  /* margin: TOP  LEFT+RIGHT  BOTTOM */
+  margin: 1rem 5rem 1rem;  /* margin: TOP  LEFT+RIGHT  BOTTOM */
   font-family: "EB Garamond", serif;
   letter-spacing: 0.06em;
   text-transform: none;
