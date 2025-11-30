@@ -291,8 +291,8 @@ a:hover {
      - top padding = flourish height + inner padding
      - bottom padding = bottom flourish height + inner padding
   */
-  padding-top: calc(212px - 10rem);
-  padding-bottom: calc(217px - 10rem);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   box-sizing: border-box;
 }
 
@@ -303,7 +303,7 @@ a:hover {
   left: 0;
   right: 0;
   top: 0;
-  height: 212px; /* top image height */
+  height: 13.25rem; /* top image height  212px */
   background: url("assets/images/decoration/Blog frame top cropped.png")
               no-repeat top center;
   background-size: 100% auto;
@@ -317,7 +317,7 @@ a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 217px; /* bottom image height */
+  height: 13.56rem; /* bottom image height 217px*/
   background: url("assets/images/decoration/Blog frame bottom cropped.png")
               no-repeat bottom center;
   background-size: 100% auto;
