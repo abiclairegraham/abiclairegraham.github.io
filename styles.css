@@ -275,7 +275,7 @@ a:hover {
 .blog-hero-frame {
   position: relative;
   max-width: 70rem;
-  margin: 15rem auto 2rem;
+  margin: 5rem auto 2rem;
 
   /* Middle paper strip that tiles vertically */
   background-image: url("assets/images/decoration/Blog frame middle.png");
@@ -291,10 +291,10 @@ a:hover {
      - top padding = flourish height + inner padding
      - bottom padding = bottom flourish height + inner padding
   */
-  padding-top: calc(212px + 3rem);
-  padding-bottom: calc(217px + 3rem);
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-top: calc(212px - 3rem);
+  padding-bottom: calc(217px - 3rem);
+  /* padding-left: 3rem;
+  padding-right: 3rem; */
 
   box-sizing: border-box;
 }
