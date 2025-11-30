@@ -275,7 +275,7 @@ a:hover {
 .blog-hero-frame {
   position: relative;
   max-width: 70rem;
-  margin: 0 auto 2rem;
+  margin: 15rem auto 2rem;
 
   /* Middle paper strip that tiles vertically */
   background-image: url("assets/images/decoration/Blog frame middle.png");
@@ -284,7 +284,7 @@ a:hover {
   background-size: 100% auto;
 
   /* Space inside where the article lives */
-  padding: 20rem 10rem;     /* top/bottom will be adjusted to fit ornaments */
+  padding: 3rem 3rem;     /* top/bottom will be adjusted to fit ornaments */
   box-sizing: border-box;
 }
 
@@ -373,17 +373,15 @@ a:hover {
   text-shadow:
     0 -1px 1px rgba(255, 255, 255, 0.35),
     0  1px 2px rgba(0, 0, 0, 0.8);
+  position: relative;
+  margin-bottom: 0.55rem;
 }
 
 .blog-hero-frame ul {
   list-style: none;
   padding-left: 1.6rem;
 }
-
-.blog-hero-frame ul li {
-  position: relative;
-  margin-bottom: 0.55rem;
-}
+ 
 
 .blog-hero-frame ul li::before {
   content: "💀";   /* or "☠" */
