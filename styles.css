@@ -296,6 +296,28 @@ a:hover {
   box-sizing: border-box;
 }
 
+@media (max-width: 768px) {
+.blog-hero-frame {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Title – stronger engraved silver effect */
+.blog-hero-frame h1,
+.blog-hero-frame h2,
+.blog-hero-frame h3{
+  margin: 1rem 3rem 0.6rem;  /* margin: TOP  LEFT+RIGHT  BOTTOM */
+}
+
+/* Body text */
+.blog-hero-frame li,
+.blog-hero-frame pre,
+.blog-hero-frame p {
+  margin: 0.6rem 3rem 1.5rem;
+}
+}
+
+   
 /* Top flourish cap */
 .blog-hero-frame::before {
   content: "";
