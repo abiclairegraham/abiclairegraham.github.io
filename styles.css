@@ -449,6 +449,59 @@ a:hover {
 }
 
 
+
+/* --------------------------------------------------
+   MINI metal plaque to put sections on!!
+-------------------------------------------------- */
+/* Metal plaque under framed images */
+.mini-plaque {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1923 / 573;       /* approximate – tweak when you know image ratio */
+  background-image: url("assets/images/decoration/Plaque 4-1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  transform: scale(0.1);      /* 90% of original size */
+  transform-origin: top center;
+}
+
+/* Text inside plaque */
+.mini-plaque-inner {
+  width: 95%;                    /* how wide the text area is inside the metal */
+  text-align: center;
+  color: #111;
+  font-family: "Cinzel", serif;
+}
+
+.mini-plaque-inner h2,
+.mini-plaque-inner p {
+  text-shadow:
+    0 1px 1px rgba(255, 255, 255, 0.2),
+    0 -1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.mini-plaque-inner h2 {
+  margin: 0 0 0.2rem;
+  line-height: 1.1;
+  font-size: 1.05rem;
+}
+
+.mini-plaque-inner p {
+  margin: 0;
+  line-height: 1;
+  font-size: 1.1rem;
+} 
+
+
+
 /* --------------------------------------------------
    Metal plaque under framed images
 -------------------------------------------------- */
