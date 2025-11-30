@@ -293,7 +293,9 @@ a:hover {
 }
 
 /* Title – stronger engraved silver effect */
-.blog-hero-frame h1 {
+.blog-hero-frame h1,
+.blog-hero-frame h2,
+.blog-hero-frame h3{
   margin: 0 -0.2rem 0.6rem;  /* margin: TOP  LEFT+RIGHT  BOTTOM */
   font-family: "Cinzel", serif;
   letter-spacing: 0.08em;
