@@ -284,7 +284,7 @@ a:hover {
   background-size: 100% auto;
 
   /* Space inside where the article lives */
-  padding: 1rem 3rem;     /* top/bottom will be adjusted to fit ornaments */
+  padding: 4rem 3rem;     /* top/bottom will be adjusted to fit ornaments */
   box-sizing: border-box;
 }
 
