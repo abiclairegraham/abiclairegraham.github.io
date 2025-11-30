@@ -488,7 +488,7 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 10rem;
+  max-width: 30rem;
   margin: 0.5rem auto;
    
   padding-top: 3rem;
@@ -516,13 +516,13 @@ a:hover {
 .mini-plaque-inner h2 {
   margin: 0 0 0.2rem;
   line-height: 1.1;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .mini-plaque-inner p {
   margin: 0;
   line-height: 1;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
 } 
 
 
