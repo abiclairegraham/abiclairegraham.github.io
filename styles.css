@@ -329,6 +329,9 @@ a:hover {
 }
 
 /* Body text – subtler metal effect */
+.blog-hero-frame li,
+.blog-hero-frame code,
+.blog-hero-frame pre,
 .blog-hero-frame p {
   margin: 0;
   font-family: "EB Garamond", serif;
