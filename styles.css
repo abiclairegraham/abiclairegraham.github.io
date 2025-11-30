@@ -297,26 +297,30 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-.blog-hero-frame {
-  padding-top: 3rem;
-  padding-bottom: 4.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
+  .blog-hero-frame {
+    padding: 3rem 0.8rem 4.5rem; /* top | left+right | bottom */
+  }
 
-/* Title – stronger engraved silver effect */
-.blog-hero-frame h1,
-.blog-hero-frame h2,
-.blog-hero-frame h3{
-  margin: 1rem 1rem 0.6rem;  /* margin: TOP  LEFT+RIGHT  BOTTOM */
-}
+  .blog-hero-frame h1,
+  .blog-hero-frame h2,
+  .blog-hero-frame h3 {
+    margin: 1rem 0.5rem 0.6rem;
+  }
 
-/* Body text */
-.blog-hero-frame li,
-.blog-hero-frame pre,
-.blog-hero-frame p {
-  margin: 0.6rem 1rem 1.5rem;
-}
+  .blog-hero-frame p,
+  .blog-hero-frame li,
+  .blog-hero-frame pre {
+    margin: 0.6rem 0.5rem 1.2rem;
+  }
+
+  /* bullet list indentation reduced */
+  .blog-hero-frame ul {
+    padding-left: 1.5rem;
+  }
+
+  .blog-hero-frame ul li::before {
+    left: -1.4rem;
+  }
 }
 
    
