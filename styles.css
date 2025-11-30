@@ -393,10 +393,9 @@ a:hover {
 
 .blog-hero-frame ul {
   list-style: none;
-  padding-left: 1.6rem;
+  padding-left: 2.2rem;  /* or 2.4rem if you want more room */
 }
  
-
 .blog-hero-frame ul li::before {
   content: "☠  " ;   /* or "💀" */
   position: absolute;
