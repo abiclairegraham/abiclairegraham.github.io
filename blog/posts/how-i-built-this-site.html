@@ -38,17 +38,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-
-/* small decorative badge before title 
-.flowchart-title-badge {
-  width: 0.9rem;
-  height: 0.9rem;
-  border-radius: 999px;
-  border: 1px solid #7b6b4a;
-  background: radial-gradient(circle at 30% 30%, #fdf7e7, #c8b48a);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.6);
-} */
-    
+ 
 .flowchart-title-badge svg {
   color: #2a2218;  /* dark brown-black for parchment */
 }
@@ -111,6 +101,15 @@
 
 .flow-step-content code {
   color: #3a3121;
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+               Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.86em;
+
+  /* Fix the overwriting: allow wrapping */
+  white-space: normal;      /* override any global white-space: pre */
+  word-break: break-all;    /* or break-word if you prefer softer wrapping */
+  background: none;
+  padding: 0;
 }
     
 .flow-step-content ul li::before {
