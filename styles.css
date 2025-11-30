@@ -394,8 +394,8 @@ a:hover {
   content: "☠" ;   /* or "💀" */
   position: absolute;
   left: -1.4rem;
-  bottom: -0.1rem;
-  margin-right: 0.5rem;
+  top: -0.1rem;
+  margin-right: 1rem;
   /* Gothic engraved look */
   /* color: #2a2218;  deep brown-black for parchment */
   font-size: 1.6rem;
