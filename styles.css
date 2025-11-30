@@ -283,8 +283,19 @@ a:hover {
   background-position: top center;
   background-size: 100% auto;
 
-  /* Space inside where the article lives */
-  padding: 3rem 3rem;     /* top/bottom will be adjusted to fit ornaments */
+  /* Make the background start below the flourishes */
+  background-origin: content-box;
+  background-clip: content-box;
+
+  /* Space:
+     - top padding = flourish height + inner padding
+     - bottom padding = bottom flourish height + inner padding
+  */
+  padding-top: calc(212px + 3rem);
+  padding-bottom: calc(217px + 3rem);
+  padding-left: 3rem;
+  padding-right: 3rem;
+
   box-sizing: border-box;
 }
 
@@ -295,7 +306,7 @@ a:hover {
   left: 0;
   right: 0;
   top: 0;
-  height: 212px; /* match your top image’s height */
+  height: 212px; /* top image height */
   background: url("assets/images/decoration/Blog frame top cropped.png")
               no-repeat top center;
   background-size: 100% auto;
@@ -309,13 +320,12 @@ a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 217px; /* match bottom image’s height */
+  height: 217px; /* bottom image height */
   background: url("assets/images/decoration/Blog frame bottom cropped.png")
               no-repeat bottom center;
   background-size: 100% auto;
   pointer-events: none;
 }
-
 
 
 /* Title – stronger engraved silver effect */
