@@ -393,13 +393,13 @@ a:hover {
 
 .blog-hero-frame ul {
   list-style: none;
-  padding-left: 2.2rem;  /* or 2.4rem if you want more room */
+  padding-left: 2.4rem;  /* or 2.4rem if you want more room */
 }
  
 .blog-hero-frame ul li::before {
   content: "☠  " ;   /* or "💀" */
   position: absolute;
-  left: -1.4rem;
+  left: -1.8rem;
   top: -0.3rem;
   margin-right: 1rem;
   /* Gothic engraved look */
