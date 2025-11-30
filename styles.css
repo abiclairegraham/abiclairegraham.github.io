@@ -272,13 +272,13 @@ a:hover {
 }
 
 /* Blog hero frame panel (desktop) */
-.blog-hero-frame {
+.blog-hero-frame { 
   position: relative;
   width: 100%;
-  max-width: 49rem; /* was 56.25 */
+  /* max-width: 49rem; was 56.25 */
   margin: 0rem auto 2rem; 
  
-  aspect-ratio: 771 / 1109; /* exact ratio from your big image */
+   /* aspect-ratio: 771 / 1109; exact ratio from your big image */
 
   background-image: url("assets/images/decoration/Blog frame.png");
   background-size: contain;
@@ -297,7 +297,6 @@ a:hover {
   font-family: "Cinzel", serif;
   letter-spacing: 0.08em;
   text-transform: none;
-  /*font-size: clamp(1.2rem, 2vw + 0.8rem, 1.7rem);*/
   font-size: clamp(1.25rem, 1rem + 0.8vw, 1.55rem); 
 
   /* base colour if gradient isn't supported */
