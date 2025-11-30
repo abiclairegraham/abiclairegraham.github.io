@@ -489,6 +489,7 @@ a:hover {
   justify-content: center;
   align-items: center;
 
+  padding-top: 3rem;
   margin-top: 0.1rem;
   margin-bottom: 0.1rem;
   transform: scale(0.2);      /* 90% of original size */
