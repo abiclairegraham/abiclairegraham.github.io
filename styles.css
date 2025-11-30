@@ -278,7 +278,7 @@ a:hover {
   margin: 0 auto 2rem;
 
   /* Middle paper strip that tiles vertically */
-  background-image: url("assets/images/decoration/blog frame middle.png");
+  background-image: url("assets/images/decoration/Blog frame middle.png");
   background-repeat: repeat-y;
   background-position: top center;
   background-size: 100% auto;
@@ -296,7 +296,7 @@ a:hover {
   right: 0;
   top: 0;
   height: 721px; /* match your top image’s height */
-  background: url("assets/images/decoration/blog frame top.png")
+  background: url("assets/images/decoration/Blog frame top.png")
               no-repeat top center;
   background-size: 100% auto;
   pointer-events: none;
@@ -310,7 +310,7 @@ a:hover {
   right: 0;
   bottom: 0;
   height: 727px; /* match bottom image’s height */
-  background: url("assets/images/decoration/blog frame bottom.png")
+  background: url("assets/images/decoration/Blog frame bottom.png")
               no-repeat bottom center;
   background-size: 100% auto;
   pointer-events: none;
