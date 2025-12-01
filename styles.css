@@ -296,39 +296,6 @@ a:hover {
   box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
-  .blog-hero-frame {
-    /* top | left/right | bottom */
-    padding: 4rem 0 4rem;
-
-    /* make the tiling start BELOW the padding */
-    background-origin: content-box;
-    background-clip: content-box;
-  }
-
-  .blog-hero-frame h1,
-  .blog-hero-frame h2,
-  .blog-hero-frame h3 {
-    margin: 0.6rem -2rem 0.6rem;   /* much smaller L/R margin */
-  }
-
-  .blog-hero-frame p,
-  .blog-hero-frame li,
-  .blog-hero-frame pre {
-    margin: 0.5rem -2rem 1rem;
-  }
-
-  /* slightly reduce bullet indent on mobile */
-  .blog-hero-frame ul {
-    padding-left: 1.6rem;
-  }
-
-  .blog-hero-frame ul li::before {
-    left: -1.3rem;
-  }
-}
-
-
    
 /* Top flourish cap */
 .blog-hero-frame::before {
@@ -1089,5 +1056,38 @@ a:hover {
   /* Optional: reduce huge vertical padding on links for mobile */
   .nav a {
     padding: 1rem 0.35rem;  /* smaller tap area but no giant top padding */
+  }
+}
+
+
+@media (max-width: 768px) {
+  .blog-hero-frame {
+    /* top | left/right | bottom */
+    padding: 4rem 0 4rem;
+
+    /* make the tiling start BELOW the padding */
+    background-origin: content-box;
+    background-clip: content-box;
+  }
+
+  .blog-hero-frame h1,
+  .blog-hero-frame h2,
+  .blog-hero-frame h3 {
+    margin: 0.6rem 0rem 0.6rem;   /* much smaller L/R margin */
+  }
+
+  .blog-hero-frame p,
+  .blog-hero-frame li,
+  .blog-hero-frame pre {
+    margin: 0.5rem 0rem 1rem;
+  }
+
+  /* slightly reduce bullet indent on mobile */
+  .blog-hero-frame ul {
+    padding-left: 1.6rem;
+  }
+
+  .blog-hero-frame ul li::before {
+    left: -1.3rem;
   }
 }
