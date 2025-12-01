@@ -112,15 +112,19 @@ def make_gallery_section_for_year(year, items):
 
     section_html = f"""
     <section class="gallery">
-      <h2>{html.escape(section_title)}</h2>
+        <div class="mini-plaque">
+         <div class="mini-plaque-inner">
+          <h2>{html.escape(title)}</h2>
+         </div>
+        </div>
       <div class="gallery-grid">
 {indent(figures_html, "        ")}
       </div>
     </section>
+ 
     """.rstrip()
 
     return section_html
-
 
 
 def build_powerlifting_page():
