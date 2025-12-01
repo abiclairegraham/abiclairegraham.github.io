@@ -29,19 +29,45 @@ OUTPUT = ROOT / "makeup" / "index.html"
 def make_gallery_section(title, items, show_heading=True):
     """
     If show_heading=False, we omit the <h2> so it feels like 'just a gallery'.
+
+    For images:
+      - use the image itself as the thumbnail.
+
+    For videos (.mp4/.mov/.webm):
+      - use a JPEG poster thumbnail as the thumbnail on the index.
+      - expected poster path: same as the video but with '.jpg' extension.
+
+    The thumbnail always links to the per-post page, where the real
+    <img> or <video> element is rendered.
     """
     figures = []
 
     for item in items:
-        img_path = get_image_path(item)
-        if not img_path:
+        media_path = get_image_path(item)
+        if not media_path:
             continue
 
         caption = (item.get("caption") or "").strip()
         alt_text = caption or "Makeup look"
-
         alt_text_esc = html.escape(alt_text, quote=True)
 
+        # Decide thumbnail src based on extension
+        ext = media_path.lower().rsplit(".", 1)[-1]
+        if ext in ("mp4", "mov", "webm"):
+            # Use a poster image with the same base name but .jpg
+            base, _ = media_path.rsplit(".", 1)
+            thumb_path = f"{base}.jpg"
+        else:
+            # Normal image file as-is
+            thumb_path = media_path
+
+        thumb_src = f"/{thumb_path}"
+
+        # Link to the corresponding per-post makeup page
+        slug = make_post_slug(item)
+        href = f"/makeup/posts/{slug}.html"
+
+        # Optional figcaption under thumbnail
         if CAPTIONS_INCLUDE:
             caption_esc = html.escape(caption)
             caption_html = f"<figcaption>{caption_esc}</figcaption>"
@@ -50,7 +76,9 @@ def make_gallery_section(title, items, show_heading=True):
 
         fig_html = f"""
         <figure class="gallery-item">
-          <img src="/{img_path}" alt="{alt_text_esc}">
+          <a href="{href}">
+            <img src="{thumb_src}" alt="{alt_text_esc}">
+          </a>
           {caption_html}
         </figure>
         """.rstrip()
