@@ -23,7 +23,7 @@ INSTAGRAM_DIR = Path(
 # Single source of truth for the main catalogue path
 # (you can change this in ONE place later)
 CATALOGUE_PATH = Path(
-    "/content/drive/MyDrive/Personal Projects/media_catalogue_instagram_with_paths.csv"
+    "/content/drive/MyDrive/Personal Projects/media_catalogue_instagram_with_paths_filtered.csv"
 )
 
 
