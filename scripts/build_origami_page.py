@@ -55,6 +55,16 @@ def make_gallery_section(title, post_groups):
     """
     post_groups: list of (post_key, [rows_for_post])
     Returns HTML for one section.
+
+    For images:
+      - use the image itself as the thumbnail.
+
+    For videos (.mp4/.mov/.webm):
+      - use a JPEG poster thumbnail as the thumbnail on the index.
+      - expected poster path: same as the video but with '.jpg' extension.
+
+    The thumbnail always links to the per-post page, where the real
+    <img> or <video> element is rendered.
     """
     figures = []
 
@@ -64,13 +74,25 @@ def make_gallery_section(title, post_groups):
 
         # representative row for this post (first item)
         rep = items[0]
-        img_path = get_image_path(rep)
-        if not img_path:
+        media_path = get_image_path(rep)
+        if not media_path:
             continue
 
         caption = (rep.get("caption") or "").strip()
         alt_text = caption or "Origami model"
         alt_text_esc = html.escape(alt_text, quote=True)
+
+        # Decide thumbnail src based on extension
+        ext = media_path.lower().rsplit(".", 1)[-1]
+        if ext in ("mp4", "mov", "webm"):
+            # Use a poster image with the same base name but .jpg
+            base, _ = media_path.rsplit(".", 1)
+            thumb_path = f"{base}.jpg"
+        else:
+            # Normal image file as-is
+            thumb_path = media_path
+
+        thumb_src = f"/{thumb_path}"
 
         # link to the corresponding post page
         slug = make_post_slug(rep)
@@ -86,7 +108,7 @@ def make_gallery_section(title, post_groups):
         fig_html = f"""
         <figure class="gallery-item">
           <a href="{href}">
-            <img src="/{img_path}" alt="{alt_text_esc}">
+            <img src="{thumb_src}" alt="{alt_text_esc}">
           </a>
           {caption_html}
         </figure>
@@ -114,6 +136,7 @@ def make_gallery_section(title, post_groups):
     """.rstrip()
 
     return section_html
+
 
 
 def build_origami_page():
