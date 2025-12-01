@@ -1073,13 +1073,13 @@ a:hover {
   .blog-hero-frame h1,
   .blog-hero-frame h2,
   .blog-hero-frame h3 {
-    margin: 0.6rem 0rem 0.6rem;   /* much smaller L/R margin */
+    margin: 1.5rem 1rem 0.8rem;   /* much smaller L/R margin */
   }
 
   .blog-hero-frame p,
   .blog-hero-frame li,
   .blog-hero-frame pre {
-    margin: 0.5rem 0rem 1rem;
+    margin: 1rem 1rem 1rem;
   }
 
   /* slightly reduce bullet indent on mobile */
