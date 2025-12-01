@@ -39,4 +39,121 @@ def build_post_html(rows):
     dt = rep.get("post_datetime") or ""
     subsection = (rep.get("subsection") or "").strip()
 
-    # Meta block (date + subs
+    # Meta block (date + subsection if present)
+    meta_parts = []
+    if dt:
+        meta_parts.append(f"<p class='post-date'>{html.escape(dt)}</p>")
+    if subsection and subsection.lower() != "general":
+        meta_parts.append(
+            f"<p class='post-subsection'>{html.escape(subsection.title())}</p>"
+        )
+    meta_html = "\n".join(meta_parts) if meta_parts else ""
+
+    # Media for this post (images and/or videos)
+    media_parts = []
+    for row in rows:
+        media_path = get_image_path(row)
+        if not media_path:
+            continue
+
+        ext = media_path.lower().rsplit(".", 1)[-1]
+
+        # Default alt text
+        alt = caption or "Makeup look"
+        alt_esc = html.escape(alt, quote=True)
+
+        if ext in ("mp4", "mov", "webm"):
+            # Video: use a poster thumbnail with same base name but .jpg
+            base, _ = media_path.rsplit(".", 1)
+            poster_path = f"{base}.jpg"
+
+            # Try to pick a reasonable MIME type
+            mime_type = {
+                "mp4": "video/mp4",
+                "mov": "video/quicktime",
+                "webm": "video/webm",
+            }.get(ext, "video/mp4")
+
+            media_html = f"""
+            <figure class="post-image">
+              <video controls poster="/{poster_path}">
+                <source src="/{media_path}" type="{mime_type}">
+                Your browser does not support the video tag.
+              </video>
+            </figure>
+            """.rstrip()
+        else:
+            # Normal image
+            media_html = f"""
+            <figure class="post-image">
+              <img src="/{media_path}" alt="{alt_esc}">
+            </figure>
+            """.rstrip()
+
+        media_parts.append(media_html)
+
+    media_html = "\n".join(media_parts)
+
+    # Full caption block
+    if caption:
+        caption_html = f"<div class='post-caption'><p>{html.escape(caption)}</p></div>"
+    else:
+        caption_html = ""
+
+    body_html = f"""
+    <article class="post-detail">
+      {media_html}
+      {caption_html}
+    </article>
+    """.rstrip()
+
+    return meta_html, body_html
+
+
+def build_makeup_posts():
+    rows = load_catalogue()
+
+    # Only makeup posts
+    makeup_rows = [
+        r for r in rows
+        if (r.get("section") or "").lower() == "makeup"
+    ]
+
+    if not makeup_rows:
+        print("No makeup rows found in catalogue.")
+        return
+
+    # Group by post_key
+    groups = defaultdict(list)
+    for r in makeup_rows:
+        key = make_post_key(r)
+        groups[key].append(r)
+
+    POSTS_DIR.mkdir(parents=True, exist_ok=True)
+
+    template_text = TEMPLATE.read_text(encoding="utf-8")
+
+    count = 0
+
+    for key, group_rows in groups.items():
+        rep = group_rows[0]
+        slug = make_post_slug(rep)
+        out_path = POSTS_DIR / f"{slug}.html"
+
+        meta_html, body_html = build_post_html(group_rows)
+
+        html_text = (
+            template_text
+            .replace("{{META}}", meta_html)
+            .replace("{{BODY}}", body_html)
+        )
+
+        out_path.write_text(html_text, encoding="utf-8")
+        count += 1
+        print("Wrote", out_path)
+
+    print(f"Done. Wrote {count} makeup post pages.")
+
+
+if __name__ == "__main__":
+    build_makeup_posts()
