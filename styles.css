@@ -299,7 +299,7 @@ a:hover {
 @media (max-width: 768px) {
   .blog-hero-frame {
     /* top | left/right | bottom */
-    padding: 5rem 0 5rem;
+    padding: 4rem 0 4rem;
 
     /* make the tiling start BELOW the padding */
     background-origin: content-box;
@@ -309,13 +309,13 @@ a:hover {
   .blog-hero-frame h1,
   .blog-hero-frame h2,
   .blog-hero-frame h3 {
-    margin: 0.8rem 0.5rem 0.6rem;   /* much smaller L/R margin */
+    margin: 0.6rem 0.3rem 0.6rem;   /* much smaller L/R margin */
   }
 
   .blog-hero-frame p,
   .blog-hero-frame li,
   .blog-hero-frame pre {
-    margin: 0.5rem 0.5rem 1rem;
+    margin: 0.5rem 0.3rem 1rem;
   }
 
   /* slightly reduce bullet indent on mobile */
