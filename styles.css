@@ -1084,7 +1084,7 @@ a:hover {
 
   /* slightly reduce bullet indent on mobile */
   .blog-hero-frame ul {
-    padding-left: 1.8rem;
+    padding-left: 2.4rem;
   }
 
   .blog-hero-frame ul li::before {
