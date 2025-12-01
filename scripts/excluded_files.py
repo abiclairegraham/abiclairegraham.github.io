@@ -1,7 +1,7 @@
 import csv
 
 input_csv = "/content/drive/MyDrive/Personal Projects/media_catalogue_instagram_with_paths.csv"       # your original CSV file
-output_csv = "/content/drive/MyDrive/Personal Projects/media_catalogue_instagram_with_paths_filtered.csv"    # new CSV file with rows removed
+filtered_csv = "/content/drive/MyDrive/Personal Projects/media_catalogue_instagram_with_paths_filtered.csv"    # new CSV file with rows removed
 deleted_csv = "/content/drive/MyDrive/Personal Projects/deleted_rows.csv"
 
 excluded=[ #powerlifting
