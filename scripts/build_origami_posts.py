@@ -26,7 +26,8 @@ POSTS_DIR = ROOT / "origami" / "posts"
 
 def build_post_html(rows):
     """
-    Build HTML body + meta for a single post (list of rows/images).
+    Build HTML body + meta for a single post (list of rows/media).
+    Supports both images and videos (mp4/mov/webm).
     """
     rep = rows[0]
     caption = (rep.get("caption") or "").strip()
@@ -41,19 +42,32 @@ def build_post_html(rows):
         meta_parts.append(f"<p class='post-subsection'>{html.escape(subsection.title())}</p>")
     meta_html = "\n".join(meta_parts) if meta_parts else ""
 
-    # images for this post
-    image_parts = []
+    # media (images / videos) for this post
+    media_parts = []
     for row in rows:
-        img_path = get_image_path(row)
-        if not img_path:
+        media_path = get_image_path(row)
+        if not media_path:
             continue
+
         alt = caption or "Origami model"
         alt_esc = html.escape(alt, quote=True)
-        image_parts.append(
-            f'<figure class="post-image"><img src="/{img_path}" alt="{alt_esc}"></figure>'
-        )
 
-    images_html = "\n".join(image_parts)
+        ext = media_path.lower().split(".")[-1]
+
+        # Video?
+        if ext in ("mp4", "mov", "webm"):
+            media_html = f"""
+            <video controls preload="metadata">
+              <source src="/{media_path}" type="video/{ext}">
+              Your browser does not support the video tag.
+            </video>
+            """.strip()
+        else:
+            media_html = f'<img src="/{media_path}" alt="{alt_esc}">'
+
+        media_parts.append(f'<figure class="post-image">{media_html}</figure>')
+
+    media_html = "\n".join(media_parts)
 
     # full caption
     if caption:
@@ -63,7 +77,7 @@ def build_post_html(rows):
 
     body_html = f"""
     <article class="post-detail">
-      {images_html}
+      {media_html}
       {caption_html}
     </article>
     """.rstrip()
