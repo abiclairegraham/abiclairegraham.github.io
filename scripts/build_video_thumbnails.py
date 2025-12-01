@@ -7,7 +7,7 @@ from scripts.build_common import ROOT
 # CONFIG
 # --------------------------------------
 
-# Folder where your powerlifting videos live
+# Folder where your videos live
 VIDEO_ROOT = ROOT / "assets" / "images" / "origami"
 
 # Video extensions to process
