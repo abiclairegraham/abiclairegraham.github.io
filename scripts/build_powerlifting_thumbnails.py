@@ -8,7 +8,7 @@ from scripts.build_common import ROOT
 # --------------------------------------
 
 # Folder where your powerlifting videos live
-VIDEO_ROOT = ROOT / "assets" / "images" / "powerlifting"
+VIDEO_ROOT = ROOT / "assets" / "images" / "origami"
 
 # Video extensions to process
 VIDEO_EXTS = {".mp4", ".mov", ".webm"}
