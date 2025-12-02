@@ -56,11 +56,13 @@ def build_post_html(rows):
         if not media_path:
             continue
 
-        ext = media_path.lower().rsplit(".", 1)[-1]
-
         # Default alt text
         alt = caption or "Makeup look"
         alt_esc = html.escape(alt, quote=True)
+
+        # Get extension safely
+        parts = media_path.lower().rsplit(".", 1)
+        ext = parts[-1] if len(parts) == 2 else ""
 
         if ext in ("mp4", "mov", "webm"):
             # Video: use a poster thumbnail with same base name but .jpg
@@ -74,23 +76,22 @@ def build_post_html(rows):
                 "webm": "video/webm",
             }.get(ext, "video/mp4")
 
-            media_html = f"""
-            <figure class="post-image">
-              <video controls poster="/{poster_path}">
-                <source src="/{media_path}" type="{mime_type}">
-                Your browser does not support the video tag.
-              </video>
-            </figure>
+            inner_html = f"""
+            <video controls poster="/{poster_path}">
+              <source src="/{media_path}" type="{mime_type}">
+              Your browser does not support the video tag.
+            </video>
             """.rstrip()
         else:
             # Normal image
-            media_html = f"""
-            <figure class="post-image">
-              <img src="/{media_path}" alt="{alt_esc}">
-            </figure>
-            """.rstrip()
+            inner_html = f'<img src="/{media_path}" alt="{alt_esc}">'
 
-        media_parts.append(media_html)
+        # Wrap in a figure (consistent for both images and videos)
+        media_parts.append(f"""
+        <figure class="post-image">
+          {inner_html}
+        </figure>
+        """.rstrip())
 
     media_html = "\n".join(media_parts)
 
