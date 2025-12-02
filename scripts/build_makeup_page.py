@@ -52,8 +52,12 @@ def make_gallery_section(title, items, show_heading=True):
         alt_text_esc = html.escape(alt_text, quote=True)
 
         # Decide thumbnail src based on extension
-        ext = media_path.lower().rsplit(".", 1)[-1]
-        if ext in ("mp4", "mov", "webm"):
+        # (be defensive if there's no dot)
+        parts = media_path.lower().rsplit(".", 1)
+        ext = parts[-1] if len(parts) == 2 else ""
+
+        is_video = ext in ("mp4", "mov", "webm")
+        if is_video:
             # Use a poster image with the same base name but .jpg
             base, _ = media_path.rsplit(".", 1)
             thumb_path = f"{base}.jpg"
@@ -74,10 +78,16 @@ def make_gallery_section(title, items, show_heading=True):
         else:
             caption_html = ""
 
+        # Optional: tiny "video" badge overlay if it's a video
+        video_badge_html = '<span class="video-badge">▶</span>' if is_video else ""
+
         fig_html = f"""
         <figure class="gallery-item">
           <a href="{href}">
-            <img src="{thumb_src}" alt="{alt_text_esc}">
+            <div class="thumb-wrapper">
+              <img src="{thumb_src}" alt="{alt_text_esc}">
+              {video_badge_html}
+            </div>
           </a>
           {caption_html}
         </figure>
