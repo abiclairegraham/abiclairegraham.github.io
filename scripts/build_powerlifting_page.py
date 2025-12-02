@@ -114,7 +114,7 @@ def make_gallery_section_for_year(year, items):
     <section class="gallery">
         <div class="mini-plaque">
          <div class="mini-plaque-inner">
-          <h2>{html.escape(title)}</h2>
+          <h2>{html.escape(section_title)}</h2>
          </div>
         </div>
       <div class="gallery-grid">
