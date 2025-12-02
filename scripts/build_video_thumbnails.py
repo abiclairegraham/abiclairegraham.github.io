@@ -8,7 +8,7 @@ from scripts.build_common import ROOT
 # --------------------------------------
 
 # Folder where your videos live
-VIDEO_ROOT = ROOT / "assets" / "images" / "origami"
+VIDEO_ROOT = ROOT / "assets" / "images" / "makeup"
 
 # Video extensions to process
 VIDEO_EXTS = {".mp4", ".mov", ".webm"}
