@@ -1217,11 +1217,12 @@ a:hover {
   }
 }
 
-    @media (min-width: 640px) {
-      .blog-card {
-        flex-direction: row;
-      }
-      .blog-card-thumb {
-        display: block;
-      }
-    }
+
+/* mobile: un-float and center */
+@media (max-width: 768px) {
+  .blog-card {
+    float: none;
+    width: 80%;              /* or 90%, or 100% — your choice */
+    margin: 2rem auto;       /* auto left/right = centered */
+  }
+}
