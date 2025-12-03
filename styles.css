@@ -466,7 +466,7 @@ a:hover {
         /* ⬅️ centre it */
         margin: 2rem auto;
       
-        padding: 1.75rem 1.5rem;
+        padding: 0.75rem 0.5rem;
         border-radius: 1.1rem;
       
         /* cream paper panel */
@@ -519,15 +519,10 @@ a:hover {
       gap: 0.3rem;
       flex: 1;
     }
-
-    /* .blog-card-title {
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin: 0;
-    } */
+ 
 
     .blog-card-title {
-        margin-bottom: 1rem;
+        margin-bottom: 0.2rem;
         display: flex;
         align-items: center;
         gap: 0.55rem;
