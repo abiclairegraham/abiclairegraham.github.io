@@ -481,6 +481,12 @@ a:hover {
         display: block;
       }
 
+      .blog-card h3,
+      .blog-card p {
+        font-family: "EB Garamond", serif;
+        color: #111;
+      }
+
     .blog-card:hover {
       border-color: #14b8a6;
       box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
