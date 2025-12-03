@@ -447,7 +447,7 @@ a:hover {
       gap: 1rem;
     }
 
-    .blog-card {
+    /* .blog-card {
       border-radius: 0.9rem;
       border: 1px solid #e5e7eb;
       background: white;
@@ -456,7 +456,30 @@ a:hover {
       gap: 0;
       text-decoration: none;
       color: inherit;
-    }
+    }*/
+      .blog-card {
+        width: 45rem;                /* good desktop width */
+        max-width: 100%;
+        /* ⬅️ remove float so text doesn't wrap */
+        float: none;
+      
+        /* ⬅️ centre it */
+        margin: 2rem auto;
+      
+        padding: 1.75rem 1.5rem;
+        border-radius: 1.1rem;
+      
+        /* cream paper panel */
+        background: #f4efe3;
+        border: 1px solid #b6aa8c;
+        box-shadow:
+          0 8px 20px rgba(0, 0, 0, 0.45),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+        font-family: "EB Garamond", serif;
+        color: #111;
+        /* optional: add top/bottom spacing that looks nicer in flow */
+        display: block;
+      }
 
     .blog-card:hover {
       border-color: #14b8a6;
@@ -489,11 +512,21 @@ a:hover {
       flex: 1;
     }
 
-    .blog-card-title {
+    /* .blog-card-title {
       font-size: 1.05rem;
       font-weight: 600;
       margin: 0;
-    }
+    } */
+
+    .blog-card-title {
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        font-size: 1.05rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
 
     .blog-card-meta {
       font-size: 0.85rem;
