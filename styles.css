@@ -1228,6 +1228,24 @@ a:hover {
 }
 
 /* --------------------------------------------------
+   Mobile tuning for mini-plaques
+-------------------------------------------------- */
+@media (max-width: 768px) {
+
+.mini-plaque-inner h2 {
+  margin: 0 0 0.2rem;
+  line-height: 1.1;
+  font-size: 1.6rem;
+}
+
+.mini-plaque-inner p {
+  margin: 0;
+  line-height: 1;
+  font-size: 1rem;
+} 
+}
+
+/* --------------------------------------------------
    Mobile tuning for blog cards
 -------------------------------------------------- */
 @media (max-width: 768px) {
