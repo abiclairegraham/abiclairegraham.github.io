@@ -454,7 +454,7 @@ a:hover {
         float: none;
       
         /* ⬅️ centre it */
-        margin: 0.5rem auto;
+        margin: 2rem auto 5rem;
       
         padding: 0.75rem 0.5rem;
         border-radius: 1.1rem;
