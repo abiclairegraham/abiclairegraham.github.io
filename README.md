@@ -76,5 +76,5 @@ abiclairegraham.github.io/
 
 ## Really helpful references
 
-(https://www.joshwcomeau.com/css/)[https://www.joshwcomeau.com/css/]
+https://www.joshwcomeau.com/css/
 
