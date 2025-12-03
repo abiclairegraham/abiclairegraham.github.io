@@ -475,6 +475,8 @@ a:hover {
       .blog-card p {
         font-family: "EB Garamond", serif;
         color: #111;
+        padding: 0.3rem 0.5rem;
+        margin: 0;
       }
 
     .blog-card:hover {
