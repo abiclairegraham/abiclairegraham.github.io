@@ -1273,8 +1273,13 @@ a:hover {
    .blog-card p {
      font-family: "EB Garamond", serif;
      color: #111;
-     padding: 0.3rem 0.2rem;
+     padding: 0.3rem 0.4rem;
      margin: 0;
-      }
+     font-size: 1.4rem; 
+    }
+
+   .blog-card p {
+     font-size: 0.75rem;
+    }
 }
 
