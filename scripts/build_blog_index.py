@@ -98,7 +98,7 @@ def extract_post_metadata(path: Path):
         thumb_meta = extract_first_img_src(content)
 
     dt = parse_date(date_str)
-    year = str(dt.year) if dt else "Unknown"
+    year = str(dt.year) if dt else "Articles"
 
     # URL is /blog/posts/<filename>
     url = "/blog/posts/" + path.name
@@ -137,11 +137,11 @@ def build_post_card(post):
     <a class="blog-card" href="{url}">
       {thumb_html}
       <div class="blog-card-body">
-        <h3 class="blog-card-title">{title}</h3>
+        <h3 class="blog-card-title">☞ {title}</h3>
         <p class="blog-card-meta">{date_str}</p>
         <p class="blog-card-summary">{summary}</p>
       </div>
-    </a>
+    </a>  
     """.rstrip()
 
     return card_html
