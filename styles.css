@@ -1235,7 +1235,7 @@ a:hover {
   /* Shrink the whole card visually */
   .blog-card {
     margin: 0.5rem auto;       /* was 1rem */
-    padding: 0.5rem 0.4rem;    /* was 0.75rem 0.5rem */
+    padding: 0.2rem 0.2rem;    /* was 0.75rem 0.5rem */
     border-radius: 0.8rem;     /* slightly smaller curves */
 
     /* Optional: soften shadow so it doesn't look so heavy on mobile */
@@ -1246,7 +1246,7 @@ a:hover {
 
   /* Reduce spacing + text inside */
   .blog-card-body {
-    padding: 0.2rem 0.2rem;   /* was 0.3rem 0.3rem */
+    padding: 0.1rem 0.1rem;   /* was 0.3rem 0.3rem */
     gap: 0.05rem;             /* super tight spacing */
   }
 
@@ -1268,5 +1268,13 @@ a:hover {
     font-size: 0.75rem;       /* smaller meta text */
     opacity: 0.6;
   }
+
+   .blog-card h3,
+   .blog-card p {
+     font-family: "EB Garamond", serif;
+     color: #111;
+     padding: 0.3rem 0.2rem;
+     margin: 0;
+      }
 }
 
