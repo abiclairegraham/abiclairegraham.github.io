@@ -162,7 +162,6 @@
   }
 }
 
-
   </style>
 </head>
 
@@ -184,38 +183,22 @@
 
   <main class="container">
     <article class="blog-hero-frame">
-      <h1>How I Built This Website From My Social Media (Using Only Cloud Tools)</h1>
+      <h1>My super-quick low-carb bread recipe</h1>
       <p class="meta">
-        A summary of how (with plenty of help from ChatGPT) I turned years of Instagram posts into this website,
-        using Google Drive, Google Colab, and GitHub.
-      </p>
+This protein bread is very low in carbs, and is free from many of the fermentable substances that cause people gut-problems, 
+        making it a very handy addition to various diets. Recipe inspired by a friend (Anastasia Zinchenko) and I eat it several times a week. It takes 10 minutes to make including cooking!! 
+              </p>
+                  <p>
+        It dries out very quickly indeed - but if you slice it and put it into a bag and freeze it, you can defrost it in the microwave when you need it and it will be as fresh as when it's newly made.
+        The texture is very close to bread, it is very filling and a great protein-source.
+ </p>
 
-      <p>
-        Most people build personal websites by hand-picking photos, writing new text, or dragging
-        things into a site builder. I did not do that, because I had a brain-wave... 😄🧠✨
-      </p>
 
-      <p>
-        Instead, in just around a day, I exported my entire Instagram archive, automatically analysed the captions,
-        sorted every image into meaningful sections, and generated the pages of this site
-        programmatically &mdash; all without storing anything locally on my laptop.
-      </p>
+This is the key ingredient - Vital refined gluten:
 
-      <p>
-        The whole workflow lives in the cloud, using three main tools:
-      </p>
+https://www.amazon.co.uk/yourhealthstore-Premium-Vital-Gluten-Recyclable/dp/B07YDZC53R?th=1
 
-      <ul>
-        <li><strong>Google Drive</strong> &mdash; my working filesystem</li>
-        <li><strong>Google Colab</strong> &mdash; my Python environment</li>
-        <li><strong>GitHub</strong> &mdash; where the final site is hosted</li>
-      </ul>
-
-      <p>
-        Colab handles the GitHub syncing between my GitHub repository and a clone stored inside
-        Google Drive. Everything &mdash; from downloading my data to publishing this page &mdash;
-        happens there.
-      </p>
+And this is my basic recipe:
 
       <!-- Flowchart -->
       <section class="flowchart">
@@ -250,7 +233,7 @@
             </svg>
           </span>
 
-          <span> <b> High-level flow of the whole process </b> </span>
+          <span> <b> Very low-card bread </b> </span>
         </div>
         <div class="flowchart-inner">
           <div class="flow-step">
@@ -258,255 +241,56 @@
             <div class="flow-step-content">
               <h3>Export from Instagram</h3>
               <p>
-                Request a full Instagram data export from Meta and save the unzipped archive into
-                Google Drive. This gives you all the images plus JSON files describing each post.
+                Mix together in a microwavable bowl: 
+                
+                * 1 scoop of gluten 
+                * 1/2 scoop of either pea-protein powder, faba-bean protein powder, soy protein powder or sunflower protein powder
+                * seasoning (most basic would just be salt, and a pinch of some kind of sweetener just as a flavour enhancer. I find a little glucose powder works very well but use a non-caloric sweetener if you really want this low-carb.)
+                *1/2 scoop of powdered Flaxseed (optional but helps the texture)
+                * 1 teaspoon of Psyllium powder (makes the dough more elastic)
+              </p>
+            </div>
+          </div>
+
+          <div class="flow-arrow"></div>
+                    <div class="flow-step">
+            <div class="flow-step-number">1</div>
+            <div class="flow-step-content">
+              <h3>Export from Instagram</h3>
+              <p>
+Now pour on just enough boiling water to make a bread dough sort of texture - not too wet and paste-like, but also, no dry ingredients left. 
+                You'll need to practice getting the amount of water right.
+                Then, microwave for about 6 minutes. It will actually rise reasonably even with no raising agent - but if you use too much water it will not rise well and be a bit stodgy.
+
               </p>
             </div>
           </div>
 
           <div class="flow-arrow"></div>
 
-          <div class="flow-step">
-            <div class="flow-step-number">2</div>
+                              <div class="flow-step">
+            <div class="flow-step-number">1</div>
             <div class="flow-step-content">
-              <h3>Build a media catalogue in Colab</h3>
+              <h3>Export from Instagram</h3>
               <p>
-                Use a Colab notebook to walk through all the JSON files and extract
-                <em>post_datetime</em>, <em>caption</em>, and <em>media URIs</em> into a CSV:
-                one row per image.
+That's essentially it - this won't have a crispy crust of course, but you can toast it if you fancy. 
+
+In terms of flavour, this really won't taste of much by itself. So, you need to add flavours - things like crispy onions, or sundried tomatoes. I sometimes add a little meat seasoning such as this to give just a little savoury flavour:
+
+https://smile.amazon.co.uk/McCORMICK-GRILL-SMOKEHOUSE-SEASONING-AMERICAN/dp/B003LMAL30/ref=mp_s_a_1_2?keywords=grill+mates+maple&qid=1582147644&sr=8-2
+
+Or you can make it sweet - add cinnamon, sweetener, nuts and raisins and eat with butter. Delicious 😀
+
+You can freeze it very soon after cooking, and then defrost again in the microwave to make it good to eat. It will not have as nice a texture if you don't reheat it (apparently gluten starts to crystallize as bread goes stale, making it tough - but reheating causes the gluten to uncrystallise again and makes the bread nice and elastic again).
+
               </p>
             </div>
           </div>
 
-          <div class="flow-arrow"></div>
-
-          <div class="flow-step">
-            <div class="flow-step-number">3</div>
-            <div class="flow-step-content">
-              <h3>Classify each image into sections</h3>
-              <p>
-                Scan each caption for keywords (origami, powerlifting, makeup, singing, activism,
-                etc.), count how many hits each category gets, and assign the image to whichever
-                section has the most matches. Origami posts also get finer-grained subsections.
-              </p>
-            </div>
-          </div>
-
-          <div class="flow-arrow"></div>
-
-          <div class="flow-step">
-            <div class="flow-step-number">4</div>
-            <div class="flow-step-content">
-              <h3>Copy images into the site structure</h3>
-              <p>
-                Another script copies each image from the archive into the GitHub repo in Drive,
-                into folders like <code>assets/images/origami/insects/</code> or
-                <code>assets/images/powerlifting/2022/</code>, based on its section and subsection.
-              </p>
-            </div>
-          </div>
-
-          <div class="flow-arrow"></div>
-
-          <div class="flow-step">
-            <div class="flow-step-number">5</div>
-            <div class="flow-step-content">
-              <h3>Generate HTML pages from the catalogue</h3>
-              <p>
-                Python scripts take the catalogue and turn it into static HTML pages: galleries for
-                each section, plus per-post pages that show all images from the same Instagram post,
-                with their full caption.
-              </p>
-            </div>
-          </div>
-
-          <div class="flow-arrow"></div>
-
-          <div class="flow-step">
-            <div class="flow-step-number">6</div>
-            <div class="flow-step-content">
-              <h3>Sync to GitHub Pages from Colab</h3>
-              <p>
-                From the Colab notebook, I commit changes inside the Drive-backed clone of my
-                repository and push to GitHub. GitHub Pages then serves the updated site.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
-      <h2>1. Getting the content: my Instagram export</h2>
 
-      <p>
-        I started by requesting a full copy of my Instagram data. When the download was ready,
-        I saved and unzipped it directly into Google Drive so I could work on it from Colab.
-      </p>
-
-      <p>
-        The archive included:
-      </p>
-
-      <ul>
-        <li>All the images and videos I'd posted</li>
-        <li>JSON files describing each post</li>
-        <li>Timestamps, captions, and other metadata</li>
-        <li>Information about multi-image posts (carousels)</li>
-      </ul>
-
-      <p>
-        None of this ever had to live on my local computer: Drive is the canonical home for all of it.
-      </p>
-
-      <h2>2. Building a media catalogue</h2>
-
-      <p>
-        Next, in a Colab notebook, I wrote a parser that walked through every JSON file and pulled
-        out the pieces I cared about:
-      </p>
-
-      <ul>
-        <li><code>post_datetime</code> &mdash; when the post was created</li>
-        <li><code>caption</code> &mdash; the text I wrote underneath</li>
-        <li><code>filename_raw</code> &mdash; where the image lives in the export</li>
-        <li><code>json_source</code> &mdash; which JSON file it came from</li>
-      </ul>
-
-      <p>
-        All of that went into a CSV: one row per image. That CSV became my
-        <strong>media catalogue</strong>, a kind of structured index of my entire Instagram history.
-      </p>
-
-      <h2>3. Automatically classifying images by topic</h2>
-
-      <p>
-        Then I taught the catalogue to understand what each image was <em>about</em>.
-      </p>
-
-      <p>
-        I created keyword lists for each section:
-      </p>
-
-      <ul>
-        <li><strong>origami</strong> &mdash; words like <em>fold</em>, <em>tessellation</em>, <em>paper</em>, etc.</li>
-        <li><strong>powerlifting</strong> &mdash; <em>squat</em>, <em>bench</em>, <em>deadlift</em>, and so on</li>
-        <li><strong>makeup</strong> &mdash; <em>eyeshadow</em>, <em>lipstick</em>, palettes, brand names</li>
-        <li><strong>singing</strong> &mdash; <em>song</em>, <em>karaoke</em>, <em>singing</em></li>
-        <li><strong>activism</strong> &mdash; <em>trans</em>, <em>racism</em>, protests, and related terms</li>
-        <li><strong>general</strong> &mdash; everything else</li>
-      </ul>
-
-      <p>
-        For each caption, the script counted how many keywords matched for each section.
-        Whichever section had the most hits became the assigned category. In cases where two
-        sections tied, I used a simple priority list as a tiebreaker.
-      </p>
-
-      <p>
-        Origami posts got an extra layer of classification into subsections like
-        <em>insects</em>, <em>tessellations</em>, <em>curved</em>, and <em>modular</em>,
-        again based on keywords.
-      </p>
-
-      <h2>4. Copying images into the GitHub repo</h2>
-
-      <p>
-        Once each image knew its section and subsection, another Colab script copied the files
-        from the Instagram export into the cloned GitHub repository stored in Google Drive.
-      </p>
-
-      <p>
-        It built a folder structure like:
-      </p>
-
-      <pre><code>assets/images/origami/insects/
-assets/images/origami/tessellations/
-assets/images/powerlifting/2022/
-assets/images/makeup/
-assets/images/general/
-</code></pre>
-
-      <p>
-        Every run starts by clearing out the old image folders, then repopulating them
-        from the catalogue. That means the repository always reflects the current state of
-        the data.
-      </p>
-
-      <h2>5. Generating HTML pages automatically</h2>
-
-      <p>
-        The next step was to turn the catalogue into actual web pages.
-      </p>
-
-      <p>
-        I wrote small Python scripts (again in Colab) that read the CSV and generated:
-      </p>
-
-      <ul>
-        <li>
-          An <strong>Origami</strong> gallery page, split into sections for insects, animals,
-          tessellations, curved origami, modular origami, and general pieces.
-        </li>
-        <li>
-          A <strong>Powerlifting</strong> gallery grouped by year, so I can see lifting photos
-          chronologically.
-        </li>
-        <li>
-          A <strong>Makeup</strong> gallery, currently one big grid but ready for future subsections.
-        </li>
-      </ul>
-
-      <p>
-        For each Instagram post, the catalogue groups all images with the same post timestamp,
-        and creates a dedicated <em>post page</em>. The gallery only shows a single representative
-        thumbnail, but clicking it opens a page with:
-      </p>
-
-      <ul>
-        <li>All images from that post</li>
-        <li>The full caption</li>
-        <li>Any extra context I might add later</li>
-      </ul>
-
-      <h2>6. Pushing changes to GitHub from Colab</h2>
-
-      <p>
-        The repository itself lives inside Google Drive, so Colab can interact with it just like a
-        local folder. I configured Git with my name and email, added a GitHub personal access token,
-        and then used standard commands:
-      </p>
-
-      <pre><code>!git add .
-!git commit -m "Rebuild site from updated media catalogue"
-!git push origin main
-      </code></pre>
-
-      <p>
-        GitHub sees the new commit, and GitHub Pages takes care of serving the updated site. The
-        whole “rebuild + publish” cycle happens in the browser.
-      </p>
-
-      <h2>7. Why I like this setup</h2>
-
-      <p>
-        This approach means the site is:
-      </p>
-
-      <ul>
-        <li><strong>Data-driven</strong> – everything comes from a single source of truth: the catalogue.</li>
-        <li><strong>Repeatable</strong> – I can rerun the scripts any time and regenerate the whole site.</li>
-        <li><strong>Cloud-based</strong> – no local environment to maintain, no files on my laptop.</li>
-        <li><strong>Honest</strong> – it’s built out of the content I’ve actually posted over the years.</li>
-      </ul>
-
-      <p>
-        Now that the foundations are in place, I can add more pages, tweak the styling, or change
-        how things are grouped, and all of it flows from the same underlying data.
-      </p>
-
-      <p>
-        And this page you’re reading is part of that: a small write-up generated in the same spirit
-        as the rest of the site.
-      </p>
     </article>
   </main>
 
