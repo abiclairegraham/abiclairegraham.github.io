@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>How Mainstream Science Defines Sex and Gender – Abi Claire Graham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <!-- Page-specific styles for the flowchart -->
+  <style>
+/* Flowchart – Victorian insert on cream paper */
+.flowchart {
+  width: 45rem;                /* good desktop width */
+  max-width: 100%;
+  float: none;
+  margin: 2rem auto;
+  padding: 1.75rem 1.5rem;
+  border-radius: 1.1rem;
+  background: #f4efe3;
+  border: 1px solid #b6aa8c;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  font-family: "EB Garamond", serif;
+  color: #111;
+  display: block;
+}
+
+/* title row */
+.flowchart-title {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+ 
+.flowchart-title-badge svg {
+  color: #2a2218;
+}
+
+/* stack of steps */
+.flowchart-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* individual step block */
+.flow-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: flex-start;
+  column-gap: 0.85rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.6rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* numbered medallion */
+.flow-step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  font-family: "Cinzel", serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #f7f4eb;
+  background: radial-gradient(circle at 30% 30%, #4b3b24, #1c1510);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+/* step heading + text */
+.flow-step-content h3 {
+  margin: 0 0 0.15rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3a3121;
+}
+
+.flow-step-content p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #3a3121;
+}
+
+/* Victorian pointing-hand arrow between steps */
+.flow-arrow {
+  align-self: center;
+  margin: 0.25rem 0;
+  font-size: 3rem;
+  line-height: 1;
+  text-align: center;
+  font-family: "EB Garamond", serif;
+  color: #3a3121;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6),
+               0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.flow-arrow::before {
+  content: "☟";
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .flowchart {
+    float: none;
+    width: 80%;
+    margin: 2rem auto;
+  }
+}
+
+/* Simple table styling (inherits your global styles but keeps it readable) */
+article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.95rem;
+}
+
+article th,
+article td {
+  border: 1px solid #ddd;
+  padding: 0.6rem 0.5rem;
+  vertical-align: top;
+}
+
+article th {
+  background: #f4f4f4;
+  text-align: left;
+  font-weight: 600;
+}
+
+article tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+article a {
+  word-break: break-word;
+}
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/origami/">Origami</a>
+        <a href="/powerlifting/">Powerlifting</a>
+        <a href="/makeup/">Makeup</a>
+        <a href="/singing/">Singing</a>
+        <!-- <a href="/data-projects/">Data Projects</a> -->
+        <a href="/blog/" class="active">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="blog-hero-frame">
+      <h1>What Mainstream Science Actually Says About Sex, Gender, and Trans People</h1>
+
+      <p class="meta">
+        A simple reference for how major scientific organisations define sex and gender, plus a
+        myth-vs-reality section on common misconceptions.
+      </p>
+
+      <p>
+        When people talk about sex, gender, and trans identities, they often say things like
+        “science says…” – but which science? Which organisations? And what do they actually say,
+        in writing, on their own websites?
+      </p>
+
+      <p>
+        This post is my personal “cheat sheet” of mainstream positions from big, boring, very
+        normal scientific and professional bodies – the kind that regulate healthcare, set
+        clinical guidelines, and write textbooks.
+      </p>
+
+      <p>
+        It has two parts:
+      </p>
+
+      <ul>
+        <li>A short, human-readable list of <strong>common misconceptions vs scientific positions</strong></li>
+        <li>A <strong>table of major organisations</strong> and how they define sex and gender, with links</li>
+      </ul>
+
+      <!-- Flowchart: high-level "how consensus works" -->
+      <section class="flowchart">
+        <div class="flowchart-title">
+          <span class="flowchart-title-badge" aria-hidden="true">
+            <svg
+              viewBox="0 0 260 260"
+              width="45"
+              height="45"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <!-- same decorative path as your original -->
+              <path d="m 124.432,168.31681 ... z" />
+            </svg>
+          </span>
+          <span><b> High-level flow of how scientific consensus forms </b></span>
+        </div>
+
+        <div class="flowchart-inner">
+          <div class="flow-step">
+            <div class="flow-step-number">1</div>
+            <div class="flow-step-content">
+              <h3>Researchers collect evidence</h3>
+              <p>
+                Scientists run studies, publish peer-reviewed papers, and argue with each other
+                (politely, most of the time) about what the data means.
+              </p>
+            </div>
+          </div>
+
+          <div class="flow-arrow"></div>
+
+          <div class="flow-step">
+            <div class="flow-step-number">2</div>
+            <div class="flow-step-content">
+              <h3>Reviews and guidelines are written</h3>
+              <p>
+                Professional bodies (like the APA, AMA, WHO, WPATH, AAP, BPS) review the evidence
+                and write summaries, position statements, and guidelines.
+              </p>
+            </div>
+          </div>
+
+          <div class="flow-arrow"></div>
+
+          <div class="flow-step">
+            <div class="flow-step-number">3</div>
+            <div class="flow-step-content">
+              <h3>Organisations adopt official positions</h3>
+              <p>
+                Those documents become the “house view” of the organisation, shaping training,
+                ethics codes, and clinical practice.
+              </p>
+            </div>
+          </div>
+
+          <div class="flow-arrow"></div>
+
+          <div class="flow-step">
+            <div class="flow-step-number">4</div>
+            <div class="flow-step-content">
+              <h3>Definitions and policies get updated</h3>
+              <p>
+                As more data comes in, organisations revise their policies. This is why many have
+                updated language around sex, gender, and transgender health in the last decade.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <h2>Part 1 &mdash; Common Misconceptions vs Scientific Positions</h2>
+
+      <p>
+        These are some of the misunderstandings I see most often, next to what mainstream scientific
+        and professional bodies actually say.
+      </p>
+
+      <h3>Misconception 1: “Sex is strictly binary.”</h3>
+      <p>
+        <strong>Scientific position:</strong> Sex is biological, but not perfectly binary in
+        practice. Most people are classified as male or female, but there is natural variation in
+        chromosomes, gonads, hormone patterns, and anatomy (for example, intersex variations).
+        Modern biology and medicine explicitly acknowledge this complexity rather than pretending
+        it doesn’t exist.
+      </p>
+
+      <h3>Misconception 2: “Gender is just another word for sex.”</h3>
+      <p>
+        <strong>Scientific position:</strong> Every major organisation in this table separates
+        them. Very roughly:
+      </p>
+      <ul>
+        <li><strong>Sex</strong> = biological traits (chromosomes, hormones, anatomy, etc.).</li>
+        <li><strong>Gender</strong> = social and psychological roles, norms, and categories.</li>
+        <li><strong>Gender identity</strong> = a person’s internal sense of their own gender.</li>
+      </ul>
+      <p>
+        They interact, but they’re not the same construct, and you can’t collapse them into one
+        word without losing important information.
+      </p>
+
+      <h3>Misconception 3: “Gender identity is a new political invention.”</h3>
+      <p>
+        <strong>Scientific position:</strong> The idea that people have an internal sense of their
+        gender has been around in psychology, psychiatry, and sexology since the mid-20th century.
+        What’s changed is the language, the quality of the data, and the level of social awareness,
+        not the underlying human experience.
+      </p>
+
+      <h3>Misconception 4: “Being transgender is a mental disorder.”</h3>
+      <p>
+        <strong>Scientific position:</strong> Major bodies (WHO, APA, BPS, AMA, AAP, WPATH) do
+        <em>not</em> treat being transgender itself as a disorder. Some trans and gender-diverse
+        people experience distress because of the mismatch between their body, social treatment, or
+        legal status and their identity, or because of stigma and discrimination. The distress is
+        the problem, not the existence of the identity.
+      </p>
+
+      <h3>Misconception 5: “Biology contradicts transgender identities.”</h3>
+      <p>
+        <strong>Scientific position:</strong> Biology describes sex traits. Gender identity is a
+        psychological and social phenomenon. Biologists do not define who is a man or woman in the
+        social or psychological sense; that’s not what the discipline is for. So “biology vs gender
+        identity” is mostly a category error &mdash; they’re talking about different things.
+      </p>
+
+      <h3>Misconception 6: “Trans women aren’t women / trans men aren’t men in science.”</h3>
+      <p>
+        <strong>Scientific position:</strong> In psychology, medicine, sociology and public health,
+        gender categories are defined in terms of gender identity and social role. When these
+        organisations talk about “women” in gender-identity contexts, they include trans women;
+        when they talk about “men”, they include trans men. Biology, again, generally doesn’t try
+        to define gender categories at all.
+      </p>
+
+      <h3>Misconception 7: “Science is totally divided on all of this.”</h3>
+      <p>
+        <strong>Scientific position:</strong> There are debates about details (for example, best
+        clinical pathways, language, or how to structure services), and there are political fights
+        around how to implement policy. But across the big mainstream organisations, there is a
+        striking level of agreement that:
+      </p>
+      <ul>
+        <li>Sex is biological and somewhat messy in real life.</li>
+        <li>Gender is social and psychological.</li>
+        <li>Gender identity is real.</li>
+        <li>Trans people exist, and trans-inclusive care and social recognition are important for health.</li>
+      </ul>
+
+      <h2>Part 2 &mdash; How Major Organisations Define Sex and Gender</h2>
+
+      <p>
+        This table pulls together a quick reference for several large, mainstream organisations.
+        It’s not exhaustive, but it gives a flavour of the overall landscape.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Organisation</th>
+            <th>Sex (definition)</th>
+            <th>Gender (definition)</th>
+            <th>Gender identity (definition)</th>
+            <th>Legitimacy / authority</th>
+            <th>Founded</th>
+            <th>Official link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>World Health Organization (WHO)</strong></td>
+            <td>
+              Biological traits such as chromosomes, reproductive anatomy and hormones; the WHO also
+              acknowledges natural variation (including intersex).
+            </td>
+            <td>
+              The socially constructed characteristics of women, men, girls and boys (norms,
+              behaviours, roles and relationships), varying across cultures and over time.
+            </td>
+            <td>
+              A person’s internal and individual experience of gender, which may or may not match
+              their sex assigned at birth.
+            </td>
+            <td>
+              UN specialised agency and global public health authority. Publishes the
+              International Classification of Diseases (ICD), used by health systems worldwide.
+            </td>
+            <td><strong>1948</strong></td>
+            <td>
+              <a href="https://www.who.int/health-topics/gender" target="_blank" rel="noopener">
+                WHO – Gender and health
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>American Psychological Association (APA)</strong></td>
+            <td>
+              Biological attributes such as anatomy, chromosomes, hormones (often grouped under
+              “sex assigned at birth”).
+            </td>
+            <td>
+              The attitudes, feelings, and behaviours that a given culture associates with being
+              male or female.
+            </td>
+            <td>
+              A person’s deeply felt, internal sense of being male, female, a blend of both,
+              neither, or another gender.
+            </td>
+            <td>
+              Largest psychological organisation in the world. Sets widely used standards for
+              research ethics, clinical practice, and training in psychology.
+            </td>
+            <td><strong>1892</strong></td>
+            <td>
+              <a href="https://www.apa.org/topics/lgbtq/transgender-people-gender-identity-gender-expression"
+                 target="_blank" rel="noopener">
+                APA – Understanding transgender people, gender identity and gender expression
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>British Psychological Society (BPS)</strong></td>
+            <td>
+              Biological classification into male, female, and intersex categories, based on
+              anatomy and chromosomes.
+            </td>
+            <td>
+              A social and psychological construct covering roles, expectations, and identities
+              related to being a man, woman, or other gender.
+            </td>
+            <td>
+              A person’s internal sense of their own gender, which may or may not align with sex
+              assigned at birth.
+            </td>
+            <td>
+              Main professional and regulatory body for psychologists in the UK. Accredits
+              training and issues ethics and practice guidelines.
+            </td>
+            <td><strong>1901</strong></td>
+            <td>
+              <a href="https://www.bps.org.uk/guideline/guidelines-psychologists-working-gender-sexuality-and-relationship-diversity"
+                 target="_blank" rel="noopener">
+                BPS – Guidelines for Psychologists Working with GSRD
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>American Medical Association (AMA)</strong></td>
+            <td>
+              Biological characteristics such as reproductive anatomy, chromosomes, and hormone
+              levels.
+            </td>
+            <td>
+              A person’s deeply felt sense of being male, female, or another gender, which may or
+              may not correspond to sex assigned at birth.
+            </td>
+            <td>
+              The internal experience of gender that guides how a person understands themselves
+              and wishes to be recognised socially.
+            </td>
+            <td>
+              Largest association of physicians and medical students in the US. Influential in
+              medical ethics, health policy, and clinical guidelines.
+            </td>
+            <td><strong>1847</strong></td>
+            <td>
+              <a href="https://www.ama-assn.org/public-health/population-health/policies-lesbian-gay-bisexual-transgender-queer-lgbtq-issues"
+                 target="_blank" rel="noopener">
+                AMA – Policies on LGBTQ issues (including gender identity)
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>WPATH (World Professional Association for Transgender Health)</strong></td>
+            <td>
+              Biological traits such as chromosomes, gonads, hormones, and anatomy (mainly in
+              relation to health care, rather than to define gender).
+            </td>
+            <td>
+              A multidimensional construct that includes gender identity, roles, and expression, in
+              interaction with social and cultural factors.
+            </td>
+            <td>
+              A person’s deeply felt, internal sense of gender (for example, man, woman, nonbinary),
+              which may or may not align with sex assigned at birth.
+            </td>
+            <td>
+              International professional association whose Standards of Care are widely used as the
+              primary clinical reference for transgender and gender-diverse health worldwide.
+            </td>
+            <td><strong>1979</strong></td>
+            <td>
+              <a href="https://www.wpath.org/soc8" target="_blank" rel="noopener">
+                WPATH – Standards of Care Version 8
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>Biology (mainstream scientific consensus)</strong></td>
+            <td>
+              Sex is treated as a multidimensional biological trait: chromosomes, gonads, hormone
+              patterns, reproductive anatomy, and secondary sex characteristics, with recognised
+              natural variation (including intersex).
+            </td>
+            <td>
+              Generally not defined; most biological disciplines treat gender as a social and
+              psychological construct rather than a biological one.
+            </td>
+            <td>
+              Also not defined within biology; gender identity is usually left to psychology and
+              social sciences.
+            </td>
+            <td>
+              Authority comes from cumulative peer-reviewed research, scientific societies, and
+              consensus across multiple fields, rather than a single central organisation.
+            </td>
+            <td>—</td>
+            <td>
+              Representative overviews can be found in review articles in journals such as
+              <em>Nature Reviews</em> and similar; there isn’t one official “biology” website.
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>American Academy of Pediatrics (AAP)</strong></td>
+            <td>
+              Sex assigned at birth based on observed anatomy and, where relevant, chromosomes.
+            </td>
+            <td>
+              A social and psychological concept related to roles, expectations, and identities
+              associated with being a boy, girl, man, woman, or other gender.
+            </td>
+            <td>
+              An individual’s internal sense of their gender, including transgender and
+              gender-diverse identities.
+            </td>
+            <td>
+              Largest professional organisation of pediatricians in the US. Issues widely followed
+              policy statements on child and adolescent health.
+            </td>
+            <td><strong>1930</strong></td>
+            <td>
+              <a href="https://publications.aap.org/aapnews/news/25340/AAP-reaffirms-gender-affirming-care-policy"
+                 target="_blank" rel="noopener">
+                AAP – Reaffirms gender-affirming care policy
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Wrapping up</h2>
+
+      <p>
+        None of this means science is perfect, or that there are no disagreements. But if someone
+        says “mainstream science” is fundamentally hostile to trans people, that doesn’t match what
+        the big organisations actually publish.
+      </p>
+
+      <p>
+        For me, having these links and definitions in one place makes it much easier to sanity-check
+        claims like “science says X” – I can just click through and see what the WHO, APA, BPS, AMA,
+        AAP, WPATH, etc. <em>actually</em> say in their own words.
+      </p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Abi Graham</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
