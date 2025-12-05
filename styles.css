@@ -412,6 +412,78 @@ a:hover {
 }
 
 /* --------------------------------------------------
+   Blog article tables — elegant parchment style
+-------------------------------------------------- */
+
+.blog-hero-frame table {
+  width: calc(100% - 15rem);   /* match your h1/p left-right margins (7.5rem each) */
+  margin: 2rem auto;
+  border-collapse: collapse;
+
+  background: rgba(255, 255, 255, 0.08);  /* translucent parchment */
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0.6rem;
+
+  overflow: hidden; /* keep rounded corners */
+  font-family: "EB Garamond", serif;
+  color: #e5e7eb;   /* light silver text */
+  text-shadow:
+    0 -1px 1px rgba(255,255,255,0.15),
+    0 1px 3px rgba(0,0,0,0.8);
+}
+
+.blog-hero-frame th {
+  background: rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+
+  padding: 0.75rem 0.6rem;
+  font-weight: 700;
+  color: #f1f3f8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.blog-hero-frame td {
+  padding: 0.75rem 0.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  vertical-align: top;
+}
+
+/* alternate row shading */
+.blog-hero-frame tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* link appearance inside table */
+.blog-hero-frame table a {
+  color: #c7d2fe; /* soft pale blue */
+  text-decoration: underline;
+}
+
+.blog-hero-frame table a:hover {
+  color: #e0e7ff;
+}
+
+/* Make table horizontally scrollable on mobile */
+@media (max-width: 768px) {
+  .blog-hero-frame table {
+    width: calc(100% - 6rem);  /* match mobile h1/p margins (3rem each) */
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+
+    font-size: 0.85rem; /* improve fit */
+  }
+
+  .blog-hero-frame th,
+  .blog-hero-frame td {
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+
+/* --------------------------------------------------
    Blog index styles
 -------------------------------------------------- */
     .blog-index {
