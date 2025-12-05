@@ -468,19 +468,23 @@ a:hover {
 /* Make table horizontally scrollable on mobile */
 @media (max-width: 768px) {
   .blog-hero-frame table {
-    width: calc(100% - 6rem);  /* match mobile h1/p margins (3rem each) */
+    width: calc(100% - 6rem);   /* same visual width as your text */
     display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-
-    font-size: 0.85rem; /* improve fit */
+    overflow-x: auto;           /* allow sideways scroll */
+    font-size: 0.85rem;
+    table-layout: fixed;        /* keep columns reasonably narrow */
   }
 
   .blog-hero-frame th,
   .blog-hero-frame td {
     padding: 0.5rem 0.5rem;
+    min-width: 9rem;            /* 👈 each column narrower than viewport */
+    max-width: 11rem;           /* stop them getting too wide */
+    white-space: normal;        /* allow wrapping */
+    word-break: break-word;     /* break long words/URLs if needed */
   }
 }
+
 
 
 /* --------------------------------------------------
