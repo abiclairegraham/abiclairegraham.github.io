@@ -415,24 +415,31 @@ a:hover {
    Blog article image styles
 -------------------------------------------------- */
 
-.blog-float-right {
+.blog-image-wrapper {
   float: right;
   width: 50%;
   max-width: 300px;
-  margin: 0 0 4rem 1.5rem;
-  padding: 0.65rem 1rem;
+  margin: 0 1.5rem 4rem 1.5rem;
   display: block;
-  border-radius: 0.5rem;
 }
 
-.blog-float-right + .post-caption {
+.blog-image-wrapper img {
+  width: 100%;
+  border-radius: 0.5rem;
+  display: block;
+  padding: 0.65rem 1rem;
+}
+
+.blog-image-wrapper .post-caption {
   margin-top: -0.5rem;
   margin-bottom: 1.5rem;
   font-size: 0.9rem;
   line-height: 1.4;
   text-align: right;
   color: #666;
+  padding: 0 1rem; /* matches image padding so caption lines up */
 }
+
 
 
 /* --------------------------------------------------
