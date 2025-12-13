@@ -1,0 +1,16 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Deadlift Style & Weight Class (IPF Raw, 2010+)"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Article
+
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-tools: true
