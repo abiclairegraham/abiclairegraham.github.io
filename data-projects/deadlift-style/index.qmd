@@ -1,0 +1,46 @@
+---
+title: "Does Sumo Offer an Advantage by Weight Class?"
+subtitle: "A simple look at IPF raw deadlift style vs deadlift contribution to total"
+format: html
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+This page uses a cleaned dataset of IPF raw lifting results (2010+), with each lifter tagged as **Sumo** or **Conventional**.  
+Metric used: **deadlift_fraction = best3_deadlift_kg / total_kg**.
+
+## Load and clean data
+
+```{python}
+import pandas as pd
+import numpy as np
+import plotly.express as px
+
+CSV_PATH = "data/deadlift_style_clean.csv"
+df = pd.read_csv(CSV_PATH)
+
+# Basic hygiene
+df["deadlift_style"] = df["deadlift_style"].fillna("Unknown")
+df["weight_class"] = df["weight_class"].astype(str)
+
+# Drop rows that can't be used for fraction-based analysis
+df_plot = df.dropna(subset=["deadlift_fraction", "sex", "weight_class", "deadlift_style"]).copy()
+
+# Optional: if you want to exclude unknown style from charts
+df_plot = df_plot[df_plot["deadlift_style"].isin(["Sumo", "Conventional"])]
+
+# Sort weight classes numerically, with "+" classes last
+def wc_sort_key(wc: str):
+    wc = str(wc)
+    if wc.endswith("+"):
+        return (int(wc[:-1]), 1)
+    try:
+        return (int(wc), 0)
+    except ValueError:
+        return (10_000, 0)
+
+weight_order = sorted(df_plot["weight_class"].unique(), key=wc_sort_key)
+
+df_plot.head()
