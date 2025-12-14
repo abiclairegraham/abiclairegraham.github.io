@@ -2,16 +2,22 @@
 title: "Does Sumo Offer an Advantage by Weight Class?"
 subtitle: "A simple look at IPF raw deadlift style vs deadlift contribution to total"
 format: html
+jupyter: python3
 execute:
-  echo: false
-  warning: false
-  message: false
----
+  echo: true
+  warning: true
+  message: true
+--- 
 
 This page uses a cleaned dataset of IPF raw lifting results (2010+), with each lifter tagged as **Sumo** or **Conventional**.  
 Metric used: **deadlift_fraction = best3_deadlift_kg / total_kg**.
 
 ## Load and clean data
+```{python}
+import sys
+print("Python executable:", sys.executable)
+print("Hello from Quarto execution!")
+```
 
 ```{python}
 import pandas as pd
