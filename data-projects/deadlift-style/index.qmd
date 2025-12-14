@@ -13,11 +13,6 @@ This page uses a cleaned dataset of IPF raw lifting results (2010+), with each l
 Metric used: **deadlift_fraction = best3_deadlift_kg / total_kg**.
 
 ## Load and clean data
-```{python}
-import sys
-print("Python executable:", sys.executable)
-print("Hello from Quarto execution!")
-```
 
 ```{python}
 import pandas as pd
@@ -52,4 +47,25 @@ weight_order = sorted(df_plot["weight_class"].unique(), key=wc_sort_key)
 df_plot.head()
 
 ```  
+## Mean deadlift fraction by weight class and style
 
+```{python}
+agg = (df_plot
+       .groupby(["sex", "weight_class", "deadlift_style"], as_index=False)
+       .agg(mean_fraction=("deadlift_fraction","mean"),
+            n=("deadlift_fraction","size")))
+
+fig = px.bar(
+    agg,
+    x="weight_class",
+    y="mean_fraction",
+    color="deadlift_style",
+    facet_col="sex",
+    barmode="group",
+    category_orders={"weight_class": weight_order},
+    hover_data=["n"]
+)
+fig.update_yaxes(title="Mean deadlift fraction")
+fig.update_xaxes(title="Weight class")
+fig
+```
