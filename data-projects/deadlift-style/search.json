@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Does Sumo Offer an Advantage by Weight Class?",
     "section": "",
-    "text": "This page uses a cleaned dataset of IPF raw lifting results (2010+), with each lifter tagged as Sumo or Conventional.\nMetric used: deadlift_fraction = best3_deadlift_kg / total_kg."
+    "text": "This page uses a cleaned dataset of IPF raw lifting results (2010+), with each lifter tagged as Sumo or Conventional.\nMetric used: deadlift_fraction = best3_deadlift_kg / total_kg.\nThere are also some rare lifters who have competed at the highest level and pulled big numbers in both Conventional and Sumo style. One such name is Ashton Rouska. I still need to do some digging to find out what his biggest lifts have been in both styles (and I’d be fascinated to know his reasons for using both - sometimes lifters do it as a practical way to work around certain injuries, and some do it simply because the know they are strong in both and trying to find out if one is optimal)."
   },
   {
     "objectID": "index.html#load-and-clean-data",
