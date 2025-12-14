@@ -50,3 +50,6 @@ def wc_sort_key(wc: str):
 weight_order = sorted(df_plot["weight_class"].unique(), key=wc_sort_key)
 
 df_plot.head()
+
+```  
+
