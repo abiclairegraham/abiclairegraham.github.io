@@ -1,7 +1,6 @@
 project:
   type: website
-  output-dir: ../../docs/data-projects/deadlift-style
-
+  output-dir: .
 
 website:
   title: "Deadlift Style & Weight Class (IPF Raw, 2010+)"
