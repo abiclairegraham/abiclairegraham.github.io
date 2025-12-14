@@ -11,6 +11,6 @@
     "href": "index.html#load-and-clean-data",
     "title": "Does Sumo Offer an Advantage by Weight Class?",
     "section": "Load and clean data",
-    "text": "Load and clean data\nimport pandas as pd import numpy as np import plotly.express as px\nCSV_PATH = “deadlift-style/2025-12-13 deadlift_styles.csv” df = pd.read_csv(CSV_PATH)"
+    "text": "Load and clean data\nimport pandas as pd import numpy as np import plotly.express as px\nCSV_PATH = “data/2025-12-13 deadlift_styles.csv” df = pd.read_csv(CSV_PATH)"
   }
 ]
