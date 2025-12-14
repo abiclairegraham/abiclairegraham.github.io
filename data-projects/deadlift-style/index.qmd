@@ -18,7 +18,7 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 
-CSV_PATH = "deadlift-style/2025-12-13 deadlift_styles.csv" 
+CSV_PATH = "data/2025-12-13 deadlift_styles.csv" 
 df = pd.read_csv(CSV_PATH)
 
 # Basic hygiene
