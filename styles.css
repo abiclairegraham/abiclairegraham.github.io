@@ -330,7 +330,7 @@ a:hover {
 .blog-hero-frame h1,
 .blog-hero-frame h2,
 .blog-hero-frame h3{
-  margin: 5rem 7.5rem 2rem;  /* margin: TOP  LEFT+RIGHT  BOTTOM */
+  margin: 5rem 9rem 2rem;  /* margin: TOP  LEFT+RIGHT  BOTTOM */
   font-family: "Cinzel", serif;
   letter-spacing: 0.08em;
   text-transform: none;
@@ -351,14 +351,15 @@ a:hover {
   );
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent; */
+  color: transparent;  
 
-  /* bevel / embossed shadow */
-  /* text-shadow:
-    0 -1px 1px rgba(255, 255, 255, 0.7),   /* top edge highlight */
-    0  2px 3px rgba(0, 0, 0, 0.9),         /* main bottom shadow */
-    0  0 6px rgba(0, 0, 0, 0.7);           /* soft glow into the panel */
-} */
+  bevel / embossed shadow 
+   text-shadow:
+    0 -1px 1px rgba(255, 255, 255, 0.7),   top edge highlight 
+    0  2px 3px rgba(0, 0, 0, 0.9),         main bottom shadow 
+    0  0 6px rgba(0, 0, 0, 0.7);           soft glow into the panel
+} 
+*/
 
 /* Body text – subtler metal effect */
 .blog-hero-frame li,
