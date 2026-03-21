@@ -367,7 +367,7 @@ a:hover {
   letter-spacing: 0.06em;
   text-transform: none;
   line-height: 1.5;
-  font-size: clamp(0.85rem, 1.3vw + 0.7rem, 1.1rem);
+  font-size: clamp(1rem, 1.1vw + 0.85rem, 1.2rem);
 
   color: #c2c7d2;
   text-shadow:
