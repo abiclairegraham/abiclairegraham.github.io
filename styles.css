@@ -330,7 +330,7 @@ a:hover {
 .blog-hero-frame h1,
 .blog-hero-frame h2,
 .blog-hero-frame h3{
-  margin: 5rem 9rem 2rem;  /* margin: TOP  LEFT+RIGHT  BOTTOM */
+  margin: 5rem 15rem 2rem;  /* margin: TOP  LEFT+RIGHT  BOTTOM */
   font-family: "Cinzel", serif;
   letter-spacing: 0.08em;
   text-transform: none;
@@ -339,6 +339,9 @@ a:hover {
   /* base colour if gradient isn't supported */
   color: #2f241c; /* dark brown*/  
   /* color: #d0d4dd; grey */
+}
+.blog-hero-frame h1 {
+  font-size: clamp(1.6rem, 1.2rem + 1vw, 2.2rem);
 }
 
   /* metallic-ish gradient inside the text 
