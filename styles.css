@@ -362,18 +362,18 @@ a:hover {
 .blog-hero-frame li,
 .blog-hero-frame pre,
 .blog-hero-frame p {
-  margin: 1rem 5rem 1.5rem;
+  margin: 1rem 4rem 1.5rem;
   font-family: "EB Garamond", serif;
   letter-spacing: 0.01em;
   text-transform: none;
   line-height: 1.7;
   font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
-  text-align: justify;
-  hyphens: auto;
   color: #c2c7d2;
   text-shadow:
     0 -1px 1px rgba(255, 255, 255, 0.35),
     0  1px 2px rgba(0, 0, 0, 0.8);
+  text-align: justify;
+  hyphens: auto;
 }
 
 /* Inline code – no big margins */
@@ -1172,13 +1172,13 @@ a:hover {
   .hero-title-plate h1 {
     /* font-size: 1.4rem;*/
     font-size: 0.9rem;
-    margin: 0.75;
+    margin: 0.75rem;
     text-align: center;
   }
 
   .hero-body-plate p {
     font-size: 0.75rem;
-     margin: 0.8;
+     margin: 0.8rem;
     line-height: 1;
   }
 }
@@ -1247,7 +1247,7 @@ a:hover {
   /* optionally reduce top margin above the plaque after the frame */
   .plaque {
     margin-top: 8rem;     /* was 7rem or more — shrink spacing */
-    transform: scale(0.65);  smaller plaques on mobile
+    transform: scale(0.65);  /*smaller plaques on mobile*/
     transform-origin: top center;
   }
 
@@ -1311,7 +1311,9 @@ a:hover {
   .blog-hero-frame p,
   .blog-hero-frame li,
   .blog-hero-frame pre {
-    margin: 1rem 3rem 1rem;
+    margin: 1rem 2rem 1rem;
+    text-align: left;
+    hyphens: auto;
   }
 
   /* slightly reduce bullet indent on mobile */
