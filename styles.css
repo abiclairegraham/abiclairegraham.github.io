@@ -370,7 +370,6 @@ a:hover {
   font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
   text-align: justify;
   hyphens: auto;
-}
 
   color: #c2c7d2;
   text-shadow:
