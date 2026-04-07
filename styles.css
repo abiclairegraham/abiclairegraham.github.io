@@ -497,7 +497,8 @@ a:hover {
 
 /* link appearance inside table */
 .blog-hero-frame table a {
-  color: #c7d2fe; /* soft pale blue */
+  /* color: #c7d2fe; soft pale blue */
+  color: #563c2a; /* soft brown */
   text-decoration: underline;
 }
 
