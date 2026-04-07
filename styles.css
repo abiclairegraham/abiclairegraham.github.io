@@ -466,7 +466,8 @@ a:hover {
 
   overflow: hidden; /* keep rounded corners */
   font-family: "EB Garamond", serif;
-  color: #e5e7eb;   /* light silver text */
+  /* color: #e5e7eb;  light silver text */
+  color: #2f241c /* dark brown text */
   text-shadow:
     0 -1px 1px rgba(255,255,255,0.15),
     0 1px 3px rgba(0,0,0,0.8);
